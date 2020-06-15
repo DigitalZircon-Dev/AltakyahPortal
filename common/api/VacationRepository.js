@@ -24,15 +24,12 @@ export default ($axios) => ({
 
   async getBalanceByEmpolyeeNumber(EmployeeNumber)
   {
-    var BalanceByEmpNumURL= VACATION.GET_BALANCE_BY_EMP;    
-        
-    //const balance = await this.$axios.$get(BalanceByEmpNumURL);
+    var BalanceByEmpNumURL= VACATION.GET_BALANCE_BY_EMP + EmployeeNumber;
     const balance = await $axios.$get(BalanceByEmpNumURL);
     return balance;
   },
 
   async getRequestsByEmpolyeeNumber(EmployeeNumber){
-    return await $axios.$get(GET_REQUESTS_BY_EMP);
-    //retrun requests;
+    return await $axios.$get(VACATION.GET_REQUESTS_BY_EMP);
   }
 })

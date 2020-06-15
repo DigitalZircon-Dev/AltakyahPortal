@@ -3,7 +3,7 @@ export const MY_SECOND_CONSTANT = 'is also awesome'
 
 // Vacation Services Constants
 export const VACATION = {
-    GET_BALANCE_BY_EMP : 'vacationBalance/ByEmployeeNumber/10133',
+    GET_BALANCE_BY_EMP : 'vacationBalance/ByEmployeeNumber/',
     GET_REQUESTS_BY_EMP : 'vacationRequest',
     GET_VACATION : 'vacations',
 }
