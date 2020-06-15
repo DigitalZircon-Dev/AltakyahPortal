@@ -1,6 +1,6 @@
-import VACATION from './apiURLs';
+//import {VACATION} from './apiURLs';
 
-export default{
-    VACATION
-}
-//export * from './apiURLs';
+// export default {
+//     VACATION
+// };
+export * from './apiURLs';

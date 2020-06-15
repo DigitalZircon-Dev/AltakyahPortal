@@ -30,7 +30,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/RepositoryPlugin.js'
+    '~/plugins/repositories.js',
+    '~/plugins/axiosPlugin',
   ],
   /*
   ** Nuxt.js dev-modules
@@ -50,7 +51,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:44306',
+    baseURL: 'http://localhost:44306/api/app',
     PREFIX: '/api/app/'
   },
   /*

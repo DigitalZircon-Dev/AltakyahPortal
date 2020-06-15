@@ -11,18 +11,16 @@
           </v-list-item-content>
         </v-list-item>
         <v-list>
-          <v-list-item link>
+          <v-list-item
+            v-for="item in menu"
+            :key="item.title" 
+            :to="item.link" 
+            router link>
             <v-list-item-content>
-              <v-list-item-title class="subtitle-1">Profile</v-list-item-title>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item link>
-            <v-list-item-content>
-              <v-list-item-title class="subtitle-1"
-                >Vacations</v-list-item-title
-              >
-            </v-list-item-content>
-          </v-list-item>
+
           <v-list-group dark color="white">
             <template v-slot:activator>
               <v-list-item-content>
@@ -96,6 +94,10 @@ export default {
       { text: "Sub Page" },
       { text: "Current Page" },
     ],
+    menu: [
+        { title: "Profile", link: "/profile", hasSub: false },
+        { title: "Vacation", link: "/vacation", hasSub: true },
+      ],
       languageLabel: {
         Arabic: {
           Title:'عربي',
