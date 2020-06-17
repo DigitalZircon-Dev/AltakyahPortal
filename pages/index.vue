@@ -9,7 +9,8 @@
       sm8
       md6
     >
-      <div class="text-center">
+      <userHtml/>
+      <!-- <div class="text-center">
         <logo />
         <vuetify-logo />
       </div>
@@ -74,7 +75,7 @@
             Continue
           </v-btn>
         </v-card-actions>
-      </v-card>
+      </v-card> -->
     </v-flex>
   </v-layout>
 </template>
@@ -82,11 +83,13 @@
 <script>
 import Logo from '~/components/common/Logo.vue'
 import VuetifyLogo from '~/components/common/VuetifyLogo.vue'
+import userHtml from '@/components/userProfile/userprofilehtml.vue'
 
 export default {
   components: {
     Logo,
-    VuetifyLogo
+    VuetifyLogo,
+    userHtml
   }
 }
 </script>

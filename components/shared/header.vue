@@ -76,9 +76,10 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-links">
+              <!-- <a href="#" class="nav-links">
                 العربية
-              </a>
+              </a> -->
+              <LangSwitcher/>
             </li>
           </ul>
         </nav>
@@ -90,7 +91,12 @@
 
 <script>
 // @ is an alias to /src
+import LangSwitcher from '@/components/shared/LangSwitcher.vue'
+
 export default {
+  components: {
+    LangSwitcher,
+  },
   name: 'Header',
   data() {
     return {

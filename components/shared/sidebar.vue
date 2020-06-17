@@ -5,12 +5,23 @@
       Main Menu
     </div>
     <v-list class="sidenav-items" tag="ul">
+
+      <v-list-item tag="li" class="active sidenav-item"
+            v-for="item in menu"
+            :key="item.title" 
+            :to="item.link" 
+            router link>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
       <v-list-item tag="li" class="active sidenav-item">
         <v-list-item-title to="/" link>Profile</v-list-item-title>
       </v-list-item>
 
       <v-list-item tag="li" class="sidenav-item">
-        <v-list-item-title to="/" link>Vacations</v-list-item-title>
+        <v-list-item-title to="/vacation" link>Vacations</v-list-item-title>
       </v-list-item>
 
       <v-list-item tag="li" class="sidenav-item">
@@ -111,7 +122,10 @@ export default {
   name: 'Sidebar',
   data() {
     return {
-      menu: [],
+      menu: [
+        { title: "Profile", link: "/", hasSub: false },
+        { title: "Vacation", link: "/vacation", hasSub: true },
+      ],
       admins: [['sub Link 1'], ['sub Link 2']]
     }
   }
