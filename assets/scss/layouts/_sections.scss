@@ -1,0 +1,35 @@
+/* Main Section Style */
+
+.main-contents {
+  background: $stc_color_air;
+  height: 100%;
+  .wrapper-content {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+    .page-control {
+      overflow: hidden;
+    }
+    .page-contents {
+      padding: 15px;
+      transition: 0.5s;
+      margin: auto;
+      width: 77%;
+      height: 100%;
+
+      .sectionTitle {
+        font-size: $stc_font_size_xlarge;
+        font-family: $stc_font_face_medium;
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          border-radius: 7.5px;
+          background-color: $stc_color_coral;
+          margin-#{$reverse-direction}: 5px;
+        }
+      }
+    }
+  }
+}

@@ -31,9 +31,10 @@ export default {
             TotalDays: 'vacations/TotalDays'
         })
     },
-     async fetch ({ store, params }) {
+     async fetch () {
         console.log('fetch from vacation balance ');
-        await store.dispatch('vacations/getVacationBalance');
+        await this.$store.dispatch('vacations/getVacationBalance');
+        //await store.dispatch('vacations/getVacationBalance');
     },
     created() {
         //this.$store.dispatch('vacations/getVacationBalance');

@@ -1,0 +1,143 @@
+/*=== Calendar Style ===*/
+.calendar-base {
+  background-color: $stc_color_white;
+  box-shadow: $stc_box_shadow;
+  font-family: $stc_font_face;
+  padding: 20px;
+  .year {
+    font-size: 22px;
+    color: $stc_color_onyx;
+    font-family: $stc_font_face_medium;
+    display: inline-block;
+  }
+  .calenderAction {
+    float: $reverse-direction;
+    .triangle-left {
+      background: $stc_color_border;
+      padding: 12px 25px;
+      border-radius: 30px;
+      width: 45px;
+      position: relative;
+      cursor: pointer;
+      float: $direction;
+      @include transition(1s);
+      &:after {
+        border-style: solid;
+        border-width: 0.1em 0.1em 0 0;
+        content: '';
+        display: inline-block;
+        height: 0.45em;
+        #{$direction}: 22px;
+        position: absolute;
+        vertical-align: top;
+        width: 0.45em;
+        top: 8px;
+        transform: rotate(220deg);
+        color: $stc_color_onyx;
+        @include transition(0.3s);
+      }
+      &:hover {
+        background: $stc_color_sunlight;
+
+        &:after {
+          color: $stc_color_white;
+        }
+      }
+    }
+    .triangle-right {
+      background: $stc_color_border;
+      padding: 12px 25px;
+      border-radius: 30px;
+      width: 45px;
+      position: relative;
+      cursor: pointer;
+      float: $reverse-direction;
+      margin-#{$direction}: 5px;
+      @include transition(1s);
+      &:after {
+        border-style: solid;
+        border-width: 0.1em 0.1em 0 0;
+        content: '';
+        display: inline-block;
+        height: 0.45em;
+        #{$direction}: 22px;
+        position: absolute;
+        vertical-align: top;
+        width: 0.45em;
+        top: 8px;
+        transform: rotate(45deg);
+        color: $stc_color_onyx;
+        @include transition(0.3s);
+      }
+      &:hover {
+        background: $stc_color_sunlight;
+        @include transition(0.3s);
+        &:after {
+          color: $stc_color_white;
+        }
+      }
+    }
+  }
+  .days {
+    color: $stc_color_onyx;
+    font-size: $stc_font_size_small;
+    word-spacing: 32px;
+    font-weight: 600;
+    font-family: $stc_font_face;
+    margin-top: 20px;
+  }
+  .num-dates {
+    z-index: 1;
+    font-family: $stc_font_face;
+    color: $stc_color_onyx;
+    margin-top: 13px;
+    > div {
+      padding: 5px 0;
+      border-top: 1px solid $stc_color_border;
+    }
+    .first-week {
+      word-spacing: 45px;
+      span {
+        color: $stc_color_border;
+      }
+    }
+    .second-week {
+      word-spacing: 41px;
+    }
+    .third-week {
+      word-spacing: 47px;
+    }
+    .fourth-week {
+      word-spacing: 44px;
+    }
+    .fifth-week {
+      word-spacing: 42px;
+    }
+    .sixth-week {
+      word-spacing: 44px;
+      span {
+        color: $stc_color_border;
+      }
+    }
+    .current-day {
+      background: $stc_color_coral;
+      color: $stc_color_white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px;
+    }
+    .event {
+      background: $stc_color_border;
+      color: $stc_color_onyx;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px;
+    }
+  }
+}

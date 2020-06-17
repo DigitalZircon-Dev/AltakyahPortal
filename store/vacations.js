@@ -37,7 +37,7 @@ export const actions = {
         //const balance = await this.$axios.$get(BalanceByEmpNumURL);
 
         const balance = await this.$repositories.vacation.getBalanceByEmpolyeeNumber(10133)
-        console.log(balance);
+        //console.log(balance);
         commit('SETBalance', balance);
     },
     async getVacationRequests({ commit }){

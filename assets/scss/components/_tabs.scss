@@ -1,0 +1,31 @@
+/* Vuetify tabs override Style */
+a.v-tab.v-tab--active {
+  background: transparent;
+  color: $stc_color_onyx;
+  font-family: $stc_font_face_medium;
+}
+a.v-tab:not(.v-tab--active) {
+  color: $stc_color_onyx;
+  font-family: $stc_font_face_medium;
+}
+.v-tab.v-tab {
+  position: relative;
+}
+.v-tab.v-tab:after {
+  content: '';
+  position: absolute;
+  background-color: #f3f3f1;
+  display: block;
+  width: 2px;
+  height: 30px;
+  top: 10px;
+  #{$reverse-direction}: -1px;
+}
+
+.v-tab.v-tab:last-child:after {
+  display: none;
+}
+
+.v-tabs-slider-wrapper {
+  display: none;
+}

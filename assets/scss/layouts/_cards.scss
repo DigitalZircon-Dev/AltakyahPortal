@@ -1,0 +1,380 @@
+/* Card Common Style*/
+.card-information {
+  background-color: $stc_color_white;
+  box-shadow: $stc_box_shadow;
+  font-family: $stc_font_face;
+  .card-header {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid $stc_color_border;
+    font-size: 22px;
+    font-family: $stc_font_face_medium;
+    .action {
+      display: block;
+      float: $reverse-direction;
+      a {
+        display: inline-block;
+        color: $stc_color_coral;
+        font-family: $stc_font_face;
+        text-decoration: none;
+        font-size: $stc_font_size;
+        img {
+          width: 18px;
+          position: relative;
+          top: 2px;
+        }
+        &.addBtn {
+          margin-#{$reverse-direction}: 10px;
+        }
+      }
+    }
+  }
+  .card-body {
+    padding: 15px 20px;
+    min-height: 200px;
+    overflow: hidden;
+    .card-body-title {
+      margin-bottom: 0;
+    }
+    .card-body-info {
+      margin-top: 35px;
+      display: flex;
+      .card-body-label {
+        font-size: 30px;
+        display: inline-block;
+        flex: 1;
+        line-height: 30px;
+        span {
+          font-size: $stc_font_size;
+        }
+      }
+      .card-body-value {
+        display: inline-block;
+        flex: 1;
+        text-align: $reverse-direction;
+        line-height: 36px;
+        font-size: $stc_font_size_large;
+        font-family: $stc_font_face_medium;
+      }
+    }
+    .card-body-target {
+      font-size: 30px;
+      font-family: $stc_font_face_medium;
+      margin-bottom: 0;
+      span {
+        font-size: $stc_font_size;
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+
+    .horizontal {
+      .progress-track {
+        position: relative;
+        width: 100%;
+        height: 5px;
+        background-color: $stc_color_border;
+        box-shadow: $stc_box_shadow;
+      }
+      .progress-fill {
+        position: relative;
+        background: $stc_color_coral;
+        height: 5px;
+        width: 50%;
+        color: $stc_color_white;
+        text-align: center;
+        font-family: $stc_font_face;
+        font-size: $stc_font_size_xsmall;
+        line-height: 20px;
+      }
+    }
+    .card-progress-footer {
+      margin-bottom: 0;
+      .card-progress-label {
+        margin-top: 5px;
+        display: block;
+        font-size: $stc_font_size;
+      }
+    }
+
+    .vertical {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      .progress-bar {
+        height: 75px;
+        width: 40px;
+        flex: 1;
+      }
+      .progress-fill {
+        position: relative;
+        background: $stc_color_purple;
+        height: 50%;
+        width: 40px;
+        color: $stc_color_white;
+        text-align: center;
+        font-family: $stc_font_face;
+        font-size: $stc_font_size_small;
+        line-height: 20px;
+        box-shadow: $stc_box_shadow;
+        @include transition(0.2s);
+        &:hover {
+          background: $stc_color_coral;
+        }
+        .progress-val {
+          position: relative;
+          top: 5px;
+        }
+      }
+
+      .progress-track {
+        position: relative;
+        width: 40px;
+        height: 100%;
+        background: $stc_color_border;
+        box-shadow: $stc_box_shadow;
+        border-radius: 3px;
+      }
+    }
+    /* Card Skills Style*/
+    .skill-list {
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      overflow: auto;
+      li {
+        display: block;
+        a {
+          background: $stc_color_hover;
+          box-shadow: $stc_box_shadow_inset;
+          color: $stc_color_onyx;
+          display: block;
+          padding: 5px 20px;
+          border-radius: 40px;
+          margin-#{$reverse-direction}: 5px;
+          text-decoration: none;
+          margin-bottom: 15px;
+          font-size: $stc_font_size_small;
+          @include transition(0.2s);
+          &:hover {
+            background: $stc_color_coral;
+            color: $stc_color_white;
+            span {
+              color: $stc_color_white;
+            }
+          }
+          span {
+            font-family: $stc_font_face_medium;
+            font-size: $stc_font_size_small;
+            color: $stc_color_coral;
+          }
+        }
+      }
+    }
+    /* Card project Style*/
+    .project-list {
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      overflow: auto;
+      li {
+        display: block;
+        a {
+          background: $stc_color_hover;
+          box-shadow: $stc_box_shadow_inset;
+          color: $stc_color_onyx;
+          display: block;
+          padding: 5px 20px;
+          border-radius: 40px;
+          margin-#{$reverse-direction}: 5px;
+          text-decoration: none;
+          margin-bottom: 15px;
+          font-size: $stc_font_size_small;
+          @include transition(0.2s);
+          &:hover {
+            background: $stc_color_coral;
+            color: $stc_color_white;
+          }
+          span {
+            font-family: $stc_font_face_medium;
+            font-size: $stc_font_size_small;
+            color: $stc_color_coral;
+          }
+        }
+      }
+    }
+    /* Card myteam Style*/
+    .myteam-list {
+      padding: 0;
+      list-style: none;
+      height: 165px;
+      overflow: auto;
+      li {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 5px;
+        @include transition(0.2s);
+        &:hover {
+          background-color: $stc_color_hover;
+        }
+        img {
+          width: 32px;
+          display: inline-block;
+        }
+        p {
+          margin-bottom: 0;
+          vertical-align: top;
+          display: inline-block;
+          margin-#{$direction}: 10px;
+          padding-top: 5px;
+        }
+      }
+    }
+    /* Card tasks Style*/
+    .tasks-box {
+      display: flex;
+      .task-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        flex: 1;
+        padding-top: 14px;
+        li {
+          display: block;
+          margin-bottom: 10px;
+          span {
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 15px;
+              height: 15px;
+              border-radius: 7.5px;
+              background-color: $stc_color_silver;
+              margin-#{$reverse-direction}: 5px;
+            }
+            &.sp-pending:before {
+              background-color: $stc_color_sunlight;
+            }
+            &.sp-new:before {
+              background-color: $stc_color_sealight;
+            }
+            &.sp-completed:before {
+              background-color: $stc_color_oasislight;
+            }
+            &.sp-rejected:before {
+              background-color: $stc_color_coral;
+            }
+          }
+        }
+      }
+
+      .task-chart {
+        flex: 1;
+        text-align: center;
+        position: relative;
+        padding: 15px;
+        img {
+          width: 130px;
+        }
+        span {
+          font-size: 38px;
+          position: absolute;
+          top: 30%;
+          #{$direction}: 0;
+          #{$reverse-direction}: 0;
+          font-family: $stc_font_face_medium;
+        }
+      }
+    }
+    /* Card requests Style*/
+    .requests-box {
+      display: flex;
+      .request-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        flex: 1;
+        padding-top: 14px;
+        li {
+          display: block;
+          margin-bottom: 10px;
+          span {
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 15px;
+              height: 15px;
+              border-radius: 7.5px;
+              background-color: $stc_color_silver;
+              margin-#{$reverse-direction}: 5px;
+            }
+            &.sp-pending:before {
+              background-color: $stc_color_sunlight;
+            }
+            &.sp-new:before {
+              background-color: $stc_color_sealight;
+            }
+            &.sp-completed:before {
+              background-color: $stc_color_oasislight;
+            }
+            &.sp-rejected:before {
+              background-color: $stc_color_coral;
+            }
+          }
+        }
+      }
+
+      .request-chart {
+        flex: 1;
+        text-align: center;
+        position: relative;
+        padding: 15px;
+        img {
+          width: 130px;
+        }
+        span {
+          font-size: 38px;
+          position: absolute;
+          top: 30%;
+          #{$direction}: 0;
+          #{$reverse-direction}: 0;
+          font-family: $stc_font_face_medium;
+        }
+      }
+    }
+    /* Card Favourite Style*/
+    .Favourite-list {
+      padding: 0;
+      list-style: none;
+      height: 165px;
+      overflow: auto;
+      li {
+        display: block;
+        overflow: hidden;
+        border-bottom: 1px solid $stc_color_border;
+        padding: 5px 0;
+        @include transition(0.2s);
+        &:hover {
+          background-color: $stc_color_hover;
+        }
+        img {
+          width: 32px;
+          display: inline-block;
+        }
+        p {
+          margin-bottom: 0;
+          vertical-align: top;
+          display: inline-block;
+          margin-#{$direction}: 10px;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+}

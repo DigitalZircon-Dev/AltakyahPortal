@@ -1,0 +1,83 @@
+/* navBar Style */
+
+.mainMenu {
+  background: $stc_color_purple_dark;
+  .menuWrapper {
+    max-width: $container-width;
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 15px;
+    .navbar {
+      display: block;
+      ul {
+        list-style: none;
+        li {
+          float: $direction;
+          a {
+            color: $stc_color_white;
+            padding: 10px 30px 10px 30px;
+            display: block;
+            text-decoration: none;
+            position: relative;
+            @include transition(0.3s);
+            &:hover {
+              background: $stc_color_coral;
+            }
+            &.active:after {
+              content: '';
+              border-bottom: 3px solid $stc_color_coral;
+              display: block;
+              width: 100%;
+              position: absolute;
+              #{$direction}: 0;
+              #{$reverse-direction}: 0;
+              bottom: 0;
+            }
+            &.dropdown:after {
+              border-style: solid;
+              border-width: 0.1em 0.1em 0 0;
+              content: '';
+              display: inline-block;
+              height: 0.45em;
+              #{$direction}: 10px;
+              position: relative;
+              vertical-align: top;
+              width: 0.45em;
+              top: 8px;
+              transform: rotate(135deg);
+            }
+          }
+        }
+      }
+    }
+
+    nav.sub-navbar {
+      float: $reverse-direction;
+      ul {
+        list-style: none;
+        li {
+          float: $direction;
+          a {
+            text-decoration: none;
+            font-size: $stc_font_size;
+            color: $stc_color_white;
+            display: block;
+            position: relative;
+            padding: 6px 15px 0;
+            @include transition(0.3s);
+            img {
+              width: 32px;
+            }
+            &:hover {
+              background: $stc_color_coral;
+            }
+          }
+          &:last-child a {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}

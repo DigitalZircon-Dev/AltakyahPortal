@@ -1,0 +1,53 @@
+/*=== Event schdule Style ===*/
+
+ul.schdule-list {
+  padding: 0;
+  list-style: none;
+  height: 250px;
+  overflow: auto;
+  li {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid $stc_color_border;
+    @include transition(0.2s);
+    &:hover {
+      background-color: $stc_color_hover;
+    }
+    span {
+      display: inline;
+      padding: 5px 15px;
+      background: $stc_color_coral;
+      font-size: $stc_font_size_small;
+      color: $stc_color_white;
+    }
+    &.in {
+      span {
+        background: $stc_color_oasislight;
+      }
+    }
+    &.out {
+      span {
+        background: $stc_color_coral;
+      }
+    }
+    &.up {
+      span {
+        background: $stc_color_sunsetlight;
+      }
+    }
+    &.down {
+      span {
+        background: $stc_color_purple;
+      }
+    }
+  }
+  p {
+    margin-bottom: 0;
+    vertical-align: top;
+    display: inline-block;
+    margin-#{$direction}: 0px;
+    padding-top: 5px;
+  }
+}

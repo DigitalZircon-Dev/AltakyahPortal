@@ -1,159 +1,231 @@
 <template>
- <v-app>
+  <v-app dark>
+    <!-- Header Component-->
     <Header />
-    <div class="containerwrapper">
-      <v-navigation-drawer v-model="drawer" app color="primary" dark="">
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title class="subtitle-2" color="primary"
-              ><p color="primary">Main Menu</p></v-list-item-title
-            >
-          </v-list-item-content>
-        </v-list-item>
-        <v-list>
-          <v-list-item
-            v-for="item in menu"
-            :key="item.title" 
-            :to="item.link" 
-            router link>
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+    <!-- End Header Component-->
+    <!-- Main Contents-->
+    <section class="main-contents">
+      <div class="wrapper-content">
+        <!-- Sidebar Component-->
+        <Sidebar />
+        <!-- End Sidebar Component-->
 
-          <v-list-group dark color="white">
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title>MyTeam</v-list-item-title>
-              </v-list-item-content>
-            </template>
+        <!-- Page contents-->
+        <div class="page-contents">
+          <div class="page-control">
+            <div class="sidebar-menu">
+              <a
+                href="#"
+                id="menuIcon"
+                style="cursor:pointer"
+                onclick="openNav(this)"
+              >
+                <img src="images/sidebar/menu-open.svg"
+              /></a>
+              <a
+                href="#"
+                id="closeIcon"
+                style="cursor:pointer; display: none"
+                onclick="closeNav(this)"
+              >
+                <img src="images/sidebar/menu-close.svg"
+              /></a>
+            </div>
+            <!-- breadcrumb Component-->
+            <Breadcrumb />
+            <!-- End breadcrumb Component-->
+          </div>
 
-            <v-list-item v-for="(admin, i) in admins" :key="i" link>
-              <v-list-item-title v-text="admin[0]"></v-list-item-title>
-              <v-list-item-icon>
-                <v-icon v-text="admin[1]"></v-icon>
-              </v-list-item-icon>
-            </v-list-item>
-          </v-list-group>
-        </v-list>
-      </v-navigation-drawer>
+          <div class="profile-section">
+            <v-container>
+              <v-row>
+                <v-col md="3" cols="12">
+                  <!-- Profile Component-->
+                  <Profile />
+                  <!-- End Profile Component-->
+                </v-col>
 
-      <v-content>
-        <div class="breadCrump">
-          <span class="actionBtn">
-            <v-app-bar-nav-icon
-              @click.stop="drawer = !drawer"
-            ></v-app-bar-nav-icon>
-          </span>
-          <v-breadcrumbs :items="breadCrumb" large></v-breadcrumbs>
+                <v-col md="9" cols="12">
+                  <!-- Profile Reports Component-->
+                  <ProfileReports />
+                  <!-- End Profile Reports Component-->
+
+                  <div class="profile-tasks-requests">
+                    <!-- tabs tasks&requests Component-->
+                    <profileTabs />
+                    <!-- End tabs tasks&requests Component-->
+
+                    <!-- Profile chart Component-->
+                    <profileCharts />
+                    <!-- End Profile chart Component-->
+                  </div>
+                </v-col>
+              </v-row>
+              <!-- Start Summary-->
+              <v-row>
+                <v-col md="12" cols="12">
+                  <div class="sectionTitle">
+                    Summary
+                  </div>
+                </v-col>
+              </v-row>
+
+              <v-row>
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Vacation Component-->
+                  <cardVacation />
+                  <!-- End Card Vacation Component-->
+                </v-col>
+
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Attendance Component-->
+                  <cardAttendance />
+                  <!-- End Card Attendance Component-->
+                </v-col>
+
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Performance Component-->
+                  <cardPerformance />
+                  <!-- End Card Performance Component-->
+                </v-col>
+
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Skills Component-->
+                  <cardSkills />
+                  <!-- End Card Skills Component-->
+                </v-col>
+
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Projects Component-->
+                  <cardProjects />
+                  <!-- End Card Projects Component-->
+                </v-col>
+
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Team Component-->
+                  <cardTeam />
+                  <!-- End Card Team Component-->
+                </v-col>
+
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Tasks Component-->
+                  <cardTasks />
+                  <!-- End Card Tasks Component-->
+                </v-col>
+
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Requests Component-->
+                  <cardRequests />
+                  <!-- End Card Requests Component-->
+                </v-col>
+
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card Favourites Component-->
+                  <cardFavourites />
+                  <!-- End Card Favourites Component-->
+                </v-col>
+              </v-row>
+
+              <!-- Start Events-->
+              <v-row>
+                <v-col md="12" cols="12">
+                  <div class="sectionTitle">
+                    Events
+                  </div>
+                </v-col>
+              </v-row>
+
+              <v-row>
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card calendar Component-->
+                  <cardCalendar />
+                  <!-- End Card calendar Component-->
+                </v-col>
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card toDoList Component-->
+                  <cardToDoList />
+                  <!-- End Card toDoList Component-->
+                </v-col>
+                <v-col md="4" cols="12" sm="12" xs="12">
+                  <!-- Card eventSchdule Component-->
+                  <cardEventSchdule />
+                  <!-- End Card eventSchdule Component-->
+                </v-col>
+              </v-row>
+            </v-container>
+          </div>
         </div>
-        <v-container fluid>
-          <v-row>
-             <nuxt />
-          </v-row>
-        </v-container>
-      </v-content>
-    </div>
+        <!-- End Page contents-->
+      </div>
+    </section>
+    <!-- End Main Contents-->
 
-    <v-footer color="primary">
-      <span class="white--text text-center">
-        Copyright © 2020 stcs. All rights reserved.
-      </span>
-    </v-footer>
+    <!-- Footer Component-->
+    <Footer />
+    <!-- End Footer Component-->
   </v-app>
 </template>
 
 <script>
-import Header from '~/components/common/Header.vue'
+import Header from '@/components/shared/header.vue'
+import Sidebar from '@/components/shared/sidebar.vue'
+import Breadcrumb from '@/components/shared/breadcrumb.vue'
+import Profile from '@/components/userProfile/Profile.vue'
+import profileTabs from '@/components/userProfile/profile-Tabs.vue' 
+import ProfileReports from '@/components/userProfile/profile-reports.vue'
+import profileCharts from '@/components/userProfile/profile-charts.vue'
+import cardVacation from '@/components/vacation/card-vacation.vue'
+import cardAttendance from '@/components/attendance/card-attendance.vue'
+import cardPerformance from '@/components/performance/card-performance.vue'
+import cardSkills from '@/components/projects/card-skills.vue'
+import cardProjects from '@/components/projects/card-projects.vue'
+import cardTeam from '@/components/userProfile/card-team.vue'
+import cardTasks from '@/components/eservices/card-tasks.vue'
+import cardRequests from '@/components/eservices/card-requests.vue'
+import cardFavourites from '@/components/userProfile/card-favourites.vue'
+import cardCalendar from '@/components/events/card-calendar.vue'
+import cardToDoList from '@/components/userProfile/card-toDoList.vue'
+import cardEventSchdule from '@/components/events/card-eventSchdule.vue'
+import Footer from '@/components/shared/footer.vue'
 
 export default {
   components: {
-    Header
+    Header,
+    Sidebar,
+    Breadcrumb,
+    Profile,
+    ProfileReports,
+    profileTabs,
+    profileCharts,
+    cardVacation,
+    cardAttendance,
+    cardPerformance,
+    cardSkills,
+    cardProjects,
+    cardTeam,
+    cardTasks,
+    cardRequests,
+    cardFavourites,
+    cardCalendar,
+    cardToDoList,
+    cardEventSchdule,
+    Footer
   },
-  data () {
-    return {
-      clipped: false,
-      dialog: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      admins: [["sub Link 1"], ["sub Link 2"]],
-      breadCrumb: [
-      { text: "Home" },
-      { text: "Sub Page" },
-      { text: "Current Page" },
-    ],
-    menu: [
-        { title: "Profile", link: "/profile", hasSub: false },
-        { title: "Vacation", link: "/vacation", hasSub: true },
-      ],
-      languageLabel: {
-        Arabic: {
-          Title:'عربي',
-          Lang:'ar'
-          },
-        English:{
-          Title: 'English',
-          Lang: 'en'
-        }
-      },
-      isArabic: false,
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  },
-  methods:{
-    lang() {
-      console.log(this.$vuetify.lang.current);
-      console.log(this.isArabic);
-      this.isArabic = !this.isArabic;
-      console.log(this.isArabic); 
-      if(this.isArabic){
-        this.$vuetify.lang.current ='ar' ;
-        this.$vuetify.rtl = true;
-      }else {
-        this.$vuetify.lang.current ='en';
-        this.$vuetify.rtl = false;
-      }
-      console.log(this.$vuetify.lang.current);
-    }
-  },
-  created() {
-   }
+  data: () => ({}),
+  methods: {
+    openNav() {
+  document.getElementById('mySidenav').style.width = '240px'
+  document.getElementsByClassName('page-contents')[0].style.marginLeft = '240px'
+  document.getElementById('menuIcon').style.display = 'none'
+  document.getElementById('closeIcon').style.display = 'block'
+},
+
+ closeNav(x) {
+  document.getElementById('mySidenav').style.width = '0'
+  document.getElementsByClassName('page-contents')[0].style.marginLeft = 'auto'
+  document.getElementById('menuIcon').style.display = 'block'
+  document.getElementById('closeIcon').style.display = 'none'
+}            
+  }
 }
 </script>
-<style lang="scss" scoped>
-.containerwrapper {
-  position: relative;
-  min-height: 400px;
-}
-.containerwrapper header,
-.containerwrapper nav {
-  position: absolute !important;
-}
-.containerwrapper nav {
-  bottom: 0px;
-  height: auto !important;
-}
-span.actionBtn {
-  float: left;
-  margin: 10px;
-}
-.menuHeaderTitle {
-  color: #8e9aa0;
-  margin-bottom: 0;
-}
-</style>

@@ -1,0 +1,366 @@
+/* profile Style*/
+
+/* profile Card */
+.profile {
+  background-color: $stc_color_white;
+  box-shadow: $stc_box_shadow;
+
+  .userImg {
+    display: block;
+    padding: 30px 0 10px;
+    img {
+      width: 120px;
+      display: block;
+      margin: auto;
+      border: 4px solid $stc_color_border;
+      border-radius: 50%;
+    }
+  }
+
+  .userInfo {
+    text-align: center;
+    p {
+      margin: 0;
+      font-family: $stc_font_face_medium;
+      &.name {
+        color: $stc_color_onyx;
+        font-size: $stc_font_size_large;
+      }
+      &.position {
+        color: $stc_color_silver;
+        font-size: $stc_font_size;
+      }
+    }
+  }
+  .userAction {
+    text-align: center;
+    margin-top: 15px;
+    .btn {
+      margin: 5px;
+      color: $stc_color_white;
+      box-shadow: none !important;
+      &.btn-green {
+        background: $stc_color_oasislight !important;
+      }
+      &.btn-orange {
+        background: $stc_color_sunsetlight !important;
+      }
+    }
+  }
+  .userlist {
+    display: block;
+    .group {
+      padding: 0 15px;
+      font-family: $stc_font_face_medium;
+      &:hover {
+        .userVal {
+          background: $stc_color_hover;
+        }
+        .userLabel {
+          background: $stc_color_hover;
+        }
+      }
+      .userLabel {
+        font-size: $stc_font_size_small;
+        color: $stc_color_onyx;
+        padding: 10px;
+        border-bottom: 1px solid $stc_color_border;
+        @include transition(0.3s);
+      }
+      .userVal {
+        font-size: $stc_font_size_small;
+        color: $stc_color_silver;
+        padding: 10px;
+        border-bottom: 1px solid $stc_color_border;
+        @include transition(0.3s);
+      }
+    }
+  }
+  .userActivity {
+    margin-top: 5px;
+    padding-bottom: 15px;
+    ul {
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        position: relative;
+        margin-#{$reverse-direction}: 20px;
+        font-size: $stc_font_size_small;
+        color: $stc_color_silver;
+        font-family: $stc_font_face_medium;
+        span {
+          font-size: $stc_font_size_large;
+          color: $stc_color_onyx;
+          font-family: $stc_font_face_medium;
+          margin-#{$reverse-direction}: 5px;
+          position: relative;
+          z-index: 1;
+          &:after {
+            content: '';
+            background: $stc_color_silver;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+            #{$direction}: 10px;
+          }
+        }
+        &.topics span:after {
+          background: $stc_color_sunsetlight;
+        }
+        &.comment span:after {
+          background: $stc_color_oasislight;
+        }
+        &.voting span:after {
+          background: $stc_color_coral;
+        }
+      }
+    }
+  }
+}
+
+/* profile Report */
+.profile-report {
+  background-color: $stc_color_white;
+  box-shadow: $stc_box_shadow;
+
+  ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      padding: 25px;
+      flex: 1;
+      position: relative;
+      text-align: center;
+      @include transition(0.3s);
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: $stc_color_air;
+        display: block;
+        width: 2px;
+        height: 50px;
+        top: 45px;
+        #{$reverse-direction}: 0px;
+      }
+      &:hover {
+        background: $stc_color_hover;
+        &:after {
+          content: none;
+        }
+      }
+      &:last-child:after {
+        content: none;
+      }
+
+      .report-caption {
+        display: block;
+        font-size: $stc_font_size_small;
+        color: $stc_color_silver;
+      }
+      .report-value {
+        font-size: 32px;
+        display: inline-block;
+        margin-#{$reverse-direction}: 10px;
+        font-family: $stc_font_face_medium;
+      }
+      .report-degree {
+        font-size: $stc_font_size_small;
+        color: $stc_color_silver;
+      }
+    }
+  }
+}
+
+/*====== Tabs =========*/
+
+.profile-tasks-requests {
+  margin-top: 30px;
+  background-color: $stc_color_white;
+  box-shadow: $stc_box_shadow;
+  min-height: 320px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  .tabs-box {
+    flex: 1;
+    .card-items {
+      padding: 5px;
+      .cell-time {
+        font-size: $stc_font_size;
+        padding: 5px 10px;
+        margin-#{$reverse-direction}: 15px;
+        color: $stc_color_white;
+        position: relative;
+        float: $direction;
+        &:after {
+          content: '';
+          margin: 0 0 10px 0;
+          width: 0px;
+          height: 0px;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-#{$direction}: 10px solid #ddd;
+          display: block;
+          position: absolute;
+          top: 7px;
+          #{$reverse-direction}: -10px;
+        }
+      }
+
+      .card-item {
+        display: block;
+        color: $stc_color_onyx;
+        padding: 10px;
+        @include transition(0.3s);
+        &:hover {
+          background: $stc_color_hover;
+        }
+        &.completed {
+          .cell-time {
+            background: $stc_color_oasislight !important;
+            &:after {
+              border-left: 10px solid $stc_color_oasislight !important;
+            }
+          }
+          .cell-status {
+            color: $stc_color_oasislight;
+          }
+        }
+        &.Canceled {
+          .cell-time {
+            background: $stc_color_coral !important;
+            &:after {
+              border-left: 10px solid $stc_color_coral !important;
+            }
+          }
+          .cell-status {
+            color: $stc_color_coral;
+          }
+        }
+        &.Pending {
+          .cell-time {
+            background: $stc_color_sealight !important;
+            &:after {
+              border-left: 10px solid $stc_color_sealight !important;
+            }
+          }
+          .cell-status {
+            color: $stc_color_sealight;
+          }
+        }
+        &.Progress {
+          .cell-time {
+            background: $stc_color_silver !important;
+            &:after {
+              border-left: 10px solid $stc_color_silver !important;
+            }
+          }
+          .cell-status {
+            color: $stc_color_silver;
+          }
+        }
+        .cell-title {
+          display: inline-block;
+          margin-left: 3px;
+          font-size: 14px !important;
+          margin-bottom: 0;
+          line-height: 20px;
+          vertical-align: top;
+          span {
+            display: block;
+          }
+          .cell-status {
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+  .report-info-box {
+    flex: 1;
+  }
+}
+
+/*====== Charts =========*/
+
+.flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 40px;
+  border-left: 1px solid $stc_color_hover;
+  .single-chart {
+    width: 33%;
+    justify-content: space-around;
+
+    .circular-chart {
+      display: block;
+      margin: 10px auto;
+      max-width: 75%;
+      max-height: 250px;
+      .circle-bg {
+        fill: none;
+        stroke: $stc_color_hover;
+        stroke-width: 2;
+      }
+      .circle {
+        fill: none;
+        stroke-width: 2;
+        animation: progress 2s ease-out forwards;
+
+        @keyframes progress {
+          0% {
+            stroke-dasharray: 0 100;
+          }
+        }
+      }
+      &.shape-green {
+        .circle {
+          stroke: $stc_color_oasislight;
+        }
+      }
+      &.shape-orange {
+        .circle {
+          stroke: $stc_color_sunsetlight;
+        }
+      }
+      &.shape-coral {
+        .circle {
+          stroke: $stc_color_coral;
+        }
+      }
+      .percentage {
+        fill: $stc_color_onyx;
+        font-family: $stc_font_face_medium;
+        font-size: 7px;
+        text-anchor: middle;
+      }
+      text.percentage-text {
+        fill: $stc_color_silver;
+        font-family: $stc_font_face_medium;
+        font-size: 4.5px;
+        text-anchor: middle;
+        font-style: italic;
+      }
+    }
+    .chart-info-text {
+      text-align: center;
+      font-size: 30px;
+      font-family: $stc_font_face_medium;
+      color: $stc_color_onyx;
+      span {
+        display: block;
+        font-size: $stc_font_size_large;
+        color: $stc_color_silver;
+      }
+    }
+  }
+}

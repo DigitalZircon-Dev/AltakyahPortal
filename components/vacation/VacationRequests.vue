@@ -47,9 +47,9 @@
         Requests: state => state.vacations.Requests,
         }),
     },
-     async fetch ({ store, params }) {
+     async fetch () {
       console.log('fetch from vacation request');
-      await store.dispatch('vacations/getVacationRequests');
+      await this.$store.dispatch('vacations/getVacationRequests');
     },
     created(){
       //this.$store.dispatch('vacations/getVacationRequests');

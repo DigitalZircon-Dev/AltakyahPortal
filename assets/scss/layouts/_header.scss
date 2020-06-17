@@ -1,0 +1,93 @@
+/* header Style*/
+
+header {
+  font-family: $stc_font_face;
+  .topBar {
+    display: block;
+    overflow: hidden;
+    background: $stc_color_white;
+    padding: 0 20px;
+    .topBar-wrapper {
+      max-width: $container-width;
+      margin: auto;
+      width: 100%;
+      overflow: hidden;
+      #logo {
+        display: block;
+        float: $direction;
+        padding: 15px 20px 7px;
+        a {
+          display: block;
+          img {
+            height: 45px;
+          }
+        }
+      }
+    }
+  }
+
+  #UserSection {
+    float: $reverse-direction;
+    padding: 13px 20px;
+    @include transition(0.2s);
+    &:hover {
+      background: $stc_color_hover;
+    }
+    a {
+      color: $stc_color_purple;
+      text-decoration: none;
+      display: inline-block;
+      font-size: $stc_font_size_small;
+      font-family: $stc_font_face_medium;
+      img {
+        width: 12px;
+        &.Avatar {
+          width: 48px !important;
+          vertical-align: middle;
+          margin-#{$direction}: 10px;
+        }
+      }
+    }
+    > img {
+      float: $reverse-direction;
+      width: 48px;
+    }
+  }
+
+  #quickLinks {
+    float: $reverse-direction;
+    > div {
+      padding: 10px;
+      border-#{$reverse-direction}: 1px solid $stc_color_border;
+      float: $direction;
+      @include transition(0.3s);
+      a {
+        display: inline-block;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        font-family: $stc_font_face;
+        img {
+          width: 28px;
+        }
+        span {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: $stc_color_coral;
+          color: $stc_color_white;
+          position: absolute;
+          top: 0;
+          #{$reverse-direction}: 2px;
+          font-size: $stc_font_size_xxsmall;
+          line-height: 20px;
+        }
+      }
+      &:hover {
+        background: $stc_color_hover;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,74 @@
+/*=== ToDo Style ===*/
+.toDoList {
+  background-color: $stc_color_white;
+  box-shadow: $stc_box_shadow;
+  font-family: $stc_font_face;
+  padding: 20px;
+  .toDo-title {
+    font-size: 22px;
+    color: $stc_color_onyx;
+    font-family: $stc_font_face_medium;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  .toDo-day {
+    font-size: 20px;
+    color: $stc_color_coral;
+    font-family: $stc_font_face_medium;
+  }
+  .toDo-date {
+    font-family: $stc_font_face_medium;
+    font-size: $stc_font_size;
+    margin-top: 5px;
+  }
+  .todolist-items {
+    padding: 0;
+    list-style: none;
+    li {
+      background: $stc_color_hover;
+      padding: 5px;
+      display: flex;
+      position: relative;
+      margin: 10px 0;
+      font-size: stc_font_size_small;
+      font-family: $stc_font_face_medium;
+      cursor: pointer;
+      @include transition(0.2s);
+      &:hover {
+        background: $stc_color_border;
+      }
+      span {
+        display: inline-block;
+        margin: 10px;
+      }
+      a {
+        display: block;
+        position: absolute;
+        #{$reverse-direction}: 20px;
+        top: 15px;
+        img {
+          width: 12px;
+        }
+      }
+    }
+  }
+  a.todolist-action {
+    background: $stc_color_coral;
+    width: 100%;
+    display: block;
+    padding: 15px;
+    margin-top: 23px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: $stc_font_size;
+    @include transition(0.2s);
+    img {
+      width: 16px;
+      margin-#{$reverse-direction}: 5px;
+    }
+    &:hover {
+      background: $stc_color_purple;
+    }
+  }
+}

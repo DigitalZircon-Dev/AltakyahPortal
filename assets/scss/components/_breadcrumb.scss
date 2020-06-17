@@ -1,0 +1,19 @@
+.breadcrumb {
+  float: $direction;
+  > ul {
+    padding: 0;
+    padding-#{$direction}: 20px;
+    li {
+      a {
+        font-size: $stc_font_size !important;
+        color: $stc_color_onyx !important;
+      }
+      &:last-child a {
+        color: $stc_color_coral !important;
+      }
+      i {
+        color: $stc_color_coral !important;
+      }
+    }
+  }
+}
