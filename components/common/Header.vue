@@ -136,7 +136,7 @@
     </div>
   </header>
   <!-- End Header -->
-  
+
 </template>
 
 <script>
@@ -170,7 +170,7 @@ export default {
       console.log(this.$vuetify.lang.current);
       console.log(this.isArabic);
       this.isArabic = !this.isArabic;
-      console.log(this.isArabic); 
+      console.log(this.isArabic);
       if(this.isArabic){
         this.$vuetify.lang.current ='ar' ;
         this.$vuetify.rtl = true;

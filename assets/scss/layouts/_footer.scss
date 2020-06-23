@@ -2,18 +2,12 @@
 
 footer.footer {
   background: $stc_color_purple !important;
-  .footerwrapper {
-    max-width: $container-width;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
     .copyright {
-      color: $stc_color_purple;
-      font-size: $stc_font_size;
+      color: $stc_color_white;
+      font-size: $stc_font_size_small;
     }
     ul.social-icons {
-      padding: 0;
+      padding-top: 5px;
       margin: 0;
       list-style: none;
       float: $reverse-direction;
@@ -26,12 +20,12 @@ footer.footer {
         a {
           border-bottom: none;
           img {
-            width:24px;
-            height:24px;
+            width:18px;
+            height:18px;
             margin-right: 20px;
             }
           }
         }
     }
-  }
+
 }

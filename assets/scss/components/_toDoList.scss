@@ -5,14 +5,14 @@
   font-family: $stc_font_face;
   padding: 20px;
   .toDo-title {
-    font-size: 22px;
+    font-size: 18px;
     color: $stc_color_onyx;
     font-family: $stc_font_face_medium;
     display: inline-block;
     margin-bottom: 15px;
   }
   .toDo-day {
-    font-size: 20px;
+    font-size: 18px;
     color: $stc_color_coral;
     font-family: $stc_font_face_medium;
   }
@@ -24,6 +24,7 @@
   .todolist-items {
     padding: 0;
     list-style: none;
+    padding-top: 15px;
     li {
       background: $stc_color_hover;
       padding: 5px;
@@ -40,6 +41,14 @@
       span {
         display: inline-block;
         margin: 10px;
+        &.toDo-item-time {
+          font-size: $stc_font_size_xsmall;
+          color: $stc_color_silver;
+      }
+      &.toDo-item-title {
+        font-size: $stc_font_size_xsmall;
+        color: $stc_color_onyx;
+    }
       }
       a {
         display: block;

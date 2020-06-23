@@ -1,0 +1,101 @@
+@charset "utf-8";
+/*STC Web font new branding*/
+
+@font-face {
+  font-family: "STC Bold";
+  src: url("../fonts/STCForward-Bold.otf");
+  src: local("?"), url("../fonts/STCForward-Bold.woff") format("woff"), url("../fonts/STCForward-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC Bold italic";
+  src: url("../fonts/STCForward-BoldItalic.otf");
+  src: local("?"), url("../fonts/STCForward-BoldItalic.woff") format("woff"), url("../fonts/STCForward-ExtraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC Bold extra";
+  src: url("../fonts/STCForward-ExtraBold.otf");
+  src: local("?"), url("../fonts/STCForward-ExtraBold.woff") format("woff"), url("../fonts/STCForward-ExtraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC Bold extra italic";
+  src: url("../fonts/STCForward-ExtraBoldItalic.otf");
+  src: local("?"), url("../fonts/STCForward-ExtraBoldItalic.woff") format("woff"),
+    url("../fonts/STCForward-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC Light";
+  src: url("../fonts/STCForward-Light.otf");
+  src: local("?"), url("../fonts/STCForward-Light.woff") format("woff"), url("../fonts/STCForward-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC Light italic";
+  src: url("../fonts/STCForward-LightItalic.otf");
+  src: local("?"), url("../fonts/STCForward-LightItalic.woff") format("woff"), url("../fonts/STCForward-LightItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC Regular";
+  src: url("../fonts/STCForward-Regular.otf");
+  src: local("?"), url("../fonts/STCForward-Regular.woff") format("woff"), url("../fonts/STCForward-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC italic";
+  src: url("../fonts/STCForward-Italic.otf");
+  src: local("?"), url("../fonts/STCForward-Italic.woff") format("woff"), url("../fonts/STCForward-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC medium";
+  src: url("../fonts/STCForward-Medium.otf");
+  src: local("?"), url("../fonts/STCForward-Medium.woff") format("woff"), url("../fonts/STCForward-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC medium italic";
+  src: url("../fonts/STCForward-MediumItalic.otf");
+  src: local("?"), url("../fonts/STCForward-MediumItalic.woff") format("woff"),
+    url("../fonts/STCForward-MediumItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC thin";
+  src: url("../fonts/STCForward-Thin.otf");
+  src: local("?"), url("../fonts/STCForward-Thin.woff") format("woff"), url("../fonts/STCForward-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STC thin italic";
+  src: url("../fonts/STCForward-ThinItalic.otf");
+  src: local("?"), url("../fonts/STCForward-ThinItalic.woff") format("woff"), url("../fonts/STCForward-ThinItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -1,78 +1,5 @@
 /* Side Bar Style */
-.sidenav {
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 0px;
-  #{$direction}: 0;
-  background-color: $stc_color_purple;
-  @include transition(0.3s);
-  width: 0;
-  overflow: hidden;
-  a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: $stc_font_face;
-    color: $stc_color_white;
-    display: block;
-    @include transition(0.3s);
-    &:hover {
-      color: $stc_color_half;
-    }
-  }
 
-  .sidebarTitle {
-    padding: 15px 20px;
-    color: $stc_color_silver;
-    font-family: $stc_font_face_medium;
-    margin-top: 15px;
-  }
-
-  .sidenav-items {
-    padding: 0 !important;
-    background: transparent !important;
-    li {
-      position: relative;
-      @include transition(0.3s);
-      cursor: pointer;
-
-      div {
-        color: #fff !important;
-      }
-      &.active {
-        background: $stc_color_purple-dark !important;
-        &:after {
-          content: '';
-          border-left: 3px solid $stc_color_coral;
-          display: block;
-          width: 100%;
-          position: absolute;
-          #{$direction}: 0;
-        }
-      }
-      &.sidenav-item:hover {
-        background: $stc_color_purple-dark !important;
-      }
-    }
-
-    .sidenav-group {
-      > .v-list-group__header {
-        padding: 0;
-        padding-right: 15px;
-        @include transition(0.3s);
-        &:before {
-          content: none;
-        }
-        &:hover {
-          background: $stc_color_purple-dark !important;
-        }
-        i {
-          color: $stc_color_white !important;
-        }
-      }
-    }
-  }
-}
 
 .sidebar-menu {
   float: #{$direction};
@@ -87,4 +14,17 @@
       }
     }
   }
+}
+
+
+.navSideBar .v-list-item__title {
+  color: $stc_color_white;
+}
+.navSideBar .v-list-item__icon i{
+  color:  $stc_color_white !important;
+}
+
+.sidebarTitle .v-list-item__title {
+  color: $stc_color_silver;
+  font-family: $stc_font_face_medium;
 }

@@ -45,6 +45,7 @@
   </v-app>
 </template>
 
+
 <script>
 import Header from '@/components/shared/header.vue'
 import Sidebar from '@/components/shared/sidebar.vue'
@@ -112,3 +113,5 @@ export default {
   }
 }
 </script>
+
+
