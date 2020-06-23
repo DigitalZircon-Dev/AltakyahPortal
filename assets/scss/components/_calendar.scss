@@ -5,7 +5,7 @@
   font-family: $stc_font_face;
   padding: 20px;
   .year {
-    font-size: 22px;
+    font-size: 18px;
     color: $stc_color_onyx;
     font-family: $stc_font_face_medium;
     display: inline-block;
@@ -81,10 +81,9 @@
   .days {
     color: $stc_color_onyx;
     font-size: $stc_font_size_small;
-    word-spacing: 32px;
-    font-weight: 600;
+    word-spacing: 12px;
     font-family: $stc_font_face;
-    margin-top: 20px;
+    margin-top: 17px;
   }
   .num-dates {
     z-index: 1;
@@ -96,25 +95,25 @@
       border-top: 1px solid $stc_color_border;
     }
     .first-week {
-      word-spacing: 45px;
+      word-spacing: 25px;
       span {
         color: $stc_color_border;
       }
     }
     .second-week {
-      word-spacing: 41px;
+      word-spacing: 21px;
     }
     .third-week {
-      word-spacing: 47px;
+      word-spacing: 27px;
     }
     .fourth-week {
-      word-spacing: 44px;
+      word-spacing: 24px;
     }
     .fifth-week {
-      word-spacing: 42px;
+      word-spacing: 22px;
     }
     .sixth-week {
-      word-spacing: 44px;
+      word-spacing: 24px;
       span {
         color: $stc_color_border;
       }

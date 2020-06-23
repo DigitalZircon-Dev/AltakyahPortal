@@ -14,19 +14,19 @@
         <span class="toDo-item-time">10:30 am</span>
         <span class="toDo-item-title">Meet My Friend</span>
         <a href="#" class="toDo-item-option">
-          <img src="/images/all/todolist-close.svg" alt="" />
+          <img src="~/assets/images/all/todolist-close.svg" alt="" />
         </a>
       </li>
       <li>
         <span class="toDo-item-time">10:30 am</span>
         <span class="toDo-item-title">Meet My Friend</span>
         <a href="#" class="toDo-item-option">
-          <img src="/images/all/todolist-close.svg" alt="" />
+          <img src="~/assets/images/all/todolist-close.svg" alt="" />
         </a>
       </li>
     </ul>
     <a href="#" class="todolist-action">
-      <img src="/images/all/todoList-add.svg" alt="" />
+      <img src="~/assets/images/all/todoList-add.svg" alt="" />
       ADD NOTE HERE
     </a>
   </div>

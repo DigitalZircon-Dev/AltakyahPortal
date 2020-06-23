@@ -14,7 +14,7 @@
           <li><span class="sp-rejected">08 rejected </span></li>
         </ul>
         <div class="request-chart">
-          <img src="/images/all/fixed-chart-img.png" alt="" /><span>98</span>
+          <img src="~/assets/images/all/fixed-chart-img.png" alt="" /><span>98</span>
         </div>
       </div>
     </div>

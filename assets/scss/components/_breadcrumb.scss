@@ -2,7 +2,8 @@
   float: $direction;
   > ul {
     padding: 0;
-    padding-#{$direction}: 20px;
+    padding-#{$direction}: 10px;
+    padding-top: 7px;
     li {
       a {
         font-size: $stc_font_size !important;

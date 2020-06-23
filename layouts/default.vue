@@ -6,154 +6,186 @@
     <!-- Main Contents-->
     <section class="main-contents">
       <div class="wrapper-content">
-        <!-- Sidebar Component-->
-        <Sidebar />
-        <!-- End Sidebar Component-->
+        <!-- Sidebar -->
+        <div class="navSideBar">
+          <v-navigation-drawer v-model="drawer" app absolute color="primary" height="100%" width="15%">
+          <v-list dense>
+        <v-list-item class="sidebarTitle">
+        <v-list-item-content>
+        <v-list-item-title >  Main Menu</v-list-item-title>
+        </v-list-item-content>
+        </v-list-item>
+          <v-list-item link>
+            <v-list-item-content>
+              <v-list-item-title >Profile</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item link>
+            <v-list-item-content>
+              <v-list-item-title
+                >Vacations</v-list-item-title
+              >
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-group >
+            <template v-slot:activator class="navtitle">
+              <v-list-item-content >
+                <v-list-item-title>MyTeam</v-list-item-title>
+              </v-list-item-content>
+            </template>
+
+            <v-list-item v-for="(admin, i) in admins" :key="i" link>
+              <v-list-item-title v-text="admin[0]"></v-list-item-title>
+              <v-list-item-icon>
+                <v-icon v-text="admin[1]"></v-icon>
+              </v-list-item-icon>
+            </v-list-item>
+          </v-list-group>
+        </v-list>
+        </v-navigation-drawer>
+
+        </div>
+        <!-- End Sidebar -->
 
         <!-- Page contents-->
         <div class="page-contents">
-          <div class="page-control">
-            <div class="sidebar-menu">
-              <a
-                href="#"
-                id="menuIcon"
-                style="cursor:pointer"
-                onclick="openNav(this)"
-              >
-                <img src="images/sidebar/menu-open.svg"
-              /></a>
-              <a
-                href="#"
-                id="closeIcon"
-                style="cursor:pointer; display: none"
-                onclick="closeNav(this)"
-              >
-                <img src="images/sidebar/menu-close.svg"
-              /></a>
+          <v-main>
+            <div class="page-control">
+              <v-container class="pb-0">
+                <v-row>
+                  <v-col md="12" cols="12" class="py-0">
+                  <div class="sidebar-menu">
+                    <v-app-bar-nav-icon
+                      @click.stop="drawer = !drawer"
+                    ><img src="~/assets/images/sidebar/menu-open.svg" width="18"/></v-app-bar-nav-icon>
+                  </div>
+                  <!-- breadcrumb Component-->
+                  <Breadcrumb />
+                  <!-- End breadcrumb Component-->
+                  </v-col>
+                </v-row>
+              </v-container>
             </div>
-            <!-- breadcrumb Component-->
-            <Breadcrumb />
-            <!-- End breadcrumb Component-->
-          </div>
 
-          <div class="profile-section">
-            <v-container>
-              <v-row>
-                <v-col md="3" cols="12">
-                  <!-- Profile Component-->
-                  <Profile />
-                  <!-- End Profile Component-->
-                </v-col>
+            <div class="profile-section">
+              <v-container class="py-0">
+                <v-row>
+                  <v-col md="4" lg="4" xl="3" cols="12">
+                    <!-- Profile Component-->
+                    <Profile />
+                    <!-- End Profile Component-->
+                  </v-col>
 
-                <v-col md="9" cols="12">
-                  <!-- Profile Reports Component-->
-                  <ProfileReports />
-                  <!-- End Profile Reports Component-->
+                    <v-col md="8" lg="8" xl="9" cols="12">
+                    <!-- Profile Reports Component-->
+                    <ProfileReports />
+                    <!-- End Profile Reports Component-->
 
-                  <div class="profile-tasks-requests">
-                    <!-- tabs tasks&requests Component-->
-                    <profileTabs />
-                    <!-- End tabs tasks&requests Component-->
+                    <div class="profile-tasks-requests">
+                      <!-- tabs tasks&requests Component-->
+                      <profileTabs />
+                      <!-- End tabs tasks&requests Component-->
 
-                    <!-- Profile chart Component-->
-                    <profileCharts />
-                    <!-- End Profile chart Component-->
-                  </div>
-                </v-col>
-              </v-row>
-              <!-- Start Summary-->
-              <v-row>
-                <v-col md="12" cols="12">
-                  <div class="sectionTitle">
-                    Summary
-                  </div>
-                </v-col>
-              </v-row>
+                      <!-- Profile chart Component-->
+                      <profileCharts />
+                      <!-- End Profile chart Component-->
+                    </div>
+                  </v-col>
+                </v-row>
+                <!-- Start Summary-->
+                <v-row>
+                  <v-col md="12" cols="12">
+                    <div class="sectionTitle">
+                      Summary
+                    </div>
+                  </v-col>
+                </v-row>
 
-              <v-row>
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Vacation Component-->
-                  <cardVacation />
-                  <!-- End Card Vacation Component-->
-                </v-col>
+                <v-row>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Vacation Component-->
+                    <cardVacation />
+                    <!-- End Card Vacation Component-->
+                  </v-col>
 
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Attendance Component-->
-                  <cardAttendance />
-                  <!-- End Card Attendance Component-->
-                </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Attendance Component-->
+                    <cardAttendance />
+                    <!-- End Card Attendance Component-->
+                  </v-col>
 
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Performance Component-->
-                  <cardPerformance />
-                  <!-- End Card Performance Component-->
-                </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Performance Component-->
+                    <cardPerformance />
+                    <!-- End Card Performance Component-->
+                  </v-col>
 
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Skills Component-->
-                  <cardSkills />
-                  <!-- End Card Skills Component-->
-                </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Skills Component-->
+                    <cardSkills />
+                    <!-- End Card Skills Component-->
+                  </v-col>
 
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Projects Component-->
-                  <cardProjects />
-                  <!-- End Card Projects Component-->
-                </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Projects Component-->
+                    <cardProjects />
+                    <!-- End Card Projects Component-->
+                  </v-col>
 
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Team Component-->
-                  <cardTeam />
-                  <!-- End Card Team Component-->
-                </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Team Component-->
+                    <cardTeam />
+                    <!-- End Card Team Component-->
+                  </v-col>
 
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Tasks Component-->
-                  <cardTasks />
-                  <!-- End Card Tasks Component-->
-                </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Tasks Component-->
+                    <cardTasks />
+                    <!-- End Card Tasks Component-->
+                  </v-col>
 
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Requests Component-->
-                  <cardRequests />
-                  <!-- End Card Requests Component-->
-                </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Requests Component-->
+                    <cardRequests />
+                    <!-- End Card Requests Component-->
+                  </v-col>
 
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card Favourites Component-->
-                  <cardFavourites />
-                  <!-- End Card Favourites Component-->
-                </v-col>
-              </v-row>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card Favourites Component-->
+                    <cardFavourites />
+                    <!-- End Card Favourites Component-->
+                  </v-col>
+                </v-row>
 
-              <!-- Start Events-->
-              <v-row>
-                <v-col md="12" cols="12">
-                  <div class="sectionTitle">
-                    Events
-                  </div>
-                </v-col>
-              </v-row>
+                <!-- Start Events-->
+                <v-row>
+                  <v-col md="12" cols="12">
+                    <div class="sectionTitle">
+                      Events
+                    </div>
+                  </v-col>
+                </v-row>
 
-              <v-row>
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card calendar Component-->
-                  <cardCalendar />
-                  <!-- End Card calendar Component-->
-                </v-col>
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card toDoList Component-->
-                  <cardToDoList />
-                  <!-- End Card toDoList Component-->
-                </v-col>
-                <v-col md="4" cols="12" sm="12" xs="12">
-                  <!-- Card eventSchdule Component-->
-                  <cardEventSchdule />
-                  <!-- End Card eventSchdule Component-->
-                </v-col>
-              </v-row>
-            </v-container>
-          </div>
+                <v-row>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card calendar Component-->
+                    <cardCalendar />
+                    <!-- End Card calendar Component-->
+                  </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card toDoList Component-->
+                    <cardToDoList />
+                    <!-- End Card toDoList Component-->
+                  </v-col>
+                  <v-col md="4" cols="12" sm="12" xs="12">
+                    <!-- Card eventSchdule Component-->
+                    <cardEventSchdule />
+                    <!-- End Card eventSchdule Component-->
+                  </v-col>
+                </v-row>
+              </v-container>
+            </div>
+          </v-main>
         </div>
         <!-- End Page contents-->
       </div>
@@ -166,12 +198,13 @@
   </v-app>
 </template>
 
+
 <script>
-import Header from '@/components/shared/header.vue'
-import Sidebar from '@/components/shared/sidebar.vue'
-import Breadcrumb from '@/components/shared/breadcrumb.vue'
+import Header from '@/components/shared/the-header.vue'
+import Sidebar from '@/components/shared/the-sidebar.vue'
+import Breadcrumb from '@/components/shared/the-breadcrumb.vue'
 import Profile from '@/components/userProfile/Profile.vue'
-import profileTabs from '@/components/userProfile/profile-Tabs.vue' 
+import profileTabs from '@/components/userProfile/profile-Tabs.vue'
 import ProfileReports from '@/components/userProfile/profile-reports.vue'
 import profileCharts from '@/components/userProfile/profile-charts.vue'
 import cardVacation from '@/components/vacation/card-vacation.vue'
@@ -186,7 +219,7 @@ import cardFavourites from '@/components/userProfile/card-favourites.vue'
 import cardCalendar from '@/components/events/card-calendar.vue'
 import cardToDoList from '@/components/userProfile/card-toDoList.vue'
 import cardEventSchdule from '@/components/events/card-eventSchdule.vue'
-import Footer from '@/components/shared/footer.vue'
+import Footer from '@/components/shared/the-footer.vue'
 
 export default {
   components: {
@@ -211,21 +244,25 @@ export default {
     cardEventSchdule,
     Footer
   },
-  data: () => ({}),
-  methods: {
-    openNav() {
-  document.getElementById('mySidenav').style.width = '240px'
-  document.getElementsByClassName('page-contents')[0].style.marginLeft = '240px'
-  document.getElementById('menuIcon').style.display = 'none'
-  document.getElementById('closeIcon').style.display = 'block'
-},
-
- closeNav(x) {
-  document.getElementById('mySidenav').style.width = '0'
-  document.getElementsByClassName('page-contents')[0].style.marginLeft = 'auto'
-  document.getElementById('menuIcon').style.display = 'block'
-  document.getElementById('closeIcon').style.display = 'none'
-}            
-  }
+   data: () => ({
+    drawer: false,
+    items: [
+      { text: "Contacts" },
+      {
+        text: "More",
+        model: false,
+        children: [
+          { text: "Import" },
+          { text: "Export" },
+          { text: "Print" },
+          { text: "Undo changes" },
+          { text: "Other contacts" },
+        ],
+      },
+    ],
+    admins: [["sub Link 1"], ["sub Link 2"]],
+  }),
 }
 </script>
+
+

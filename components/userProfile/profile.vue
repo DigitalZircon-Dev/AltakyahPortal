@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <div class="userImg">
-      <img src="images/all/user-img.png" />
+      <img src="~/assets/images/all/user-img.png" />
     </div>
     <div class="userInfo">
       <p class="name">Muhammed Alzahrani</p>

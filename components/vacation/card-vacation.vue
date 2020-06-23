@@ -4,11 +4,11 @@
       Vacations
       <div class="action">
         <a href="#" class="addBtn">
-          <img src="/images/card/card-plus.svg" alt="" />
+          <img src="~/assets/images/card/card-plus.svg" alt="" />
           Add
         </a>
         <a href="#" class="Expand">
-          <img src="/images/card/card-expand.svg" alt="" />
+          <img src="~/assets/images/card/card-expand.svg" alt="" />
         </a>
       </div>
     </div>
