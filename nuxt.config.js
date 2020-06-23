@@ -1,5 +1,5 @@
 // import colors from 'vuetify/es5/util/colors'
-
+  
 export default {
   mode: 'universal',
   /*
@@ -99,7 +99,7 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/scss/main.scss',
+    '@/assets/scss/main.scss',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -120,6 +120,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Axios module configuration
@@ -133,9 +134,14 @@ export default {
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
   */
+ styleResources: {
+  scss: [
+    '@/assets/scss/main.scss',
+  ]
+},
   vuetify: {
     customVariables: ['~/assets/scss/vuetify-variables.scss'],
-    optionsPath: './vuetify.options.js',    
+    optionsPath: './vuetify.options.js',
   },
   /*
   ** Build configuration
