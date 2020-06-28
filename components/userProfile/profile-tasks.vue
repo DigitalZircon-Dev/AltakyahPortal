@@ -1,8 +1,8 @@
 <template>
-<div class="RequestBox col-md-6 pa-0 ml-3">
-   <v-card  flat class="requestCard ">
-      <v-card-title class="RequestHeader py-0">
-         My Requests
+<div class="tasksBox col-md-6 pa-0  mr-3">
+   <v-card  flat class="taskCard">
+      <v-card-title class="taskHeader py-0">
+          My Tasks
         <v-spacer></v-spacer>
         <v-text-field
           v-model="search"
@@ -16,13 +16,13 @@
          :headers="headers"
          :items="tasks"
         :search="search"
-          class="requestsTable px-2"
+          class="tasksTable px-2"
          :items-per-page="4"
         hide-default-header
         hide-default-footer
       >
         <template v-slot:item ="{item}" >
-            <div class="requestItems">
+            <div class="taskItems">
                 <a href="#" v-bind:class="`${item.statusText}`">
                 <span class="cell-id">{{ item.id}}</span>
                 <p class="cell-title">{{ item.title}} </p>
@@ -45,7 +45,7 @@
 <script>
 // @ is an alias to /src
 export default {
-  name: 'profileCharts',
+  name: 'profileTasks',
 
     data () {
     return {

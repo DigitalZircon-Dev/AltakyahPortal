@@ -1,5 +1,4 @@
-<template>
-  <v-main>
+<template>  
     <div class="profile-section">
       <v-container class="py-0">
 
@@ -17,11 +16,11 @@
 
             <div class="profile-tasks-requests">
               <!-- tabs tasks&requests Component-->
-              <profileTabs />
+              <profileTasks />
               <!-- End tabs tasks&requests Component-->
 
               <!-- Profile chart Component-->
-              <profileCharts />
+              <profileRequests />
               <!-- End Profile chart Component-->
             </div>
           </v-col>
@@ -119,16 +118,15 @@
         </v-row>
       </v-container>
     </div>
-  </v-main>
 </template>
 <script>
 // import Header from '@/components/shared/header.vue'
 // import Sidebar from '@/components/shared/sidebar.vue'
 // import Breadcrumb from '@/components/shared/breadcrumb.vue'
 import Profile from "@/components/userProfile/Profile.vue";
-import profileTabs from "@/components/userProfile/profile-Tabs.vue";
 import ProfileReports from "@/components/userProfile/profile-reports.vue";
-import profileCharts from "@/components/userProfile/profile-charts.vue";
+import profileTasks from "@/components/userProfile/profile-tasks.vue";
+import profileRequests from "@/components/userProfile/profile-requests.vue";
 import cardVacation from "@/components/vacation/card-vacation.vue";
 import cardAttendance from "@/components/attendance/card-attendance.vue";
 import cardPerformance from "@/components/performance/card-performance.vue";
@@ -148,8 +146,8 @@ export default {
   components: {
     Profile,
     ProfileReports,
-    profileTabs,
-    profileCharts,
+    profileTasks,
+    profileRequests,
     cardVacation,
     cardAttendance,
     cardPerformance,
