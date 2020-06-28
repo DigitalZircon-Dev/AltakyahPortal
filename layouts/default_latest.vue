@@ -2,7 +2,7 @@
  <v-app>
     <Header />
     <div class="containerwrapper">
-      <v-navigation-drawer v-model="drawer" app color="primary" dark="">
+      <v-navigation-drawer v-model="drawer" app color="primary" dark>
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="subtitle-2" color="primary"
@@ -13,8 +13,8 @@
         <v-list>
           <v-list-item
             v-for="item in menu"
-            :key="item.title" 
-            :to="item.link" 
+            :key="item.title"
+            :to="item.link"
             router link>
             <v-list-item-content>
               <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -120,7 +120,7 @@ export default {
       console.log(this.$vuetify.lang.current);
       console.log(this.isArabic);
       this.isArabic = !this.isArabic;
-      console.log(this.isArabic); 
+      console.log(this.isArabic);
       if(this.isArabic){
         this.$vuetify.lang.current ='ar' ;
         this.$vuetify.rtl = true;
@@ -135,25 +135,3 @@ export default {
    }
 }
 </script>
-<style lang="scss" scoped>
-.containerwrapper {
-  position: relative;
-  min-height: 400px;
-}
-.containerwrapper header,
-.containerwrapper nav {
-  position: absolute !important;
-}
-.containerwrapper nav {
-  bottom: 0px;
-  height: auto !important;
-}
-span.actionBtn {
-  float: left;
-  margin: 10px;
-}
-.menuHeaderTitle {
-  color: #8e9aa0;
-  margin-bottom: 0;
-}
-</style>

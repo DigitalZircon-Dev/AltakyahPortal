@@ -99,7 +99,7 @@
           position: relative;
           z-index: 1;
           &:after {
-            content: '';
+            content: "";
             background: $stc_color_silver;
             width: 15px;
             height: 15px;
@@ -141,7 +141,7 @@
       position: relative;
       @include transition(0.3s);
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         background-color: $stc_color_air;
         display: block;
@@ -179,190 +179,268 @@
   }
 }
 
-/*====== Tabs =========*/
+/*====== tasks  & requests=========*/
 
 .profile-tasks-requests {
   margin-top: 30px;
-  background-color: $stc_color_white;
-  box-shadow: $stc_box_shadow;
-  padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  .tabs-box {
+  > div {
+    padding: 10px;
     flex: 1;
-    .tab-content {
-    height: 282px;
-    overflow: auto;
-    }
-    .card-items {
-      padding: 5px;
-      .cell-time {
-        font-size: $stc_font_size;
-        padding: 5px 10px;
-        margin-#{$reverse-direction}: 15px;
-        color: $stc_color_white;
-        position: relative;
-        float: $direction;
-        &:after {
-          content: '';
-          margin: 0 0 10px 0;
-          width: 0px;
-          height: 0px;
-          border-top: 10px solid transparent;
-          border-bottom: 10px solid transparent;
-          border-#{$direction}: 10px solid #ddd;
-          display: block;
-          position: absolute;
-          top: 7px;
-          #{$reverse-direction}: -10px;
-        }
-      }
+    background-color: $stc_color_white;
+    box-shadow: $stc_box_shadow;
 
-      .card-item {
-        display: block;
-        color: $stc_color_onyx;
-        padding: 10px;
-        @include transition(0.3s);
-        &:hover {
-          background: $stc_color_hover;
-        }
-        &.completed {
-          .cell-time {
-            background: $stc_color_oasislight !important;
-            &:after {
-              border-left: 10px solid $stc_color_oasislight !important;
-            }
-          }
-          .cell-status {
-            color: $stc_color_oasislight;
-          }
-        }
-        &.Canceled {
-          .cell-time {
-            background: $stc_color_coral !important;
-            &:after {
-              border-left: 10px solid $stc_color_coral !important;
-            }
-          }
-          .cell-status {
-            color: $stc_color_coral;
-          }
-        }
-        &.Pending {
-          .cell-time {
-            background: $stc_color_sealight !important;
-            &:after {
-              border-left: 10px solid $stc_color_sealight !important;
-            }
-          }
-          .cell-status {
-            color: $stc_color_sealight;
-          }
-        }
-        &.Progress {
-          .cell-time {
-            background: $stc_color_silver !important;
-            &:after {
-              border-left: 10px solid $stc_color_silver !important;
-            }
-          }
-          .cell-status {
-            color: $stc_color_silver;
-          }
-        }
-        .cell-title {
-          display: inline-block;
-          margin-left: 3px;
-          font-size: 14px !important;
-          margin-bottom: 0;
-          line-height: 20px;
-          vertical-align: top;
-          span {
-            display: block;
-          }
-          .cell-status {
-            font-style: italic;
-          }
-        }
-      }
-    }
   }
-  .report-info-box {
-    flex: 1;
-  }
+
+
+.tasksCard {
+  min-height: 346px;
+  border-radius: 0 !important;
 }
 
-/*====== Charts =========*/
+.requestCard {
+  min-height: 346px;
+  border-radius: 0 !important;
+}
 
-.flex-wrapper {
-  display: flex;
-  flex-flow: row nowrap;
-  margin-top: 70px;
-  border-left: 1px solid $stc_color_hover;
-  .single-chart {
-    width: 33%;
-    justify-content: space-around;
+.requestsTable table , .tasksTable table {
+  margin: 15px 0;
+}
 
-    .circular-chart {
-      display: block;
-      margin: 10px auto;
-      max-width: 75%;
-      max-height: 250px;
-      .circle-bg {
-        fill: none;
-        stroke: $stc_color_hover;
-        stroke-width: 2;
-      }
-      .circle {
-        fill: none;
-        stroke-width: 2;
-        animation: progress 2s ease-out forwards;
 
-        @keyframes progress {
-          0% {
-            stroke-dasharray: 0 100;
-          }
+
+.requestItems {
+  a {
+    display: block;
+    color: $stc_color_onyx;
+    text-decoration: none;
+    overflow: hidden;
+    @include transition(0.3s);
+    border-bottom: 1px solid  $stc_color_border;
+    padding: 8px 15px;
+    &:hover {
+      background: $stc_color_hover;
+    }
+
+    &.completed {
+      .cell-id {
+        background: $stc_color_oasislight !important;
+        &:after {
+          border-left: 10px solid $stc_color_oasislight !important;
         }
       }
-      &.shape-green {
-        .circle {
-          stroke: $stc_color_oasislight;
-        }
-      }
-      &.shape-orange {
-        .circle {
-          stroke: $stc_color_sunsetlight;
-        }
-      }
-      &.shape-coral {
-        .circle {
-          stroke: $stc_color_coral;
-        }
-      }
-      .percentage {
-        fill: $stc_color_onyx;
-        font-family: $stc_font_face_medium;
-        font-size: 7px;
-        text-anchor: middle;
-      }
-      text.percentage-text {
-        fill: $stc_color_silver;
-        font-family: $stc_font_face_medium;
-        font-size: 4.5px;
-        text-anchor: middle;
-        font-style: italic;
+      .cell-status {
+        color: $stc_color_oasislight;
       }
     }
-    .chart-info-text {
-      text-align: center;
-      font-size: 22px;
-      font-family: $stc_font_face_medium;
-      color: $stc_color_onyx;
-      span {
-        display: block;
-        font-size: $stc_font_size;
+
+    &.Canceled {
+      .cell-id {
+        background: $stc_color_coral !important;
+        &:after {
+          border-left: 10px solid $stc_color_coral !important;
+        }
+      }
+      .cell-status {
+        color: $stc_color_coral;
+      }
+    }
+
+    &.Pending {
+      .cell-id {
+        background: $stc_color_sealight !important;
+        &:after {
+          border-left: 10px solid $stc_color_sealight !important;
+        }
+      }
+      .cell-status {
+        color: $stc_color_sealight;
+      }
+    }
+    &.Progress {
+      .cell-id {
+        background: $stc_color_silver !important;
+        &:after {
+          border-left: 10px solid $stc_color_silver !important;
+        }
+      }
+      .cell-status {
         color: $stc_color_silver;
       }
     }
+
+    span.cell-id {
+      background: $stc_color_oasislight !important;
+      font-size: $stc_font_size;
+      padding: 3px 10px;
+      margin-right: 15px;
+      color: white;
+      position: relative;
+      float: left;
+      &:after {
+        content: "";
+        margin: 0 0 10px 0;
+        width: 0px;
+        height: 0px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid $stc_color_border;
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: -10px;
+      }
+    }
+    p.cell-title {
+      display: block;
+      margin-left: 3px;
+      font-size: $stc_font_size_small !important;
+      margin-bottom: 0;
+      line-height: 20px;
+    }
+
+    span.cell-status {
+      color: $stc_color_oasislight;
+      font-style: italic;
+      font-size: $stc_font_size_small;
+    }
+
+    span.cell-author {
+      font-size: 10px;
+      color: $stc_color_border;
+      padding-right: 5px;
+      border-right: 1px solid $stc_color_border;
+      margin-right: 5px;
+    }
+
+    span.cell-date {
+      font-size: $stc_font_size_xxsmall;
+      color: $stc_color_border;
+    }
   }
+  &:last-child a {
+    border-bottom: 0px !important;
+  }
+}
+
+
+
+.taskItems {
+  a {
+    display: block;
+    color: $stc_color_onyx;
+    text-decoration: none;
+    overflow: hidden;
+    @include transition(0.3s);
+    border-bottom: 1px solid  $stc_color_border;
+    padding: 8px 15px;
+    &:hover {
+      background: $stc_color_hover;
+    }
+
+    &.completed {
+      .cell-id {
+        background: $stc_color_oasislight !important;
+        &:after {
+          border-left: 10px solid $stc_color_oasislight !important;
+        }
+      }
+      .cell-status {
+        color: $stc_color_oasislight;
+      }
+    }
+
+    &.Canceled {
+      .cell-id {
+        background: $stc_color_coral !important;
+        &:after {
+          border-left: 10px solid $stc_color_coral !important;
+        }
+      }
+      .cell-status {
+        color: $stc_color_coral;
+      }
+    }
+
+    &.Pending {
+      .cell-id {
+        background: $stc_color_sealight !important;
+        &:after {
+          border-left: 10px solid $stc_color_sealight !important;
+        }
+      }
+      .cell-status {
+        color: $stc_color_sealight;
+      }
+    }
+    &.Progress {
+      .cell-id {
+        background: $stc_color_silver !important;
+        &:after {
+          border-left: 10px solid $stc_color_silver !important;
+        }
+      }
+      .cell-status {
+        color: $stc_color_silver;
+      }
+    }
+
+    span.cell-id {
+      background: $stc_color_oasislight !important;
+      font-size: $stc_font_size;
+      padding: 3px 10px;
+      margin-right: 15px;
+      color: white;
+      position: relative;
+      float: left;
+      &:after {
+        content: "";
+        margin: 0 0 10px 0;
+        width: 0px;
+        height: 0px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid $stc_color_border;
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: -10px;
+      }
+    }
+    p.cell-title {
+      display: block;
+      margin-left: 3px;
+      font-size: $stc_font_size_small !important;
+      margin-bottom: 0;
+      line-height: 20px;
+    }
+
+    span.cell-status {
+      color: $stc_color_oasislight;
+      font-style: italic;
+      font-size: $stc_font_size_small;
+    }
+
+    span.cell-author {
+      font-size: 10px;
+      color: $stc_color_border;
+      padding-right: 5px;
+      border-right: 1px solid $stc_color_border;
+      margin-right: 5px;
+    }
+
+    span.cell-date {
+      font-size: $stc_font_size_xxsmall;
+      color: $stc_color_border;
+    }
+  }
+  &:last-child a {
+    border-bottom: 0px !important;
+  }
+}
+
+
+
+
 }

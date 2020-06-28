@@ -1,81 +1,123 @@
 <template>
-  <div class="report-info-box">
-    <div class="flex-wrapper">
-      <div class="single-chart">
-        <svg viewBox="0 0 36 36" class="circular-chart shape-green">
-          <path
-            class="circle-bg"
-            d="M18 2.0845
-                              a 15.9155 15.9155 0 0 1 0 31.831
-                              a 15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <path
-            class="circle"
-            stroke-dasharray="75, 100"
-            d="M18 2.0845
-                              a 15.9155 15.9155 0 0 1 0 31.831
-                              a 15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <text x="18" y="18" class="percentage">75%</text>
-          <text x="18" y="24" class="percentage-text">
-            Task
-          </text>
-        </svg>
-        <p class="chart-info-text">110<span>Task</span></p>
-      </div>
-
-      <div class="single-chart">
-        <svg viewBox="0 0 36 36" class="circular-chart shape-orange">
-          <path
-            class="circle-bg"
-            d="M18 2.0845
-                              a 15.9155 15.9155 0 0 1 0 31.831
-                              a 15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <path
-            class="circle"
-            stroke-dasharray="50, 100"
-            d="M18 2.0845
-                              a 15.9155 15.9155 0 0 1 0 31.831
-                              a 15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <text x="18" y="18" class="percentage">50%</text>
-          <text x="18" y="24" class="percentage-text">
-            Ongoing
-          </text>
-        </svg>
-        <p class="chart-info-text">75<span>Task</span></p>
-      </div>
-
-      <div class="single-chart">
-        <svg viewBox="0 0 36 36" class="circular-chart shape-coral">
-          <path
-            class="circle-bg"
-            d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <path
-            class="circle"
-            stroke-dasharray="25, 100"
-            d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <text x="18" y="18" class="percentage">25%</text>
-          <text x="18" y="24" class="percentage-text">
-            Inreview
-          </text>
-        </svg>
-        <p class="chart-info-text">35<span>Task</span></p>
-      </div>
-    </div>
-  </div>
+<div class="RequestBox col-md-6 pa-0 ml-3">
+   <v-card  flat class="requestCard ">
+      <v-card-title class="RequestHeader py-0">
+         My Requests
+        <v-spacer></v-spacer>
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+          hide-details
+        ></v-text-field>
+      </v-card-title>
+      <v-data-table
+         :headers="headers"
+         :items="tasks"
+        :search="search"
+          class="requestsTable px-2"
+         :items-per-page="4"
+        hide-default-header
+        hide-default-footer
+      >
+        <template v-slot:item ="{item}" >
+            <div class="requestItems">
+                <a href="#" v-bind:class="`${item.statusText}`">
+                <span class="cell-id">{{ item.id}}</span>
+                <p class="cell-title">{{ item.title}} </p>
+                <span class="cell-status ">{{ item.statusText}}</span>
+                <div class="float-right">
+                <span class="cell-author ">{{ item.author}}</span>
+                <span class="cell-date ">{{ item.date}}</span>
+                </div>
+                </a>
+            </div>
+        </template>
+        <v-alert slot="no-results" :value="true" color="error" icon="warning">
+          Your search for "{{ search }}" found no results.
+        </v-alert>
+      </v-data-table>
+    </v-card>
+</div>
 </template>
 
 <script>
 // @ is an alias to /src
 export default {
-  name: 'profileCharts'
+  name: 'profileCharts',
+
+    data () {
+    return {
+      search: '',
+      headers: [
+      { text: 'id', value: 'id'},
+      { text: 'title', value: 'title' },
+      { text: 'status', value: 'statusText'},
+      { text: 'Author', value: 'author' },
+      { text: 'Date', value: 'date' },
+      ],
+      tasks: [
+        {
+          id: '#10184',
+          title: 'Review code for team page',
+          statusText : "completed",
+          author: "Muhammed Gamal Zaky",
+          date: "04 April 2020",
+        },
+        {
+         id: '#10657',
+            title: 'Review code for team page',
+            statusText : "Canceled",
+            author: "Muhammed Gamal Zaky",
+            date: "04 April 2020",
+        },
+        {
+         id: '#16677',
+            title: 'Review code for team page',
+            statusText : "Pending",
+            author: "Muhammed Gamal Zaky",
+            date: "04 April 2020",
+        },
+        {
+         id: '#23777',
+            title: 'Review code for team page',
+            statusText : "Progress",
+            author: "Muhammed Gamal Zaky",
+            date: "04 April 2020",
+        },
+        {
+         id: '#11277',
+            title: 'Review code for team page',
+            statusText : "completed",
+            author: "Muhammed Gamal Zaky",
+            date: "04 April 2020",
+        },
+        {
+         id: '#10747',
+            title: 'Review code for team page',
+            statusText : "completed",
+            author: "Muhammed Gamal Zaky",
+            date: "04 April 2020",
+        },
+        {
+         id: '#10752',
+            title: 'Review code for team page',
+            statusText : "completed",
+            author: "Muhammed Gamal Zaky",
+            date: "04 April 2020",
+        }
+      ]
+
+    }
+  }, methods: {
+         getColor (statusText) {
+        if (statusText == 'completed') return 'green'
+        else if (statusText == 'pending') return 'orange'
+        else if (statusText == 'late') return 'red'
+        else return 'gray'
+      },
+    },
 }
 </script>
+
