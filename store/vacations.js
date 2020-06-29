@@ -45,6 +45,16 @@ export const actions = {
         //const requests = await this.$axios.$get('http://localhost:44306/api/app/vacationRequest');
         const requests = await this.$repositories.vacation.getRequestsByEmpolyeeNumber();
         console.log(requests.items);
+        console.log('before get test fdata');
+        const data = await this.$repositories.test.Test();
+        console.log(data);
         commit('SETRequests', requests.items);
+    },
+    async getTestData({ commit }){
+        //var RequestByEmpNumURL = '';
+        //const requests = await this.$axios.$get('http://localhost:44306/api/app/vacationRequest');
+        const requests = await this.$repositories.test.Test();
+        console.log(requests);
+        //commit('SETRequests', requests.items);
     }
 }
