@@ -1,5 +1,5 @@
 // import colors from 'vuetify/es5/util/colors'
-  
+
 export default {
   mode: 'universal',
   /*
@@ -94,7 +94,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#4f008c' },
   /*
   ** Global CSS
   */
@@ -107,6 +107,8 @@ export default {
   plugins: [
     '~/plugins/repositories.js',
     '~/plugins/axiosPlugin',
+    '~/plugins/Vuelidate' ,
+    { src: '~/plugins/ckeditor5', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules
@@ -119,7 +121,36 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    '@nuxtjs/axios',[
+      'nuxt-fontawesome',
+      {
+        component: 'fa',
+        imports: [
+          {
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: [
+              'faDollarSign',
+              'faThumbsUp',
+              'faCommentDots',
+              'faChevronCircleDown',
+              'faPaperclip',
+              'faReplyAll',
+              'faTrashAlt',
+              'faExclamationTriangle',
+              'faEdit',
+              'faHeart',
+              'faStar',
+              'faCommentAlt',
+              'faDownload',
+              'faBan',
+              'faCalendarAlt',
+              'faCheckCircle',
+              'faPlusCircle'
+            ]
+          }
+        ]
+      }
+    ],
     '@nuxtjs/style-resources'
   ],
   /*
@@ -127,7 +158,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:44306/api/app',
+    baseURL: 'https://localhost:44368/api/app/',
     PREFIX: '/api/app/'
   },
   /*

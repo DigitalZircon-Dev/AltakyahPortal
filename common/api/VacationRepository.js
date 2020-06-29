@@ -24,6 +24,7 @@ export default ($axios) => ({
 
   async getBalanceByEmpolyeeNumber(EmployeeNumber)
   {
+    debugger
     var BalanceByEmpNumURL= VACATION.GET_BALANCE_BY_EMP + EmployeeNumber;
     const balance = await $axios.$get(BalanceByEmpNumURL);
     return balance;
