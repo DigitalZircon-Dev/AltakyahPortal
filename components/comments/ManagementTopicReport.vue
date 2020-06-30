@@ -10,7 +10,7 @@
 </template>
 <script>
 import Vue from 'vue'
-import CommentReports from '@/components/comments/CommentReports'
+import CommentReports from '../../components/comments/CommentReports'
 
 export default Vue.extend({
   name: 'ManagementTopicReport',

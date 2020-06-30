@@ -7,9 +7,8 @@
             <div class="comment-box add-comment">
               <div class="comment-box">
                 <span class="commenter-pic">
-                  <img src="@/assets/images/user-icon.jpg" class="img-fluid" />
+                  <img src="~/assets/images/all/user-img.png" class="img-fluid" />
                 </span>
-
                 <span class="commenter-name">
                   <a href="#">{{ comment.commentBy }}</a>
                   <span class="comment-time">{{ comment.createdOn }}</span>
@@ -20,8 +19,6 @@
                   <button
                     class="comment-reply reply-popup"
                     :title="$vuetify.lang.t('$vuetify.commentoptions.report')"
-                    data-toggle="modal"
-                    data-target="#CommentReporters"
                     @click.prevent="displayCommentReporters(comment.id)"
                   >
                     <BaseIcon
@@ -50,6 +47,7 @@
               </div>
               <ModalConfirmation
                 v-if="isDisplayDeleteComment"
+                :isopen="isDisplayDeleteComment"
                 :item-id="id"
                 :title="$vuetify.lang.t('$vuetify.commonoprations.delete')"
                 :message="$vuetify.lang.t('$vuetify.messages.deleteConfirmation')"
@@ -59,6 +57,7 @@
               <ModalConfirmation
                 v-if="isDisplayBlockedComment"
                 :item-id="id"
+                :isopen="isDisplayBlockedComment"
                 :title="$vuetify.lang.t('$vuetify.commentoptions.blocked')"
                 :message="$vuetify.lang.t('$vuetify.messages.bloackConfirmation')"
                 @method="onBlockedComment"
@@ -67,6 +66,7 @@
               <CommentReporters
                 v-if="isDisplayCommentReporters"
                 :id="id"
+                :displayCommentReporters="isDisplayCommentReporters"
                 @close="close"
               ></CommentReporters>
             </div>
@@ -79,9 +79,9 @@
 <script>
 import Vue from 'vue'
 import { required } from 'vuelidate/lib/validators'
-import BaseIcon from '../shared/BaseIcon.vue'
-import ModalConfirmation from '@/components/shared/ModalConfirmation'
-import CommentReporters from '@/components/comments/CommentReporters'
+import BaseIcon from '../shared/BaseIcon'
+import ModalConfirmation from '../../components/shared/ModalConfirmation'
+import CommentReporters from '../../components/comments/CommentReporters'
 
 export default Vue.extend({
   name: 'CommentReports',
@@ -108,8 +108,10 @@ export default Vue.extend({
       this.isDisplayBlockedComment = false
     },
     displayCommentReporters(_id) {
+
       this.id = _id
       this.isDisplayCommentReporters = true
+
     },
     displayDeleteComment(_id) {
       this.id = _id

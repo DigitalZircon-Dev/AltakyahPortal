@@ -1,52 +1,46 @@
 <template>
-  <div
-    id="modalConfirmation"
-    class="modal fade"
-    tabindex="-1"
-    data-keyboard="false"
-    data-backdrop="static"
-    role="dialog"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 id="deleteConfirmationLabel" class="modal-title">
-            {{ title }}
-          </h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-            @click.prevent="close()"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>{{ message }}</p>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-dismiss="modal"
-            @click.prevent="close()"
-          >
-            {{ $vuetify.lang.t('$vuetify.commonoprations.close') }}
-          </button>
-          <input
-            class="btn btn-danger"
-            type="submit"
-            :value="title"
-            @click.prevent="deleteItem()"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+<div >
+    <v-dialog
+         persistent
+        v-model="modalConfirmation"
+        max-width="500"
+      >
+        <v-card>
+  <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+       {{ title }}
+        </v-card-title>
+          <v-card-text>
+           {{ message }}
+          </v-card-text>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn
+              color="green darken-1"
+              text
+              @click="close"
+            >
+               {{ $vuetify.lang.t('$vuetify.commonoprations.close') }}
+            </v-btn>
+
+            <v-btn
+              color="green darken-1"
+              text
+              @click="deleteItem"
+            >
+              {{title}}
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+</div>
+
 </template>
+
 <script>
 import { required } from 'vuelidate/lib/validators'
 
@@ -66,17 +60,30 @@ export default {
       type: String,
       required,
       default: null
+    },
+      isopen: {
+      type: Boolean,
+      required,
+      default: false
+    },
+  },
+   data() {
+    return {
+      modalConfirmation: this.isopen
     }
+  },
+  destroyed() {
+     this.modalConfirmation=false
   },
   methods: {
     deleteItem() {
-      this.$emit('method', this.itemId)
 
-      // eslint-disable-next-line no-undef
-      $('#modalConfirmation').modal('hide')
+      this.$emit('method', this.itemId)
+      this.modalConfirmation=false
       this.$emit('close')
     },
     close() {
+      this.modalConfirmation=false
       this.$emit('close')
     }
   }
