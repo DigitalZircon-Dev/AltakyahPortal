@@ -14,13 +14,19 @@
       >
     </button>
     <div style="border-top: 1px solid #ddd;padding-bottom: 5px;"></div>
-    <button
+
+         <v-btn icon :color="commentDto.isLiked ? 'pink' : 'purple'"
+         @click="onLiked(commentDto.id, !commentDto.isLiked)">
+              <v-icon>mdi-heart</v-icon>
+        </v-btn>
+
+    <!-- <button
       :class="commentDto.isLiked ? 'comment-like-color' : 'comment-like'"
       :title="$vuetify.lang.t('$vuetify.commentoptions.like')"
       @click="onLiked(commentDto.id, !commentDto.isLiked)"
     >
       <BaseIcon name="heart"> </BaseIcon>
-    </button>
+    </button> -->
     <button
       class="comment-reply reply-popup"
       @click.prevent="
@@ -29,6 +35,7 @@
     >
       <BaseIcon name="reply-all">{{ $vuetify.lang.t('$vuetify.commentoptions.repley') }}</BaseIcon>
     </button>
+
     <button
       v-if="commentDto.isHasAttachments"
       :title="$vuetify.lang.t('$vuetify.commentoptions.downloadattachment')"
@@ -60,21 +67,22 @@
         name="exclamation-triangle"
       ></BaseIcon>
     </button>
-    <button
+    <v-btn icon v-if="commentDto.isAllowedEdit"
+          @click.prevent="displayEditComment(!isDisplayEditComment, commentDto.id)">
+           <v-icon>mdi-pencil</v-icon>
+        </v-btn>
+    <!-- <button
       v-if="commentDto.isAllowedEdit"
       :title="$vuetify.lang.t('$vuetify.commonoprations.edit')"
       @click.prevent="displayEditComment(!isDisplayEditComment, commentDto.id)"
     >
       <BaseIcon name="edit"></BaseIcon>
-    </button>
-    <button
-      v-if="commentDto.isAllowedDelete"
-      :title="$vuetify.lang.t('$vuetify.commonoprations.delete')"
-      class="delete-icon"
-      @click.prevent="deleteComment(commentDto.id)"
-    >
-      <BaseIcon name="trash-alt"></BaseIcon>
-    </button>
+    </button> -->
+     <v-btn icon  v-if="commentDto.isAllowedDelete"
+           @click.prevent="deleteComment(commentDto.id)">
+               <v-icon color="red">mdi-delete</v-icon>
+        </v-btn>
+
   </div>
 </template>
 

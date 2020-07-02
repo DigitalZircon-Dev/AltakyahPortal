@@ -19,7 +19,6 @@
       <p class="card-body-target">
         24
       </p>
-
       <ul class="project-list">
         <li><a href="#">AwalNet </a></li>
         <li><a href="#">CMA Project </a></li>

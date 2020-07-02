@@ -2,9 +2,8 @@ export const actions = {
 
   async fetchSourceUrls ({ commit }, vm) {
    try {
-     const self = this
 
-     const { data } = await self.$repositories.comment.fetchSourceUrls(vm)
+     const { data } = await this.$repositories.comment.fetchSourceUrls(vm)
      if (data.isValid) {
        return { value: data.value, error: '' }
      } else {

@@ -38,8 +38,8 @@ export default {
     maximumfileerror: "The number of files allowed to be uploaded "
   },
   messages:{
- deleteConfirmation:"Are you sure you want to delete the item?" ,
- bloackConfirmation:"Are you sure you want to block the item ?"
+ deleteConfirmation:"Are you sure you want to delete this item?" ,
+ bloackConfirmation:"Are you sure you want to block this item ?"
 
   },
   CommentReporter:{

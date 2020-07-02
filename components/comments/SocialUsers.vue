@@ -1,32 +1,33 @@
 <template>
   <div>
     <v-dialog v-model="SocialUsers" persistent max-width="500">
-      <v-card>
-        <!-- <v-card-title class="headline grey lighten-2" primary-title>
-          Use Google's location service?
-        </v-card-title> -->
-        <v-card-text>
-          <ul class="todolist-items">
-                  <li
-                    v-for="(user, index) in users"
-                    :key="index"
-                    class="list-group-item d-flex justify-content-between lh-condensed"
-                  >
-                    <div>
-                      <h6 class="my-0">{{ user.fullName }}</h6>
-                    </div>
-                  </li>
-                </ul>
-        </v-card-text>
+       <v-card
+      max-width="500"
+      class="mx-auto"
+    >
+       <v-list subheader>
+        <v-list-item
+         v-for="(user, index) in users"
+            :key="index"
+        >
+          <v-list-item-avatar>
+            <v-img src="/_nuxt/assets/images/all/user-img.png"></v-img>
+          </v-list-item-avatar>
 
-        <v-card-actions>
+          <v-list-item-content>
+            <v-list-item-title v-text="user.fullName"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+      <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn  color="error"
         class="mr-4" @click="close">
             {{ $vuetify.lang.t('$vuetify.commonoprations.close') }}
           </v-btn>
         </v-card-actions>
-      </v-card>
+    </v-card>
+
     </v-dialog>
   </div>
 </template>

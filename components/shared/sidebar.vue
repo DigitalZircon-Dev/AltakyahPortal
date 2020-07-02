@@ -10,8 +10,8 @@
         </v-list-item>
         <v-list-item link class="active sidenav-item"
             v-for="item in menu"
-            :key="item.title" 
-            :to="item.link" 
+            :key="item.title"
+            :to="item.link"
             router>
             <v-list-item-content>
               <v-list-item-title>{{ item.title }}</v-list-item-title>

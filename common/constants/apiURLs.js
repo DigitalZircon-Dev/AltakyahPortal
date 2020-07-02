@@ -26,8 +26,27 @@ export const COMMENT = {
   ON_BLOCKED_COMMENT : 'Comment/BlockedComment',
   FETCH_COMMENT_REPORTS : 'Comment/FetchCommentReports',
   FETCH_COMMENT_REPORTER : 'CommentReport/FetchCommentReporter/',
+}
 
 
+export const USERPROFILE = {
+  ADD_OR_EDIT_PROJECT : 'Project/OnCreateProject',
+  FETCH_PROJECTS : 'Project/FetchProjects/',
+  FETCHP_ROJECT : 'Project/FetchProject/',
+  DELETE_PROJECT : 'Project/Delete',
+  FETCH_TEAM_MEMBERS : 'ProjectTeamMember/FetchTeamMembers',
+  ADD_OR_EDIT_USER_RECOMMENDATION : 'UserRecommendation/OnCreateRecommendation',
+  FETCH_USER_RECOMMENDATIONS : 'UserRecommendation/FetchUserRecommendations/',
+  FETCH_USER_RECOMMENDATION : 'UserRecommendation/FetchUserRecommendation/',
+  DELETE_USER_RECOMMENDATION : 'UserRecommendation/Delete',
+  ACTIVED_RECOMMENDATION : 'UserRecommendation/ActivedRecommendation',
+  FETCH_USER_SKILLS : 'UserSkill/FetchUserSkills/',
+  ADD_USER_SKILL : 'UserSkill/OnCreateUserSkill',
+  DELETE_USER_SKILL : 'UserSkill/Delete',
+  ON_ENDORSE : 'UserSkill/OnEndorse',
+  FETCH_USER_SKILL_ENDORSES : 'UserSkill/FetchUserSkillEndorses/',
+  FETCH_SKILL : 'Skill/FetchSkills',
+  ADD_SKILL : 'Skill/OnCreateSkill',
 }
 
 //export default Object.freeze({

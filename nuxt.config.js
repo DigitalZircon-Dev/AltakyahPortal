@@ -100,6 +100,7 @@ export default {
   */
   css: [
     '@/assets/scss/main.scss',
+    'vue-multiselect/dist/vue-multiselect.min.css'
   ],
   /*
   ** Plugins to load before mounting the App

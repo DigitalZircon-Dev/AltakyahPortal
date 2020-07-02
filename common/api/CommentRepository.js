@@ -13,7 +13,6 @@ export default ($axios) => ({
   },
 
   async fetchSourceUrls(vm) {
-    debugger
     const params = helper.getParams({ fullUrl: vm.fullUrl })
     return await $axios.get(COMMENT.FERCH_SOURCE_URLS, params)
   },

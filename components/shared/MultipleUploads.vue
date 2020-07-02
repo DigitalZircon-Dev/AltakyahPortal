@@ -9,43 +9,34 @@
       accept="image/jpeg,image/png,image/gif','image/jpg"
       @change="selectFiles($event.target.files)"
     />
-    <div v-if="errorMaximumFile" class="alert alert-warning" role="alert">
-      {{ $vuetify.lang.t('$vuetify.multipleuploads.maximumfileerror') }} ({{ maximumFile }}) .
-    </div>
-    <div class="container attachment-container">
-      <div class="col-md-8 order-md-6 mb-6">
-        <ul class="list-group mb-3">
-          <li
-            v-for="(uploadFile, index) in uploadFiles"
-            :key="index"
-            :class="
-              uploadFile.invalidMessage
-                ? 'list-group-item d-flex justify-content-between lh-condensed error-message'
-                : 'list-group-item d-flex justify-content-between lh-condensed'
-            "
-          >
-            <div>
-              <h6 class="my-0">{{ uploadFile.fileName }}</h6>
-              <small class="text-muted error-message">{{
-                uploadFile.invalidMessage
-              }}</small>
-            </div>
-            <span class="text-muted">
-              <button
-                :title="$vuetify.lang.t('$vuetify.commonoprations.delete')"
-                type="button"
-                class="delete-icon"
-                @click.prevent="
-                  deleteFile(uploadFile.lastModified, uploadFile.id)
-                "
-              >
-                <fa :icon="['fas', 'trash-alt']" />
-              </button>
-            </span>
-          </li>
-        </ul>
+    <div >
+      <div>
+        <v-alert  v-model="alert" outlined type="warning" border="left" dismissible v-if="errorMaximumFile">
+          {{ $vuetify.lang.t('$vuetify.multipleuploads.maximumfileerror') }} ({{
+            maximumFile
+          }}) .
+        </v-alert>
       </div>
     </div>
+    <br />
+    <v-card max-width="500">
+      <v-list v-if="uploadFiles.length > 0" subheader>
+        <v-list-item v-for="(uploadFile, index) in uploadFiles" :key="index">
+          <v-list-item-content>
+            <v-list-item-title v-text="uploadFile.fileName"></v-list-item-title>
+            <small class="text-muted error-message">{{
+              uploadFile.invalidMessage
+            }}</small>
+          </v-list-item-content>
+          <v-btn
+            icon
+            @click.prevent="deleteFile(uploadFile.lastModified, uploadFile.id)"
+          >
+            <v-icon color="red">mdi-delete</v-icon>
+          </v-btn>
+        </v-list-item>
+      </v-list>
+    </v-card>
   </div>
 </template>
 <script>
@@ -72,6 +63,7 @@ export default {
     return {
       uploadFiles: this.files || [],
       attachemnts: [],
+      alert: true,
       message: '',
       errorMaximumFile: false,
       isdisabled: this.files?.length >= this.maximumFile ?? false
@@ -86,15 +78,17 @@ export default {
   },
   methods: {
     selectFiles(attachemnt) {
+
       this.errorMaximumFile = false
       this.attachemnts = attachemnt
 
       const cointFiles = parseInt(
         this.attachemnts.length + this.uploadFiles.length
       )
-
+     debugger
       if (cointFiles > this.maximumFile) {
         this.errorMaximumFile = true
+        this.alert = true
         return
       }
 
@@ -126,14 +120,7 @@ export default {
 }
 </script>
 <style scoped>
-.delete-icon {
-  color: #dc7c7c;
-}
 .error-message {
   color: #dc7c7c !important;
-}
-.attachment-container {
-  padding: 5px;
-  margin-right: -60px;
 }
 </style>

@@ -20,7 +20,7 @@
             <v-spacer></v-spacer>
 
             <v-btn
-              color="green darken-1"
+              color="error"
               text
               @click="close"
             >
@@ -28,7 +28,7 @@
             </v-btn>
 
             <v-btn
-              color="green darken-1"
+              color="purple "
               text
               @click="deleteItem"
             >

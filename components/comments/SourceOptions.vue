@@ -1,5 +1,6 @@
 <template>
   <div class="container1">
+
     <div class="row">
       <div class="col-12">
         <div class="comments">
@@ -18,9 +19,7 @@
               class="comment-like-color"
               data-toggle="modal"
               data-target="#SocialUsers"
-              @click.prevent="OpneSocialUsers(sourceUrl.id, topicFavorite)"
-            >
-
+              @click.prevent="OpneSocialUsers(sourceUrl.id, topicFavorite)">
               {{$vuetify.lang.t('$vuetify.sourceoptions.favorites')}} ({{
                 sourceUrl.countFavorite
               }})
@@ -37,7 +36,11 @@
           </div>
           <div class="comment-box">
             <div class="comment-meta">
-              <button
+                <v-btn icon :color="sourceUrl.isLiked ? 'pink' : 'purple'"
+                  @click="onLiked(!sourceUrl.isLiked)">
+                  <v-icon>mdi-heart</v-icon>
+                 </v-btn>
+              <!-- <button
                 id="btnLike"
                 :class="
                   sourceUrl.isLiked ? 'comment-like-color' : 'comment-like'
@@ -46,7 +49,7 @@
                 @click="onLiked(!sourceUrl.isLiked)"
               >
                 <BaseIcon name="heart"></BaseIcon>
-              </button>
+              </button> -->
               <button
                 :class="
                   sourceUrl.isFavorite ? 'comment-like-color' : 'comment-like'
