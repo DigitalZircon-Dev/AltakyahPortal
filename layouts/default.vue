@@ -8,7 +8,7 @@
       <div class="wrapper-content">
 
 <!-- Sidebar -->
-        
+
         <!-- End Sidebar -->
         <Sidebar :drawer='drawer'/>
         <!-- Page contents-->
@@ -34,7 +34,7 @@
           </div>
           <nuxt />
           </v-main>
-        </div>        
+        </div>
         <!-- End Page contents-->
       </div>
     </section>
@@ -119,5 +119,6 @@ export default {
 
 }
 </script>
+
 
 

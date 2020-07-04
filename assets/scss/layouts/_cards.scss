@@ -3,12 +3,14 @@
   background-color: $stc_color_white;
   box-shadow: $stc_box_shadow;
   font-family: $stc_font_face;
+  position: relative;
   .card-header {
     display: block;
     padding: 10px 20px;
     border-bottom: 1px solid $stc_color_border;
     font-size: $stc_font_size;
     font-family: $stc_font_face_medium;
+    position: relative;
     .action {
       display: block;
       float: $reverse-direction;
@@ -30,7 +32,7 @@
     }
   }
   .card-body {
-    padding: 15px;
+    padding: 10px 15px;
     height: 175px;
     overflow: auto;
     .card-body-title {
@@ -179,36 +181,84 @@
       padding: 0;
       list-style: none;
       overflow: hidden;
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 10px;
       overflow: auto;
       li {
         display: block;
         a {
-          background: $stc_color_hover;
-          box-shadow: $stc_box_shadow_inset;
           color: $stc_color_onyx;
           display: block;
           padding: 5px 13px;
-          border-radius: 40px;
           margin-#{$reverse-direction}: 5px;
           text-decoration: none;
-          margin-bottom: 15px;
           font-size: $stc_font_size_xsmall;
-          @include transition(0.2s);
+          border-bottom: 1px solid $stc_color_hover;;
+          line-height: 25px;
           &:hover {
-            background: $stc_color_coral;
-            color: $stc_color_white;
+            background-color: $stc_color_hover;
           }
           span {
             font-family: $stc_font_face_medium;
             font-size: $stc_font_size_xxsmall;
             color: $stc_color_coral;
+            &.icon-project{
+              img{
+                width: 24px;
+                vertical-align: top;
+                margin-right: 10px;
+                position: relative;
+                top: 0px;
+              }
+            }
+
           }
         }
       }
     }
+    /* Card recommendation Style*/
+    .recommendation-list {
+      padding: 0;
+      list-style: none;
+      li {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 0px;
+        border-bottom: 1px solid $stc_color_hover;
+        padding: 10px 0;
+        position: relative;
+        @include transition(0.2s);
+        &:hover {
+          background-color: $stc_color_hover;
+        }
+        img {
+          width: 28px;
+          position: absolute;
+          left: 5px;
+          top: 15px;
+
+        }
+        p {
+          margin-bottom: 0;
+          display: block;
+          padding-top: 5px;
+          font-size: 14px;
+          padding-left: 40px;
+          margin-left: 0;
+          position: relative;
+          span.date{
+            font-size: 10px;
+            color: $stc_color_silver;
+            float: right;
+          }
+        }
+        span{
+        display: block;
+        font-size: 10px;
+        padding-left: 40px;
+        margin-right: 5px;
+        }
+      }
+    }
+
     /* Card myteam Style*/
     .myteam-list {
       padding: 0;
@@ -222,7 +272,7 @@
           background-color: $stc_color_hover;
         }
         img {
-          width: 32px;
+          width: 28px;
           display: inline-block;
         }
         p {
@@ -231,6 +281,7 @@
           display: inline-block;
           margin-#{$direction}: 10px;
           padding-top: 5px;
+          font-size: $stc_font_size_small;
         }
       }
     }
@@ -282,7 +333,7 @@
         span {
           font-size: 28px;
           position: absolute;
-          top: 30%;
+          top: 28%;
           #{$direction}: 0;
           #{$reverse-direction}: 0;
           font-family: $stc_font_face_medium;
@@ -337,7 +388,7 @@
         span {
           font-size: 28px;
           position: absolute;
-          top: 30%;
+          top: 28%;
           #{$direction}: 0;
           #{$reverse-direction}: 0;
           font-family: $stc_font_face_medium;
@@ -351,7 +402,7 @@
       li {
         display: block;
         overflow: hidden;
-        border-bottom: 1px solid $stc_color_border;
+        border-bottom: 1px solid $stc_color_hover;
         padding: 5px 0;
         @include transition(0.2s);
         &:hover {
@@ -370,5 +421,7 @@
         }
       }
     }
+
+
   }
 }

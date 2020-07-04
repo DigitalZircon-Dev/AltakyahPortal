@@ -1,7 +1,7 @@
 <template>
-  <div class="card-information">
+  <div class="card-information vacationBx">
     <div class="card-header">
-      Vacations
+      Vacations Balance
       <div class="action">
         <a href="#" class="addBtn">
           <img src="~/assets/images/card/card-plus.svg" alt="" />
@@ -13,9 +13,6 @@
       </div>
     </div>
     <div class="card-body">
-      <p class="card-body-title">
-        Balance
-      </p>
       <p class="card-body-info">
         <span class="card-body-label">
           28

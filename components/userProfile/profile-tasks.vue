@@ -1,7 +1,7 @@
 <template>
 <div class="tasksBox col-md-6 pa-0  mr-3">
    <v-card  flat class="taskCard">
-      <v-card-title class="taskHeader py-0">
+      <v-card-title class="taskHeader py-2">
           My Tasks
         <v-spacer></v-spacer>
         <v-text-field
@@ -26,8 +26,8 @@
                 <a href="#" v-bind:class="`${item.statusText}`">
                 <span class="cell-id">{{ item.id}}</span>
                 <p class="cell-title">{{ item.title}} </p>
-                <span class="cell-status ">{{ item.statusText}}</span>
-                <div class="float-right">
+                <span class="cell-status float-right">{{ item.statusText}}</span>
+                 <div class="author-info float-left">
                 <span class="cell-author ">{{ item.author}}</span>
                 <span class="cell-date ">{{ item.date}}</span>
                 </div>

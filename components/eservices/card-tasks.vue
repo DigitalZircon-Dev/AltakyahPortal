@@ -1,5 +1,5 @@
 <template>
-  <div class="card-information">
+  <div class="card-information tasksBx">
     <div class="card-header">
       Tasks
     </div>

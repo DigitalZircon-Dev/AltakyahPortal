@@ -1,12 +1,8 @@
 <template>
-  <div class="card-information">
+  <div class="card-information favouriteBx">
     <div class="card-header">
       Favourites
       <div class="action">
-        <a href="#" class="addBtn">
-          <img src="~/assets/images/card/card-plus.svg" alt="" />
-          Add
-        </a>
         <a href="#" class="Expand">
           <img src="~/assets/images/card/card-expand.svg" alt="" />
         </a>

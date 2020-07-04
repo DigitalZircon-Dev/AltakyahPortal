@@ -1,6 +1,6 @@
 <template>
   <div class="eventSchdule">
-    <div class="card-information">
+    <div class="card-information schduleBx">
       <div class="card-header">
         Event Schdule
       </div>

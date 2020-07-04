@@ -1,5 +1,5 @@
 <template>
-  <div class="card-information">
+  <div class="card-information teamBx">
     <div class="card-header">
       My Team
     </div>
