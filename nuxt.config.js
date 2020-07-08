@@ -1,3 +1,4 @@
+// import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'universal',
@@ -93,12 +94,13 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#4f008c' },
   /*
   ** Global CSS
   */
   css: [
     '@/assets/scss/main.scss',
+    'vue-multiselect/dist/vue-multiselect.min.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -106,6 +108,8 @@ export default {
   plugins: [
     '~/plugins/repositories.js',
     '~/plugins/axiosPlugin',
+    '~/plugins/Vuelidate' ,
+    { src: '~/plugins/ckeditor5', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules

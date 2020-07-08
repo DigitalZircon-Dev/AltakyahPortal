@@ -26,7 +26,7 @@ export const mutations = {
     },
     SETRequests(state, requests){
         console.log('inside SetRequests');
-        state.Requests.push(...requests);        
+        state.Requests.push(...requests);
     }
 }
 
@@ -35,7 +35,6 @@ export const actions = {
         // console.log('inside vacaiton Balance');
         //var BalanceByEmpNumURL='http://localhost:44306/api/app/vacationBalance/ByEmployeeNumber/10133';
         //const balance = await this.$axios.$get(BalanceByEmpNumURL);
-
         const balance = await this.$repositories.vacation.getBalanceByEmpolyeeNumber(10133)
         //console.log(balance);
         commit('SETBalance', balance);
@@ -45,6 +44,16 @@ export const actions = {
         //const requests = await this.$axios.$get('http://localhost:44306/api/app/vacationRequest');
         const requests = await this.$repositories.vacation.getRequestsByEmpolyeeNumber();
         console.log(requests.items);
+        console.log('before get test fdata');
+        const data = await this.$repositories.test.Test();
+        console.log(data);
         commit('SETRequests', requests.items);
+    },
+    async getTestData({ commit }){
+        //var RequestByEmpNumURL = '';
+        //const requests = await this.$axios.$get('http://localhost:44306/api/app/vacationRequest');
+        const requests = await this.$repositories.test.Test();
+        console.log(requests);
+        //commit('SETRequests', requests.items);
     }
 }
