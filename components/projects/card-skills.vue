@@ -1,5 +1,5 @@
 <template>
-  <div class="card-information">
+  <div class="card-information skillsBx">
     <div class="card-header">
       Skills & Endorse
       <div class="action">

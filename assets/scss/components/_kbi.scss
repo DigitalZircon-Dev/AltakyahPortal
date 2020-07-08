@@ -1,0 +1,37 @@
+/* Card Kbi Style*/
+
+.KbiBx .card-body{
+  height: 220px;
+  .Kbi-list {
+    padding: 0;
+    list-style: none;
+    li {
+      display: block;
+      overflow: hidden;
+      border-bottom: 1px solid $stc_color_hover;
+      padding: 8px 0;
+      @include transition(0.2s);
+      &:hover {
+        background-color: $stc_color_hover;
+      }
+      img {
+        width: 22px;
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        left: 5px;
+      }
+      p {
+        margin-bottom: 0;
+        vertical-align: top;
+        display: inline-block;
+        margin-#{$direction}: 10px;
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+
+
+

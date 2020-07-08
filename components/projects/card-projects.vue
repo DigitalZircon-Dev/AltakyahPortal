@@ -1,5 +1,5 @@
 <template>
-  <div class="card-information">
+  <div class="card-information projectsBx">
     <div class="card-header">
       Projects
       <div class="action">
@@ -13,20 +13,13 @@
       </div>
     </div>
     <div class="card-body">
-      <p class="card-body-title">
-        Latest Projects
-      </p>
-      <p class="card-body-target">
-        24
-      </p>
-
       <ul class="project-list">
-        <li><a href="#">AwalNet </a></li>
-        <li><a href="#">CMA Project </a></li>
-        <li><a href="#">Ministry of Finance</a></li>
-        <li><a href="#">NUMU </a></li>
-        <li><a href="#">Cafe ET dessert</a></li>
-        <li><a href="#">Now training Co</a></li>
+        <li><a href="#"><span class="icon-project"><img src="~/assets/images/all/projects-icon.svg" alt=""></span>AwalNet </a></li>
+        <li><a href="#"><span class="icon-project"><img src="~/assets/images/all/projects-icon.svg" alt=""></span>CMA Project </a></li>
+        <li><a href="#"><span class="icon-project"><img src="~/assets/images/all/projects-icon.svg" alt=""></span>Ministry of Finance</a></li>
+        <li><a href="#"><span class="icon-project"><img src="~/assets/images/all/projects-icon.svg" alt=""></span>NUMU </a></li>
+        <li><a href="#"><span class="icon-project"><img src="~/assets/images/all/projects-icon.svg" alt=""></span>Cafe ET dessert</a></li>
+        <li><a href="#"><span class="icon-project"><img src="~/assets/images/all/projects-icon.svg" alt=""></span>Now training Co</a></li>
       </ul>
     </div>
   </div>
