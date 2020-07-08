@@ -26,7 +26,7 @@ export const mutations = {
     },
     SETRequests(state, requests){
         console.log('inside SetRequests');
-        state.Requests.push(...requests);        
+        state.Requests.push(...requests);
     }
 }
 
@@ -35,7 +35,6 @@ export const actions = {
         // console.log('inside vacaiton Balance');
         //var BalanceByEmpNumURL='http://localhost:44306/api/app/vacationBalance/ByEmployeeNumber/10133';
         //const balance = await this.$axios.$get(BalanceByEmpNumURL);
-
         const balance = await this.$repositories.vacation.getBalanceByEmpolyeeNumber(10133)
         //console.log(balance);
         commit('SETBalance', balance);

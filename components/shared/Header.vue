@@ -71,6 +71,14 @@
             <li>
               <a href="#" class="nav-links dropdown">Promotions </a>
             </li>
+             <li>
+               <a href="comments" class="nav-links dropdown">Comments </a>
+                  <!-- <nuxt-link :to="$i18n.path('comments' ) "
+                    class="nav-links"
+                  >
+                    Comments
+                  </nuxt-link> -->
+            </li>
           </ul>
         </nav>
 
