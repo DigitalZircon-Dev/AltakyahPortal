@@ -37,15 +37,24 @@ export default {
         dark: darkMode === 'true',
         themes: {
           light: {
-            primary: '#4f008c',
-            secondary: '#f3f3f1',
-            accent: '#f3f3f1',
-            error: '#FF5252',
-            info: '#2196F3',
-            success: '#4CAF50',
-            warning: '#FFC107'
-          },
-          dark: {
+
+            /*=== Our  COLORS ===*/
+            stc_color_purple: '#4f008c',
+            stc_color_purple_dark: '#420076',
+            stc_color_coral: '#ff375e',
+            stc_color_air: '#f3f3f1',
+            stc_color_silver: '#8e9aa0',
+            stc_color_onyx: '#1d252d',
+            stc_color_sunlight: '#ffdd40',
+            stc_color_sunsetlight: '#ff6a39',
+            stc_color_moonlight: '#a54ee1',
+            stc_color_oasislight: '#00c48c',
+            stc_color_half: 'hsla(0, 0%, 100%, 0.5)',
+            stc_color_white: 'hsla(0, 0%, 100%, 1)',
+            stc_color_border: '#ddd',
+
+
+            /*=== Vuetify Light COLORS ===*/
             primary: '#4f008c',
             secondary: '#3f0070',
             accent: '#f3f3f1',
@@ -53,6 +62,34 @@ export default {
             info: '#2196F3',
             success: '#4CAF50',
             warning: '#FFC107'
+
+
+          },
+          dark: {
+             /*=== Our COLORS ===*/
+             stc_color_purple: '#4f008c',
+             stc_color_purple_dark: '#420076',
+             stc_color_coral: '#ff375e',
+             stc_color_air: '#f3f3f1',
+             stc_color_silver: '#8e9aa0',
+             stc_color_onyx: '#1d252d',
+             stc_color_sunlight: '#ffdd40',
+             stc_color_sunsetlight: '#ff6a39',
+             stc_color_moonlight: '#a54ee1',
+             stc_color_oasislight: '#00c48c',
+             stc_color_half: 'hsla(0, 0%, 100%, 0.5)',
+             stc_color_white: 'hsla(0, 0%, 100%, 1)',
+             stc_color_border: '#ddd',
+
+
+             /*=== Vuetify Dark COLORS ===*/
+             primary: '#4f008c',
+             secondary: '#3f0070',
+             accent: '#f3f3f1',
+             error: '#FF5252',
+             info: '#2196F3',
+             success: '#4CAF50',
+             warning: '#FFC107'
           }
         },
         options: {

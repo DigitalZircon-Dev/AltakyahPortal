@@ -1,5 +1,4 @@
-// import colors from 'vuetify/es5/util/colors'
-  
+
 export default {
   mode: 'universal',
   /*
@@ -88,7 +87,7 @@ export default {
       },
       { rel: 'manifest', href: '/favicons/manifest.json' },
       // Fonts and Icons
-      { rel: 'stylesheet', href: 'css/fonts.css' }
+      //{ rel: 'stylesheet', href: 'css/fonts.css' }
     ]
   },
   /*
@@ -136,13 +135,13 @@ export default {
   */
  styleResources: {
   scss: [
-    '@/assets/scss/main.scss',
+    '@/assets/scss/variables.scss',
   ]
 },
-  vuetify: {
-    customVariables: ['~/assets/scss/vuetify-variables.scss'],
-    optionsPath: './vuetify.options.js',
-  },
+vuetify: {
+  customVariables: ['~/assets/scss/variables.scss'],
+  optionsPath: './vuetify.options.js'
+},
   /*
   ** Build configuration
   */

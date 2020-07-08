@@ -2,6 +2,11 @@
   <div class="card-information teamBx">
     <div class="card-header">
       My Team
+            <div class="action">
+        <a href="#" class="Expand">
+          <img src="~/assets/images/card/card-expand.svg" alt="" />
+        </a>
+      </div>
     </div>
     <div class="card-body">
       <ul class="myteam-list">
