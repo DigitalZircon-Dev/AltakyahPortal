@@ -52,6 +52,7 @@ export default {
             stc_color_half: 'hsla(0, 0%, 100%, 0.5)',
             stc_color_white: 'hsla(0, 0%, 100%, 1)',
             stc_color_border: '#ddd',
+            stc_color_mtea: '#eff3f6',
 
 
             /*=== Vuetify Light COLORS ===*/

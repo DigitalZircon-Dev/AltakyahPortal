@@ -8,7 +8,9 @@
            persistent max-width="700px"
           transition="scale-transition"
           origin="center center"
-          content-class="vacationModal"
+          content-class="commonModal"
+          @keydown.esc="addVacation = false"
+          @click:outside="addVacation = false"
         >
           <template v-slot:activator="{ on, attrs }">
             <a
@@ -176,7 +178,6 @@ export default {
   data() {
     return {
       addVacation: false,
-      showMessages: false
     };
   }
 
@@ -194,7 +195,7 @@ export default {
   border-width:1px;
     }
 
-.vacationModal {
+.commonModal {
     border-radius: 0 !important;
 }
 

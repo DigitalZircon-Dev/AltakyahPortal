@@ -139,42 +139,27 @@
       }
     }
     /* Card Skills Style*/
-    .skill-list {
-      padding: 0;
-      list-style: none;
-      overflow: hidden;
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 8px;
-      overflow: auto;
-      li {
-        display: block;
-        a {
-          background: $stc_color_hover;
-          box-shadow: $stc_box_shadow_inset;
-          color: $stc_color_onyx;
-          display: block;
-          padding: 5px 13px;
-          border-radius: 40px;
-          margin-#{$reverse-direction}: 5px;
-          text-decoration: none;
-          margin-bottom: 15px;
-          font-size: $stc_font_size_xsmall;
-          @include transition(0.2s);
-          &:hover {
-            background: $stc_color_coral;
-            color: $stc_color_white;
-            span {
-              color: $stc_color_white;
-            }
-          }
-          span {
-            font-family: $stc_font_face_medium;
-            font-size: $stc_font_size_xxsmall;
-            color: $stc_color_coral;
-          }
+
+    .skill-items  {
+    span{
+      &.itm{
+      background: rgba(221, 221, 221, 0.3);
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      color: #1d252d;
+      font-size: 14px;
+      transition: 0.2s;
+      .v-avatar{
+        color:$stc_color_coral !important
+      }
+      &:hover {
+        background: $stc_color_coral;
+        color: $stc_color_white;
+        .v-avatar{
+          color:$stc_color_white !important
         }
       }
+      }
+    }
     }
     /* Card project Style*/
     .project-list {

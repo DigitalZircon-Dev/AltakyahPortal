@@ -9,7 +9,9 @@
           max-width="700px"
           transition="scale-transition"
           origin="center center"
-          content-class="vacationModal"
+          content-class="commonModal"
+          @keydown.esc="expandFavourite = false"
+          @click:outside="expandFavourite = false"
         >
           <template v-slot:activator="{ on, attrs }">
             <a
@@ -44,32 +46,40 @@
                     <v-col cols="12" sm="12" class="py-0 ">
                       <v-tabs v-model="tab" class="favModal">
                         <v-tabs-slider
-                          color="transparent lighten-3"
+                          color="transparent"
                         ></v-tabs-slider>
-                        <v-tab href="#tab-all" class="itmFav active">
-                          <span class="active">
-                            ALL
-                          </span>
-                        </v-tab>
-                        <v-tab href="#tab-services" class="itmFav"
-                          >Services</v-tab
+                        <v-tab
+                        v-for="i in tabItm.length-1"
+                        :key="i"
+                        :href="`#tab-${tabItm[i]}`"
+                        class="itmFav"
                         >
-                        <v-tab href="#tab-topics" class="itmFav">Topics</v-tab>
-                        <v-tab href="#tab-links" class="itmFav">Links</v-tab>
+                        {{tabItm[i]}}
+                        </v-tab>
+
                       </v-tabs>
                     </v-col>
                   </v-row>
                   <v-row>
+
                     <v-tabs-items v-model="tab" class="full-width">
-                      <v-tab-item value="tab-all">
+                    <v-tab-item
+                    v-for="i in  tabItm.length-1"
+                    :key="i"
+                    :value="`tab-${tabItm[i]}`"
+                    >
+
                         <v-container>
                           <v-row>
                             <v-col cols="12" sm="12" class="py-0">
                               <v-list>
                                 <v-list-item>
-                                  <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
+                                  <img
+                                    src="~/assets/images/all/bookmark.svg"
+                                    alt=""
+                                    width="24px"
+                                    class="ma-1"
+                                  />
                                   <v-list-item-content>
                                     <v-list-item-title>
                                       Little details in UX design: Tabs vs.
@@ -77,19 +87,32 @@
                                     </v-list-item-title>
                                   </v-list-item-content>
                                   <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
+                                    <v-btn
+                                      depressed
+                                      flat
+                                      dense
+                                      text
+                                      class="text-capitalize rounded-0"
+                                    >
+                                      <img
+                                        src="~/assets/images/all/ic-trash.svg"
+                                        alt=""
+                                        width="18px"
+                                        class="ma-1"
+                                      />
+                                      Delete
                                     </v-btn>
                                   </v-list-item-action>
                                 </v-list-item>
                                 <v-divider></v-divider>
 
                                 <v-list-item>
-                               <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
+                                  <img
+                                    src="~/assets/images/all/bookmark.svg"
+                                    alt=""
+                                    width="24px"
+                                    class="ma-1"
+                                  />
                                   <v-list-item-content>
                                     <v-list-item-title>
                                       Little details in UX design: Tabs vs.
@@ -97,40 +120,32 @@
                                     </v-list-item-title>
                                   </v-list-item-content>
                                   <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
+                                    <v-btn
+                                      depressed
+                                      flat
+                                      dense
+                                      text
+                                      class="text-capitalize rounded-0"
+                                    >
+                                      <img
+                                        src="~/assets/images/all/ic-trash.svg"
+                                        alt=""
+                                        width="18px"
+                                        class="ma-1"
+                                      />
+                                      Delete
                                     </v-btn>
                                   </v-list-item-action>
                                 </v-list-item>
                                 <v-divider></v-divider>
 
                                 <v-list-item>
-                            <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                                          <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                              <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
+                                  <img
+                                    src="~/assets/images/all/bookmark.svg"
+                                    alt=""
+                                    width="24px"
+                                    class="ma-1"
+                                  />
                                   <v-list-item-content>
                                     <v-list-item-title>
                                       Little details in UX design: Tabs vs.
@@ -139,10 +154,54 @@
                                   </v-list-item-content>
 
                                   <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
+                                    <v-btn
+                                      depressed
+                                      flat
+                                      dense
+                                      text
+                                      class="text-capitalize rounded-0"
+                                    >
+                                      <img
+                                        src="~/assets/images/all/ic-trash.svg"
+                                        alt=""
+                                        width="18px"
+                                        class="ma-1"
+                                      />
+                                      Delete
+                                    </v-btn>
+                                  </v-list-item-action>
+                                </v-list-item>
+                                <v-divider></v-divider>
+
+                                <v-list-item>
+                                  <img
+                                    src="~/assets/images/all/bookmark.svg"
+                                    alt=""
+                                    width="24px"
+                                    class="ma-1"
+                                  />
+                                  <v-list-item-content>
+                                    <v-list-item-title>
+                                      Little details in UX design: Tabs vs.
+                                      Accordions
+                                    </v-list-item-title>
+                                  </v-list-item-content>
+
+                                  <v-list-item-action class="float-right">
+                                    <v-btn
+                                      depressed
+                                      flat
+                                      dense
+                                      text
+                                      class="text-capitalize rounded-0"
+                                    >
+                                      <img
+                                        src="~/assets/images/all/ic-trash.svg"
+                                        alt=""
+                                        width="18px"
+                                        class="ma-1"
+                                      />
+                                      Delete
                                     </v-btn>
                                   </v-list-item-action>
                                 </v-list-item>
@@ -152,278 +211,6 @@
                         </v-container>
                       </v-tab-item>
 
-                      <v-tab-item value="tab-services">
-                         <v-container>
-                          <v-row>
-                            <v-col cols="12" sm="12" class="py-0">
-                              <v-list>
-                                <v-list-item>
-                                  <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                               <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                            <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                                          <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                              <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                              </v-list>
-                            </v-col>
-                          </v-row>
-                        </v-container>
-                      </v-tab-item>
-
-                      <v-tab-item value="tab-topics">
-                         <v-container>
-                          <v-row>
-                            <v-col cols="12" sm="12" class="py-0">
-                              <v-list>
-                                <v-list-item>
-                                  <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                               <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                            <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                                          <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                              <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                              </v-list>
-                            </v-col>
-                          </v-row>
-                        </v-container>
-                      </v-tab-item>
-
-                      <v-tab-item value="tab-links">
-                         <v-container>
-                          <v-row>
-                            <v-col cols="12" sm="12" class="py-0">
-                              <v-list>
-                                <v-list-item>
-                                  <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                               <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                            <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                                          <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                              <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                  <v-list-item-action class="float-right">
-                                    <v-btn depressed flat dense text class="text-capitalize rounded-0">
-                                      <v-icon color="stc_color_coral"
-                                        >mdi-playlist-remove</v-icon
-                                      >Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                              </v-list>
-                            </v-col>
-                          </v-row>
-                        </v-container>
-                      </v-tab-item>
                     </v-tabs-items>
                   </v-row>
                 </v-container>
@@ -463,13 +250,14 @@ export default {
   data() {
     return {
       expandFavourite: false,
-      tab: ""
-    };
+      tab: "",
+      tabItm :["","all","services","topics","links"]
+      };
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .favModal a.itmFav {
   font-size: 14px;
   background: transparent;

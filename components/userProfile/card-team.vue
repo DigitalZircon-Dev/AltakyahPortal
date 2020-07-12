@@ -3,7 +3,7 @@
     <div class="card-header">
       My Team
             <div class="action">
-        <a href="#" class="Expand">
+        <a href="/otherpages/P_team" class="Expand">
           <img src="~/assets/images/card/card-expand.svg" alt="" />
         </a>
       </div>
