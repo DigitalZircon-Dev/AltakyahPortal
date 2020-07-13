@@ -2,7 +2,8 @@
   <div>
     <SourceOptions
       :source-url="sourceUrl"
-      @addLikeOrFavorite="addLikeOrFavorite"
+      @onLike="onLike"
+      @onFavorite="onFavorite"
       @displayComment="displayComment"
       @OpneSocialUsers="OpneSocialUsers"
     ></SourceOptions>

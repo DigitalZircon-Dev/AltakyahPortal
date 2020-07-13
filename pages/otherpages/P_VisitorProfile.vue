@@ -51,7 +51,7 @@
 <script>
 import Profile from "@/components/userProfile/Profile.vue";
 import ProfileReports from "@/components/userProfile/profile-reports.vue";
-import cardSkills from "@/components/projects/card-skills.vue";
+import cardSkills from "@/components/userProfile/skills/card-skills.vue";
 import cardProjects from "@/components/projects/card-projects.vue";
 import cardRecommendations from "@/components/userProfile/card-recommendations.vue";
 

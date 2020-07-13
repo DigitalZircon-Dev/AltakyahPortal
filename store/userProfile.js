@@ -180,7 +180,6 @@ export const actions = {
         return { value: state.listOfskills, error: '' }
       }
       const { data } = await this.$repositories.userProfile.fetchSkill()
-      debugger
       if (data.isValid) {
         commit('SET_SKILLS', data.value)
         return { value: data.value, error: '' }
@@ -201,5 +200,17 @@ export const actions = {
   },
   resetState({ commit }) {
     commit('RESET')
-  }
+  },
+  async fetchLastKPI({ commit }, vm){
+    try {
+      const { data } = await this.$repositories.userProfile.fetchLastKPI(vm)
+      if (data.isValid) {
+        return { value: data.value, error: '' }
+      } else {
+        return { value: null, error: '' }
+      }
+    } catch (e) {
+      return { value: null, error: e.response }
+    }
+  },
 }

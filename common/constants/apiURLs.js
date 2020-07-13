@@ -21,11 +21,19 @@ export const COMMENT = {
   DELETE_COMMENT_ATTACHMENT : 'CommentAttachment/DeleteAttachment',
   EDIT_COMMENT : 'Comment/OnEditComment',
   ADD_LIKE_OR_FAVORITE : 'Like/OnCreateLikeOrFavorite',
+  On_FAVORITE : 'Like/OnFavorite',
+  On_LIKE : 'Like/OnLike',
   FETCH_ATTACHMENTS : 'CommentAttachment/FetchAttachments/',
   FETCH_SOCIAL_USERS : 'Comment/FetchSocialUsers',
   ON_BLOCKED_COMMENT : 'Comment/BlockedComment',
   FETCH_COMMENT_REPORTS : 'Comment/FetchCommentReports',
   FETCH_COMMENT_REPORTER : 'CommentReport/FetchCommentReporter/',
+  FETCH_LAST_FAVOURITES:'Like/FetchLastFavorite/',
+  FETCH_FAVOURITES:'Like/FetchFavorites',
+  DELETE_FAVOURITE:'Like/DeleteFavorite'
+
+
+
 }
 
 
@@ -47,17 +55,6 @@ export const USERPROFILE = {
   FETCH_USER_SKILL_ENDORSES : 'UserSkill/FetchUserSkillEndorses/',
   FETCH_SKILL : 'Skill/FetchSkills',
   ADD_SKILL : 'Skill/OnCreateSkill',
+  FETCH_LAST_KPI : 'KPI/FetchLastKPI/'
+
 }
-
-//export default Object.freeze({
-// export default {
-//     VACATION,
-//     GET_VACATION
-// };
-
-// export default {
-//     MY_FIRST_CONSTANT : 'is awesome',
-//     MY_SECOND_CONSTANT : 'is also awesome',
-
-//     VACATION : 'vacations'
-// };

@@ -1,5 +1,5 @@
-import operationTypes from '@/enums/operationTypes'
-import helper from '../../helpers/Utils'
+import operationTypes from '@/common/enums/operationTypes'
+import helper from '../../common/helpers/Utils'
 export const commentsMixins = {
   methods: {
     OpneSocialUsers(id, isdisplaySocialUsers, socialUsersTypeId) {
@@ -68,11 +68,10 @@ export const commentsMixins = {
         this.sourceUrl = data.value
       }
     },
-    async addLikeOrFavorite(_isLikeOrFavorite, _operationTypeId) {
+    async onLike(_isLike) {
       const likeDto = {
         fullUrl: helper.getPageUrl(),
-        isLikeOrFavorite: _isLikeOrFavorite,
-        OperationType: _operationTypeId,
+        isLike: _isLike,
         sourceUrl: {
           fullUrl: '',
           urlTitle: '',
@@ -84,21 +83,40 @@ export const commentsMixins = {
       formData.append('sourceUrl.UrlTitle', document.title)
       formData.append('sourceUrl.siteCollection', 'siteCollection')
       const data = await this.$store.dispatch(
-        'comment/addLikeOrFavorite',
+        'comment/onLike',
         formData
       )
       if (data.value) {
-        if (_operationTypeId === operationTypes.FAVORITE) {
-          this.sourceUrl.countFavorite = _isLikeOrFavorite
+        debugger
+        this.sourceUrl.countLike = _isLike
+        ? this.sourceUrl.countLike + 1
+        : this.sourceUrl.countLike - 1
+      this.sourceUrl.isLiked = _isLike
+      }
+    },
+    async onFavorite(_isFavorite) {
+      const likeDto = {
+        fullUrl: helper.getPageUrl(),
+        isFavorite: _isFavorite,
+        sourceUrl: {
+          fullUrl: '',
+          urlTitle: '',
+          siteCollection: ''
+        }
+      }
+      const formData = helper.convertObjectToFormData(likeDto)
+      formData.append('sourceUrl.fullUrl', helper.getPageUrl())
+      formData.append('sourceUrl.UrlTitle', document.title)
+      formData.append('sourceUrl.siteCollection', 'siteCollection')
+      const data = await this.$store.dispatch(
+        'comment/onFavorite',
+        formData
+      )
+      if (data.value) {
+        this.sourceUrl.countFavorite = _isFavorite
             ? this.sourceUrl.countFavorite + 1
             : this.sourceUrl.countFavorite - 1
-          this.sourceUrl.isFavorite = _isLikeOrFavorite
-        } else {
-          this.sourceUrl.countLike = _isLikeOrFavorite
-            ? this.sourceUrl.countLike + 1
-            : this.sourceUrl.countLike - 1
-          this.sourceUrl.isLiked = _isLikeOrFavorite
-        }
+          this.sourceUrl.isFavorite = _isFavorite
       }
     }
   }

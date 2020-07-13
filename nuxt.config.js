@@ -110,6 +110,7 @@ export default {
     '~/plugins/axiosPlugin',
     '~/plugins/Vuelidate' ,
     { src: '~/plugins/ckeditor5', ssr: false },
+    { src: '~/plugins/materialDesignIcons', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -130,8 +131,9 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:44306/api/app',
+    baseURL: 'https://localhost:44368/api/app',
     PREFIX: '/api/app/'
+
   },
   /*
   ** vuetify module configuration

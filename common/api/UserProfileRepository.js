@@ -1,5 +1,5 @@
 import {USERPROFILE} from '../constants'
-import helper from '../../helpers/Utils'
+import helper from '../../common/helpers/Utils'
 
 export  default ($axios) => ({
   // Start project oprations
@@ -75,8 +75,12 @@ export  default ($axios) => ({
   },
   async addSkill(skillsDto) {
     return await $axios.post(USERPROFILE.ADD_SKILL, skillsDto)
+  }// End recommendation user skills
+  ,
+  async fetchLastKPI(vm) {
+    return await $axios.get(
+      USERPROFILE.FETCH_LAST_KPI + vm.userId
+    )
   }
-
-  // End recommendation user skills
 })
 
