@@ -131,13 +131,13 @@ import cardTasks from "@/components/eservices/card-tasks.vue";
 import cardRequests from "@/components/eservices/card-requests.vue";
 import cardVacation from "@/components/vacation/card-vacation.vue";
 //import cardAttendance from "@/components/attendance/card-attendance.vue";
-import cardSkills from "@/components/userProfile/skills/card-skills.vue";
-import cardProjects from "@/components/userProfile/projects/card-projects.vue";
-import cardRecommendations from "@/components/userProfile/recommendations/card-recommendations.vue";
+import cardSkills from "@/components/projects/card-skills.vue";
+import cardProjects from "@/components/projects/card-projects.vue";
+import cardRecommendations from "@/components/userProfile/card-recommendations.vue";
 import cardPerformance from "@/components/performance/card-performance.vue";
 import cardTeam from "@/components/userProfile/card-team.vue";
-import cardFavourites from "@/components/userProfile/card-favourites.vue";
-import cardKbi from "@/components/events/card-kbi.vue";
+import cardFavourites from "@/components/Design/card-favourites.vue";
+import cardKbi from "@/components/Design/card-kbi.vue";
 import cardToDoList from "@/components/userProfile/card-toDoList.vue";
 import cardEventSchdule from "@/components/events/card-eventSchdule.vue";
 // import Footer from '@/components/shared/footer.vue'
