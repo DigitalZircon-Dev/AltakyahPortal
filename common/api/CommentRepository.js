@@ -1,5 +1,5 @@
 import {COMMENT} from '../constants'
-import helper from '../../helpers/Utils'
+import helper from '../../common/helpers/Utils'
 
 
 export default ($axios) => ({
@@ -45,11 +45,9 @@ export default ($axios) => ({
       commentReportDto
     )
   },
-
   async fetchComment(vm) {
     return await $axios.get(COMMENT.FERCH_COMMENT + vm.id)
   },
-
   async deleteCommentAttachment(dto) {
     return await $axios.post(COMMENT.DELETE_COMMENT_ATTACHMENT, dto)
   },
@@ -57,11 +55,12 @@ export default ($axios) => ({
   async editComment(commentDto) {
     return await $axios.post(COMMENT.EDIT_COMMENT, commentDto)
   },
-
-  async addLikeOrFavorite(dto) {
-    return await $axios.post(COMMENT.ADD_LIKE_OR_FAVORITE, dto)
+  async onLike(dto) {
+    return await $axios.post(COMMENT.On_LIKE, dto)
   },
-
+  async onFavorite(dto) {
+    return await $axios.post(COMMENT.On_FAVORITE, dto)
+  },
   async fetchAttachments(vm) {
     return await $axios.get(
       COMMENT.FETCH_ATTACHMENTS + vm.commentId
@@ -85,5 +84,16 @@ export default ($axios) => ({
     return await $axios.get(
       COMMENT.FETCH_COMMENT_REPORTER + vm.commentId
     )
+  },
+  async fetchLastFavourites(vm) {
+    return await $axios.get(COMMENT.FETCH_LAST_FAVOURITES + vm.userId)
+  },
+  async fetchFavourites(vm) {
+    const params = helper.getParams(vm)
+    return await $axios.get(COMMENT.FETCH_FAVOURITES , params)
+  },
+  async deleteFavorite(vm) {
+    return await $axios.post(COMMENT.DELETE_FAVOURITE , vm)
   }
+
 })

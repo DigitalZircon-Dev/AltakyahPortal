@@ -25,7 +25,7 @@
             </a>
           </template>
 
-          <div class="cardModal">
+          <div class="cardModal2">
             <v-card>
               <v-card-title class="py-2">
                 <span class="headline">New Project</span>

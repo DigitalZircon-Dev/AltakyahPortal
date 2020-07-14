@@ -1,4 +1,4 @@
-import helper from '../../helpers/Utils'
+import helper from '../../common/helpers/Utils'
 
 export const commentMixins = {
   methods: {

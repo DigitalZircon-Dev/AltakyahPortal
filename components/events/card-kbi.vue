@@ -106,34 +106,40 @@
     </div>
     <div class="card-body">
       <ul class="Kbi-list">
-        <li>
+        <li   v-for="kpi in lastKPI"
+            :key="kpi.id">
           <img src="~/assets/images/all/pen.svg" alt="" />
-          <p>KPI item dummy text here</p>
-        </li>
-        <li>
-          <img src="~/assets/images/all/pen.svg" alt="" />
-          <p>KPI item dummy text here</p>
-        </li>
-        <li>
-          <img src="~/assets/images/all/pen.svg" alt="" />
-          <p>KPI item dummy text here</p>
-        </li>
-        <li>
-          <img src="~/assets/images/all/pen.svg" alt="" />
-          <p>KPI item dummy text here</p>
+          <p>{{kpi.description}}</p>
         </li>
       </ul>
     </div>
   </div>
 </template>
-
 <script>
+// @ is an alias to /src
 export default {
-  data(){
-    return{
-expandKbi: false,
-
+  name: "cardKPI",
+  data() {
+    return {
+      expandKbi: false,
+      lastKPI:[]
+    };
+  },
+  created() {
+    this.fetchLastFavourites()
+  },
+   methods: {
+    async fetchLastFavourites(_socialTypeId) {
+      const vm = { userId: this.$route.query.userId}
+      const result = await this.$store.dispatch(
+        'userProfile/fetchLastKPI',
+        vm
+      )
+      if (result.value) {
+        this.lastKPI = result.value
+      }
     }
-  }
-}
+   }
+};
 </script>
+

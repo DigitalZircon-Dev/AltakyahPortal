@@ -38,19 +38,17 @@
             <div class="comment-meta">
                 <v-btn icon :color="sourceUrl.isLiked ? 'pink' : 'purple'"
                   @click="onLiked(!sourceUrl.isLiked)">
-                  <v-icon>mdi-heart</v-icon>
+                  <BaseIcon
+                  name="mdi-heart"
+                ></BaseIcon>
+                 </v-btn>
+                 <v-btn icon :color="sourceUrl.isFavorite ? 'pink' : 'purple'"
+                  @click="onFavorite(!sourceUrl.isFavorite)">
+                  <BaseIcon
+                  name="mdi-star"
+                ></BaseIcon>
                  </v-btn>
               <!-- <button
-                id="btnLike"
-                :class="
-                  sourceUrl.isLiked ? 'comment-like-color' : 'comment-like'
-                "
-                :title="$vuetify.lang.t('$vuetify.sourceoptions.countlike')"
-                @click="onLiked(!sourceUrl.isLiked)"
-              >
-                <BaseIcon name="heart"></BaseIcon>
-              </button> -->
-              <button
                 :class="
                   sourceUrl.isFavorite ? 'comment-like-color' : 'comment-like'
                 "
@@ -58,15 +56,14 @@
                 @click="onFavorite(!sourceUrl.isFavorite)"
               >
                 <BaseIcon
-                  name="star"
-                  :class-name="sourceUrl.isFavorite ? 'reporticon' : ''"
+                  name="mdi-star"
                 ></BaseIcon>
-              </button>
+              </button> -->
               <button
                 class="comment-reply reply-popup"
                 @click.prevent="displayComment(!isDisplayComment)"
               >
-                <BaseIcon name="comment-alt"
+                <BaseIcon name="mdi-comment-multiple-outline"
                   >{{$vuetify.lang.t('$vuetify.sourceoptions.addcomment')}}
                 </BaseIcon>
               </button>
@@ -82,8 +79,8 @@
 import Vue from 'vue'
 import { required } from 'vuelidate/lib/validators'
 import BaseIcon from '../shared/BaseIcon.vue'
-import operationTypes from '@/enums/operationTypes'
-import socialUsersTypes from '@/enums/socialUsersTypes'
+import operationTypes from '@/common/enums/operationTypes'
+import socialUsersTypes from '@/common/enums/socialUsersTypes'
 
 export default Vue.extend({
   name: 'SourceOptions',
@@ -110,10 +107,10 @@ export default Vue.extend({
       this.$emit('displayComment', isShow, id)
     },
     onLiked(isLike) {
-      this.$emit('addLikeOrFavorite', isLike, operationTypes.Like)
+      this.$emit('onLike', isLike)
     },
     onFavorite(isFavorite) {
-      this.$emit('addLikeOrFavorite', isFavorite, operationTypes.FAVORITE)
+      this.$emit('onFavorite', isFavorite)
     },
     OpneSocialUsers(id, socialUsersTypeId) {
       this.$emit('OpneSocialUsers', id, true, socialUsersTypeId)

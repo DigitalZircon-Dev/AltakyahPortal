@@ -41,7 +41,7 @@
 </template>
 <script>
 import _ from 'lodash'
-import helper from '@/helpers/Utils'
+import helper from '@/common/helpers/Utils'
 
 export default {
   name: 'MultipleUploads',

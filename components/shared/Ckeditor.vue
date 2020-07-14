@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import helper from '@/helpers/Utils'
+import helper from '@/common/helpers/Utils'
 
 export default {
   name: 'Ckeditor5',

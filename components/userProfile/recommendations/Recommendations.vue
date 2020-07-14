@@ -59,8 +59,8 @@
 import Vue from 'vue'
 import AddOrEditRecommendation from '../recommendations/AddOrEditRecommendation.vue'
 import Recommendation from '../recommendations/Recommendation'
-import RecommendationType from '@/enums/recommendationType'
-import NotificationsType from '@/enums/NotificationsType'
+import RecommendationType from '@/common/enums/recommendationType'
+import NotificationsType from '@/common/enums/NotificationsType'
 
 export default Vue.extend({
   name: 'Recommendations',

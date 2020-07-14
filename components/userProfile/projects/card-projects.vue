@@ -1,58 +1,25 @@
 <template>
-  <div>
-    <v-container fluid>
-      <v-row>
-        <v-card-title class="headline">
-          {{ $vuetify.lang.t('$vuetify.project.projectTitle') }}
-           <v-btn icon @click.prevent="showAddProject" color="purple">
-          <v-icon>mdi-plus</v-icon>
-        </v-btn>
-          </v-card-title
-        >
+  <div class="card-information projectsBx">
+    <div class="card-header">
+      {{ $vuetify.lang.t('$vuetify.project.projectTitle') }}
+      <div class="action">
+        <a href="#" class="addBtn" @click.prevent="showAddProject">
+          <img src="~/assets/images/card/card-plus.svg" alt="" />
+          Add
+        </a>
+        <a href="#" class="Expand">
+          <img src="~/assets/images/card/card-expand.svg" alt="" />
+        </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="project-list">
+        <li v-for="project in projects" :key="project.id">
+          <a href="#"><span class="icon-project"><img src="~/assets/images/all/projects-icon.svg" alt=""></span>{{project.projectName}} </a></li>
 
-        <v-col v-for="project in projects" :key="project.id" cols="12">
-          <v-card class="mx-auto">
-            <v-card-title
-              class="headline"
-              v-text="project.projectName"
-            ></v-card-title>
-            <v-card-subtitle>
-              {{ project.startDate }} /
-              <span v-if="project.isCurrentlyWorking">{{
-                $vuetify.lang.t('$vuetify.project.present')
-              }}</span>
-              {{ project.endDate }}
-            </v-card-subtitle>
-            <ProjectTeamMember
-              v-if="project.projectTeamMembers.length > 0"
-              :team-members="project.projectTeamMembers"
-            ></ProjectTeamMember>
-            <v-card-text>
-              <p class="comment-txt more" v-html="project.description"></p>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn
-                v-if="project.isAllowedDelete"
-                icon
-                @click.prevent="displayDeleteProject(project.id)"
-              >
-                <v-icon color="red">mdi-delete</v-icon>
-              </v-btn>
-
-              <v-btn
-                v-if="project.isAllowedEdit"
-                icon
-                color="purple"
-                @click.prevent="showEditProject(project.id)"
-              >
-                <v-icon>mdi-pencil</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-    <AddorEditProject
+      </ul>
+    </div>
+      <AddorEditProject
       v-if="isDisplayAddorEditProject"
       :id="id"
       :display-add-or-edit-project="isDisplayAddorEditProject"
@@ -73,6 +40,7 @@
     ></ModalConfirmation>
   </div>
 </template>
+
 <script>
 import Vue from 'vue'
 import AddorEditProject from '../projects/AddorEditProject'
@@ -81,7 +49,7 @@ import BaseIcon from '../../shared/BaseIcon'
 import ModalConfirmation from '@/components/shared/ModalConfirmation'
 
 export default Vue.extend({
-  name: 'Projects',
+  name: 'cardProjects',
   components: {
     AddorEditProject,
     ProjectTeamMember,
@@ -130,7 +98,8 @@ export default Vue.extend({
       this.isDisplayAddorEditProject = true
     },
     bindprojects(projectDto) {
-      const index = this.projects.findIndex((f) => f.id === projectDto.id)
+      const self = this
+      const index = self.projects.findIndex((f) => f.id === projectDto.id)
       if (index === -1) {
         this.projects.push(projectDto)
         // this.$notify({
@@ -170,4 +139,3 @@ export default Vue.extend({
   }
 })
 </script>
-

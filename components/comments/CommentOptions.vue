@@ -9,7 +9,7 @@
         OpneSocialUsers(commentDto.id, commentDto.socialUsersTypeId)
       "
     >
-      <BaseIcon name="heart" :width="10">
+      <BaseIcon name="mdi-heart" :width="10">
         {{ $vuetify.lang.t('$vuetify.sourceoptions.likes') }} ({{ commentDto.countLike }})</BaseIcon
       >
     </button>
@@ -33,7 +33,7 @@
         displayCommentReply(!isDisplayCommentReply, commentDto.id)
       "
     >
-      <BaseIcon name="reply-all">{{ $vuetify.lang.t('$vuetify.commentoptions.repley') }}</BaseIcon>
+ <BaseIcon name="reply-all">{{ $vuetify.lang.t('$vuetify.commentoptions.repley') }}</BaseIcon>
     </button>
 
     <button
@@ -50,10 +50,10 @@
       class="comment-reply"
       @click.prevent="fetchReplyComments(commentDto.id)"
     >
-      <BaseIcon name="chevron-circle-down">
-        {{ $vuetify.lang.t('$vuetify.commentoptions.repleis') }}
-        {{ commentDto.commentReplyCount }}</BaseIcon
-      >
+        <BaseIcon name="chevron-circle-down">
+         {{ $vuetify.lang.t('$vuetify.commentoptions.repleis') }}
+        {{ commentDto.commentReplyCount }}
+        </BaseIcon>
     </button>
     <button
       class="comment-reply reply-popup"
@@ -62,25 +62,15 @@
         displayCommentReport(!isDisplayCommentReport, commentDto.id)
       "
     >
-      <BaseIcon
-        :class-name="'reporticon'"
-        name="exclamation-triangle"
-      ></BaseIcon>
+    <BaseIcon :class-name="'reporticon'" name="exclamation-triangle"></BaseIcon>
     </button>
     <v-btn icon v-if="commentDto.isAllowedEdit"
           @click.prevent="displayEditComment(!isDisplayEditComment, commentDto.id)">
-           <v-icon>mdi-pencil</v-icon>
+             <BaseIcon name="mdi-pencil"></BaseIcon>
         </v-btn>
-    <!-- <button
-      v-if="commentDto.isAllowedEdit"
-      :title="$vuetify.lang.t('$vuetify.commonoprations.edit')"
-      @click.prevent="displayEditComment(!isDisplayEditComment, commentDto.id)"
-    >
-      <BaseIcon name="edit"></BaseIcon>
-    </button> -->
      <v-btn icon  v-if="commentDto.isAllowedDelete"
            @click.prevent="deleteComment(commentDto.id)">
-               <v-icon color="red">mdi-delete</v-icon>
+            <BaseIcon color="red" name="mdi-delete"></BaseIcon>
         </v-btn>
 
   </div>
@@ -90,7 +80,7 @@
 import Vue from 'vue'
 import { required } from 'vuelidate/lib/validators'
 import BaseIcon from '../shared/BaseIcon.vue'
-import socialUsersTypes from '@/enums/socialUsersTypes'
+import socialUsersTypes from '@/common/enums/socialUsersTypes'
 
 export default Vue.extend({
   name: 'CommentOptions',

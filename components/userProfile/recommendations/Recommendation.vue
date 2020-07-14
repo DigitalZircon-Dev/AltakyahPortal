@@ -73,7 +73,7 @@ import { required } from 'vuelidate/lib/validators'
 import AddOrEditRecommendation from '../recommendations/AddOrEditRecommendation.vue'
 import BaseIcon from '../../shared/BaseIcon'
 import AppSwitch from '../../shared/Switch'
-import recommendationType from '../../../enums/recommendationType'
+import recommendationType from '@/common/enums/recommendationType'
 import ModalConfirmation from '@/components/shared/ModalConfirmation'
 
 export default Vue.extend({

@@ -49,9 +49,17 @@ async addCommentLike   ({ commit }, dto) {
     return { value: null, error: e.response }
   }
 },
-async addLikeOrFavorite  ({ commit }, dto) {
+async onFavorite  ({ commit }, dto) {
   try {
-    const { data } = await this.$repositories.comment.addLikeOrFavorite(dto)
+    const { data } = await this.$repositories.comment.onFavorite(dto)
+    return { value: data.isValid, error: '' }
+  } catch (e) {
+    return { value: null, error: e.response }
+  }
+},
+async onLike  ({ commit }, dto) {
+  try {
+    const { data } = await this.$repositories.comment.onLike(dto)
     return { value: data.isValid, error: '' }
   } catch (e) {
     return { value: null, error: e.response }
@@ -164,14 +172,34 @@ async fetchCommentReporter ({ commit }, vm) {
   } catch (e) {
     return { value: null, error: e.response }
   }
-}
-
+},
+  async fetchLastFavourites  ({ commit }, vm) {
+    try {
+      const { data } = await this.$repositories.comment.fetchLastFavourites(vm)
+      return { value: data.value, error: '' }
+    } catch (e) {
+      return { value: null, error: e.response }
+    }
+  },
+  async fetchFavourites  ({ commit }, vm) {
+    try {
+      const { data } = await this.$repositories.comment.fetchFavourites(vm)
+      return { value: data.value, error: '' }
+    } catch (e) {
+      return { value: null, error: e.response }
+    }
+  },
+  async deleteFavorite   ({ commit }, dto)  {
+    try {
+      const { data } = await this.$repositories.comment.deleteFavorite(dto)
+      if (data.isValid) {
+        return { value: data.value }
+      } else {
+        return { value: null, error: data.errors }
+      }
+    } catch (e) {
+      return { value: null, error: e.response }
+    }
+  },
  }
-// import * as actions from './comment/actions'
-
-// export default ($repositories) => {
-//   debugger
-//   actions
-// }
-
 

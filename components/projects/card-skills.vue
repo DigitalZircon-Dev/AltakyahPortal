@@ -129,8 +129,7 @@
               <img src="~/assets/images/card/card-expand.svg" alt="" />
             </a>
           </template>
-
-          <div class="cardModal">
+  <div class="cardModal">
             <v-card>
               <v-card-title class="py-2">
                 <span class="headline">Skills & Endorsement</span>
@@ -194,113 +193,13 @@
                           </v-list>
                         </v-expansion-panel-content>
                       </v-expansion-panel>
-
-                      <v-expansion-panel accordion v-if="expanditm1">
-                        <v-expansion-panel-header disable-icon-rotate>
-                          Telecommunications
-                          <span class="d-inline mx-2">
-                            <v-chip>5</v-chip>
-                          </span>
-                          <template v-slot:actions>
-                            <v-btn
-                              depressed
-                              flat
-                              dense
-                              text
-                              class="text-capitalize rounded-0"
-                              @click="expanditm1 = false"
-                            >
-                              <img
-                                src="~/assets/images/all/ic-trash.svg"
-                                alt=""
-                                width="18px"
-                                class="ma-1"
-                              />
-                              Delete
-                            </v-btn>
-                          </template>
-                        </v-expansion-panel-header>
-                        <v-divider></v-divider>
-                        <v-expansion-panel-content>
-                          <v-list>
-                            <template v-for="item in endorse">
-                              <v-list-item :key="item.avatar">
-                                <v-list-item-avatar class="mx-1">
-                                  <v-img
-                                    :src="item.avatar"
-                                    max-width="32px"
-                                    width="32px"
-                                    max-height="32px"
-                                  ></v-img>
-                                </v-list-item-avatar>
-
-                                <v-list-item-content>
-                                  <v-list-item-title>
-                                    {{ item.endorseName }}
-                                  </v-list-item-title>
-                                </v-list-item-content>
-                              </v-list-item>
-                              <v-divider :key="item.avatar"></v-divider>
-                            </template>
-                          </v-list>
-                        </v-expansion-panel-content>
-                      </v-expansion-panel>
-
-                      <v-expansion-panel accordion v-if="expanditm2">
-                        <v-expansion-panel-header disable-icon-rotate>
-                          Telecommunications
-                          <span class="d-inline mx-2">
-                            <v-chip>5</v-chip>
-                          </span>
-                          <template v-slot:actions>
-                            <v-btn
-                              depressed
-                              flat
-                              dense
-                              text
-                              class="text-capitalize rounded-0"
-                              @click="expanditm2 = false"
-                            >
-                              <img
-                                src="~/assets/images/all/ic-trash.svg"
-                                alt=""
-                                width="18px"
-                                class="ma-1"
-                              />
-                              Delete
-                            </v-btn>
-                          </template>
-                        </v-expansion-panel-header>
-                        <v-expansion-panel-content>
-                          <v-list>
-                            <template v-for="item in endorse">
-                              <v-list-item :key="item.avatar">
-                                <v-list-item-avatar class="mx-1">
-                                  <v-img
-                                    :src="item.avatar"
-                                    max-width="32px"
-                                    width="32px"
-                                    max-height="32px"
-                                  ></v-img>
-                                </v-list-item-avatar>
-
-                                <v-list-item-content>
-                                  <v-list-item-title>
-                                    {{ item.endorseName }}
-                                  </v-list-item-title>
-                                </v-list-item-content>
-                              </v-list-item>
-                              <v-divider :key="item.avatar"></v-divider>
-                            </template>
-                          </v-list>
-                        </v-expansion-panel-content>
-                      </v-expansion-panel>
                     </v-expansion-panels>
                   </v-row>
                 </v-container>
               </v-card-text>
             </v-card>
           </div>
+
         </v-dialog>
       </div>
     </div>

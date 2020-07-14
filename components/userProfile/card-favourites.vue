@@ -19,6 +19,7 @@
               v-bind="attrs"
               v-on="on"
               class="Expand"
+             @click.prevent="fetchFavourites('tab-all',allFavourites)"
             >
               <img src="~/assets/images/card/card-expand.svg" alt="" />
             </a>
@@ -33,7 +34,7 @@
                   fab
                   small
                   icon
-                  @click="expandFavourite = false"
+                  @click.prevent="expandFavourite = false"
                   color="red"
                 >
                   <v-icon>mdi-close</v-icon>
@@ -48,32 +49,30 @@
                         <v-tabs-slider
                           color="transparent"
                         ></v-tabs-slider>
-                        <v-tab
-                        v-for="i in tabItm.length-1"
-                        :key="i"
-                        :href="`#tab-${tabItm[i]}`"
-                        class="itmFav"
-                        >
-                        {{tabItm[i]}}
+                        <v-tab href="#tab-all" class="itmFav active" @click.prevent="fetchFavourites('tab-all',allFavourites)">
+                          <span class="active" >
+                            ALL
+                          </span>
                         </v-tab>
-
+                        <v-tab href="#tab-services" class="itmFav" @click.prevent="fetchFavourites('tab-services',services)"
+                          >Services</v-tab
+                        >
+                        <v-tab href="#tab-topics" class="itmFav" @click.prevent="fetchFavourites('tab-topics',topic)">Topics</v-tab>
+                        <v-tab href="#tab-links" class="itmFav" @click.prevent="fetchFavourites('tab-links',portal)">Portal</v-tab>
                       </v-tabs>
                     </v-col>
                   </v-row>
                   <v-row>
-
                     <v-tabs-items v-model="tab" class="full-width">
-                    <v-tab-item
-                    v-for="i in  tabItm.length-1"
-                    :key="i"
-                    :value="`tab-${tabItm[i]}`"
-                    >
-
+                      <v-tab-item :value='tabName'>
                         <v-container>
                           <v-row>
                             <v-col cols="12" sm="12" class="py-0">
                               <v-list>
-                                <v-list-item>
+                                <v-list-item
+                                 v-for="favourite in favourites"
+                                 :key="favourite.id">
+
                                   <img
                                     src="~/assets/images/all/bookmark.svg"
                                     alt=""
@@ -82,129 +81,18 @@
                                   />
                                   <v-list-item-content>
                                     <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
+                                     {{favourite.favoriteName}}
                                     </v-list-item-title>
                                   </v-list-item-content>
-                                  <v-list-item-action class="float-right">
-                                    <v-btn
-                                      depressed
-                                      flat
-                                      dense
-                                      text
-                                      class="text-capitalize rounded-0"
-                                    >
-                                      <img
-                                        src="~/assets/images/all/ic-trash.svg"
-                                        alt=""
-                                        width="18px"
-                                        class="ma-1"
-                                      />
-                                      Delete
+                                  <v-list-item-action class="float-right" v-if="favourite.isAllowedDelete">
+                                    <v-btn depressed  dense text class="text-capitalize rounded-0"
+                                    @click.prevent="deleteFavourite(favourite.id)">
+                                      <v-icon color="stc_color_coral">mdi-playlist-remove</v-icon
+                                      >Delete
                                     </v-btn>
                                   </v-list-item-action>
                                 </v-list-item>
                                 <v-divider></v-divider>
-
-                                <v-list-item>
-                                  <img
-                                    src="~/assets/images/all/bookmark.svg"
-                                    alt=""
-                                    width="24px"
-                                    class="ma-1"
-                                  />
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-                                  <v-list-item-action class="float-right">
-                                    <v-btn
-                                      depressed
-                                      flat
-                                      dense
-                                      text
-                                      class="text-capitalize rounded-0"
-                                    >
-                                      <img
-                                        src="~/assets/images/all/ic-trash.svg"
-                                        alt=""
-                                        width="18px"
-                                        class="ma-1"
-                                      />
-                                      Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                                  <img
-                                    src="~/assets/images/all/bookmark.svg"
-                                    alt=""
-                                    width="24px"
-                                    class="ma-1"
-                                  />
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                  <v-list-item-action class="float-right">
-                                    <v-btn
-                                      depressed
-                                      flat
-                                      dense
-                                      text
-                                      class="text-capitalize rounded-0"
-                                    >
-                                      <img
-                                        src="~/assets/images/all/ic-trash.svg"
-                                        alt=""
-                                        width="18px"
-                                        class="ma-1"
-                                      />
-                                      Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
-                                <v-divider></v-divider>
-
-                                <v-list-item>
-                                  <img
-                                    src="~/assets/images/all/bookmark.svg"
-                                    alt=""
-                                    width="24px"
-                                    class="ma-1"
-                                  />
-                                  <v-list-item-content>
-                                    <v-list-item-title>
-                                      Little details in UX design: Tabs vs.
-                                      Accordions
-                                    </v-list-item-title>
-                                  </v-list-item-content>
-
-                                  <v-list-item-action class="float-right">
-                                    <v-btn
-                                      depressed
-                                      flat
-                                      dense
-                                      text
-                                      class="text-capitalize rounded-0"
-                                    >
-                                      <img
-                                        src="~/assets/images/all/ic-trash.svg"
-                                        alt=""
-                                        width="18px"
-                                        class="ma-1"
-                                      />
-                                      Delete
-                                    </v-btn>
-                                  </v-list-item-action>
-                                </v-list-item>
                               </v-list>
                             </v-col>
                           </v-row>
@@ -222,21 +110,11 @@
     </div>
     <div class="card-body">
       <ul class="Favourite-list">
-        <li>
+        <li
+            v-for="favourite in lastFavourites"
+            :key="favourite.id">
           <img src="~/assets/images/all/bookmark.svg" alt="" />
-          <p>Microsoft Team</p>
-        </li>
-        <li>
-          <img src="~/assets/images/all/bookmark.svg" alt="" />
-          <p>Document Library</p>
-        </li>
-        <li>
-          <img src="~/assets/images/all/bookmark.svg" alt="" />
-          <p>Promotions</p>
-        </li>
-        <li>
-          <img src="~/assets/images/all/bookmark.svg" alt="" />
-          <p>Microsoft</p>
+          <p>{{favourite.favoriteName}}</p>
         </li>
       </ul>
     </div>
@@ -245,15 +123,61 @@
 
 <script>
 // @ is an alias to /src
+import socialTypes from '../../common/enums/socialTypes.js'
+
 export default {
   name: "cardFavourites",
   data() {
     return {
       expandFavourite: false,
-      tab: "",
-      tabItm :["","all","services","topics","links"]
-      };
-  }
+      lastFavourites:[],
+      favourites:[],
+      allFavourites:socialTypes.ALL,
+       portal:socialTypes.PORTAL,
+       topic:socialTypes.TOPIC,
+       services:socialTypes.SERVICES,
+      tabName:'tab-all',
+      tab: ""
+    };
+  },
+  created() {
+    this.fetchLastFavourites()
+  },
+   methods: {
+    async fetchLastFavourites(_socialTypeId) {
+      const vm = { userId: this.$route.query.userId}
+      const result = await this.$store.dispatch(
+        'comment/fetchLastFavourites',
+        vm
+      )
+      if (result.value) {
+        this.lastFavourites = result.value
+      }
+    },
+    async fetchFavourites(_tabName,_socialTypeId){
+     this.tabName=_tabName
+     const vm = { userId: this.$route.query.userId,socialTypeId : _socialTypeId}
+      const result = await this.$store.dispatch(
+        'comment/fetchFavourites',
+        vm
+      )
+      if (result.value) {
+        this.favourites = result.value
+      }
+   },
+      async deleteFavourite(_id) {
+      const vm = { id: _id}
+      const result = await this.$store.dispatch(
+        'comment/deleteFavorite',
+        vm
+      )
+      if (result.value) {
+        const index = this.favourites.findIndex((f) => f.id === _id)
+        this.favourites.splice(index, 1)
+      }
+    },
+   }
+
 };
 </script>
 

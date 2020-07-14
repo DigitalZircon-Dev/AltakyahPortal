@@ -1,19 +1,16 @@
 // npm i nuxt-fontawesome
 // npm i @fortawesome/fontawesome-svg-core @fortawesome/vue-fontawesome
 //npm install --save @fortawesome/free-solid-svg-icons
+
 <template>
   <div>
-    <fa
-      class="cursor-pointer"
-      :class="className"
-      :icon="['fas', name]"
-      :style="{ width: width }"
-    />
+    <v-icon :color="color">{{name}}</v-icon>
     <slot></slot>
   </div>
 </template>
 
 <script>
+
 import { required } from 'vuelidate/lib/validators'
 export default {
   name: 'BaseIcon',
@@ -30,6 +27,10 @@ export default {
     width: {
       type: Number,
       default: 22
+    },
+    color :{
+      type: String,
+      default: ''
     }
   }
 }
