@@ -1,16 +1,13 @@
 <template>
-  <div>
-     <li>
-          <a href="#">  {{ userSkill.skillName }} <span v-if="countEndorse > 0"
-             @click.prevent="displayUserSkillEndorses(userSkill.id, userSkill.skillName)">  {{ countEndorse }}</span></a>
-        </li>
-        <UserSkillEndorse
-      v-if="isDisplayUserSkillEndorses"
-      :id="id"
-      :display-user-skill-endorses="isDisplayUserSkillEndorses"
-      :title="skillName"
-      @close="close"
-    ></UserSkillEndorse>
+  <span>
+  <v-chip class="ma-1 itm">
+     <v-btn right icon @click.prevent="onEndorse(!isEndorse)">
+          <v-icon>{{ isEndorse ? 'mdi-check ' : 'mdi-plus' }}</v-icon>
+        </v-btn>
+    {{ userSkill.skillName }}
+     <v-avatar  text-color="white" right class="purple"  v-if="countEndorse > 0">{{ countEndorse }}
+    </v-avatar>
+  </v-chip>
     <ModalConfirmation
       v-if="isDisplayDeleteUserSkill"
       :item-id="id"
@@ -20,7 +17,7 @@
       @method="onDeleteUserSkill"
       @close="close"
     ></ModalConfirmation>
-  </div>
+  </span>
 
 </template>
 
@@ -28,14 +25,12 @@
 import Vue from 'vue'
 import { required } from 'vuelidate/lib/validators'
 import BaseIcon from '../../shared/BaseIcon'
-import UserSkillEndorse from '../skills/UserSkillEndorse'
 import ModalConfirmation from '@/components/shared/ModalConfirmation'
 
 export default Vue.extend({
   name: 'UserSkill',
   components: {
     BaseIcon,
-    UserSkillEndorse,
     ModalConfirmation
   },
   props: {
@@ -87,24 +82,6 @@ export default Vue.extend({
     displayDeleteUserSkill(_id) {
       this.id = _id
       this.isDisplayDeleteUserSkill = true
-    },
-    async onDeleteUserSkill(_id) {
-      const vm = { id: _id }
-      const result = await this.$store.dispatch(
-        'userProfile/deleteUserSkill',
-        vm
-      )
-      if (result.value) {
-        this.$emit('deleteItemUserSkill', _id)
-        this.isDisplayDeleteUserSkill = false
-
-        // this.$notify({
-        //   title: this.$vuetify.lang.t('$vuetify.userSkill.userSkillTite'),
-        //   text: this.$vuetify.lang.t('$vuetify.userSkill.notifications.delete'),
-        //   closeOnClick: true,
-        //   type: 'error'
-        // })
-      }
     }
   }
 })

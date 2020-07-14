@@ -1,72 +1,89 @@
 <template>
   <div>
-    <v-dialog v-model="addUserSkill" persistent max-width="500">
-      <v-card>
-        <v-card-title class="headline grey lighten-2" primary-title>
-          {{ $vuetify.lang.t('$vuetify.userSkill.adduserSkill') }}
-        </v-card-title>
-        <v-card-text>
-          <form>
-            <label for="userSkills"> </label>
-            <br>
+    <v-dialog v-model="addUserSkill" persistent max-width="700">
+      <div class="cardModal">
+        <v-card>
+          <v-card-title class="py-2">
+            <span class="headline">{{
+              $vuetify.lang.t('$vuetify.userSkill.adduserSkill')
+            }}</span>
+            <v-spacer></v-spacer>
+            <v-btn fab small icon color="red" @click.prevent="close()">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+            <v-container class="py-0">
+              <v-row>
+                <v-col cols="12" sm="12" class="py-0">
+                  <multiselect
+                    id="userSkills"
+                    :options="skills"
+                    :searchable="true"
+                    :selected="selectedSkills"
+                    :multiple="true"
+                    :taggable="true"
+                    placeholder="اختر المهارات"
+                    label="name"
+                    track-by="name"
+                    @tag="addSkills"
+                    @input="updateSkills"
+                  >
+                  </multiselect>
+                  <div
+                    v-if="isDuplicateSkill == true"
+                    class="input-feedback fount-color"
+                  >
+                    {{
+                      $vuetify.lang.t(
+                        '$vuetify.userSkill.validators.duplicateSkillError'
+                      )
+                    }}
+                  </div>
+                </v-col>
 
-            <multiselect
-              id="userSkills"
-              :options="skills"
-              :searchable="true"
-              :selected="selectedSkills"
-              :multiple="true"
-              :taggable="true"
-              placeholder="اختر المهارات"
-              label="name"
-              track-by="name"
-              @tag="addSkills"
-              @input="updateSkills"
-            >
-            </multiselect>
-            <div
-              v-if="isDuplicateSkill == true"
-              class="input-feedback fount-color"
-            >
-              {{
-                $vuetify.lang.t(
-                  '$vuetify.userSkill.validators.duplicateSkillError'
-                )
-              }}
-            </div>
-            <div class="card-information">
-              <div class="card-body">
-                <v-chip
-                  v-for="selectedSkill of selectedSkills"
-                  :key="selectedSkill.id"
-                  class="ma-2"
-                  close
-                  color="purple"
-                  text-color="white"
-                  @click:close="removeSkill(selectedSkill.id)"
-                >
-                  <v-avatar left>
-                    <v-icon>mdi-checkbox-marked-circle</v-icon>
-                  </v-avatar>
-                  {{ selectedSkill.name }}
-                </v-chip>
-              </div>
-            </div>
-          </form>
-        </v-card-text>
-        <v-card-actions>
-          <v-btn
-            color="primary"
-            :disabled="userSkillsDtos.length == 0"
-            @click.prevent="save()"
-          >
-            {{ $vuetify.lang.t('$vuetify.commonoprations.save') }}
-          </v-btn>
-          <v-btn color="error" @click.prevent="close()">
-            {{ $vuetify.lang.t('$vuetify.commonoprations.close') }}
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+                <v-col cols="12" sm="12" class="py-0">
+                  <v-row>
+                    <v-chip
+                      v-for="selectedSkill of selectedSkills"
+                      :key="selectedSkill.id"
+                      class="ma-1"
+                      close
+                      @click:close="removeSkill(selectedSkill.id)"
+                    >
+                      {{ selectedSkill.name }}</v-chip
+                    >
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-text>
+          <v-divider></v-divider>
+          <v-card-actions>
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="12" class="py-0">
+                  <v-btn
+                    class="rounded-0 stc_color_white--text mr-3"
+                    depressed
+                    :disabled="userSkillsDtos.length == 0"
+                    color="stc_color_oasislight"
+                    @click.prevent="save()"
+                  >
+                    {{
+                      $vuetify.lang.t('$vuetify.commonoprations.save')
+                    }}</v-btn
+                  >
+                  <v-btn class="rounded-0" depressed @click.prevent="close()">{{
+                    $vuetify.lang.t('$vuetify.commonoprations.close')
+                  }}</v-btn>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-actions>
+        </v-card>
+      </div>
     </v-dialog>
   </div>
 </template>

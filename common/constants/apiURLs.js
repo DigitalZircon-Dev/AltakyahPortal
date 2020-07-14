@@ -55,6 +55,7 @@ export const USERPROFILE = {
   FETCH_USER_SKILL_ENDORSES : 'UserSkill/FetchUserSkillEndorses/',
   FETCH_SKILL : 'Skill/FetchSkills',
   ADD_SKILL : 'Skill/OnCreateSkill',
-  FETCH_LAST_KPI : 'KPI/FetchLastKPI/'
+  FETCH_LAST_KPI : 'KPI/FetchLastKPI/',
+  FETCH_SKILL_ENDORSES: 'UserSkill/FetchSkillEndorses/'
 
 }

@@ -28,7 +28,7 @@
       </v-row>
 
       </v-col>
-      <v-col md="12" cols="12" sm="12" xs="12">
+      <v-col cols="12">
             <!-- Card Projects Component-->
             <cardRecommendations />
             <!-- End Card Projects Component-->
@@ -36,7 +36,7 @@
       </v-row>
 
       <v-row>
-        <v-col md="12" cols="12" sm="12" xs="12">
+        <v-col cols="12">
           <!-- Card Vacation Component-->
 
           <!-- End Card Vacation Component-->

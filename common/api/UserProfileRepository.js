@@ -81,6 +81,11 @@ export  default ($axios) => ({
     return await $axios.get(
       USERPROFILE.FETCH_LAST_KPI + vm.userId
     )
+  },
+  async fetchSkillEndorses(vm) {
+    return await $axios.get(
+      USERPROFILE.FETCH_SKILL_ENDORSES + vm.userId
+    )
   }
 })
 

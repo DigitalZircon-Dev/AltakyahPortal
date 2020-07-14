@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-dialog v-model="addUserSkill" persistent max-width="500">
+    <v-dialog scrollable v-model="addUserSkill" persistent max-width="500" height="100%">
       <v-card>
         <v-card-title class="headline grey lighten-2" primary-title>
           {{ $vuetify.lang.t('$vuetify.userSkill.adduserSkill') }}
         </v-card-title>
         <v-card-text>
-          <form>
+          <div id="divSkills">
             <label for="userSkills"> </label>
             <br>
 
@@ -52,7 +52,7 @@
                 </v-chip>
               </div>
             </div>
-          </form>
+          </div>
         </v-card-text>
         <v-card-actions>
           <v-btn

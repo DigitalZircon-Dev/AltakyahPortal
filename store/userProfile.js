@@ -213,4 +213,17 @@ export const actions = {
       return { value: null, error: e.response }
     }
   },
+  async fetchSkillEndorses({ commit }, vm){
+    try {
+      const { data } = await this.$repositories.userProfile.fetchSkillEndorses(vm)
+      if (data.isValid) {
+        return { value: data.value, error: '' }
+      } else {
+        return { value: null, error: '' }
+      }
+    } catch (e) {
+      return { value: null, error: e.response }
+    }
+  },
+
 }

@@ -19,18 +19,18 @@
     <div class="userlist ">
       <v-container>
         <v-row justify="center" class="group">
-          <v-col md="4" sm="3" cols="6" class="userLabel">Cell Phone</v-col>
-          <v-col md="8" sm="3" cols="6" class="userVal">059651842</v-col>
+          <v-col cols="12" md="4" class="userLabel">Cell Phone</v-col>
+          <v-col cols="12" md="8"  class="userVal">059651842</v-col>
         </v-row>
         <v-row justify="center" class="group">
-          <v-col md="4" sm="3" cols="6" class="userLabel">Email</v-col>
-          <v-col md="8" sm="3" cols="6" class="userVal"
+          <v-col cols="12" md="4" class="userLabel">Email</v-col>
+          <v-col cols="12" md="8" class="userVal"
             >Muhammed@gmail.com</v-col
           >
         </v-row>
         <v-row justify="center" class="group">
-          <v-col md="4" sm="3" cols="6" class="userLabel">Account</v-col>
-          <v-col md="8" sm="3" cols="6" class="userVal">@Hamido</v-col>
+          <v-col cols="12" md="4" class="userLabel">Account</v-col>
+          <v-col cols="12" md="8"  class="userVal">@Hamido</v-col>
         </v-row>
       </v-container>
     </div>

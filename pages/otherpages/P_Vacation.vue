@@ -2,7 +2,7 @@
   <div class="profile-section">
     <v-container class="py-0">
       <v-row>
-        <v-col md="12" cols="12" sm="12" xs="12">
+        <v-col cols="12">
           <!-- Card Vacation Component-->
           <cardVacation />
           <!-- End Card Vacation Component-->
@@ -10,7 +10,7 @@
       </v-row>
 
       <v-row>
-        <v-col md="12" cols="12" sm="12" xs="12">
+        <v-col cols="12">
           <v-card class="vRequests">
             <v-card-title class="py-2">
               Vacation Requests

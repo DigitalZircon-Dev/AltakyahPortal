@@ -42,7 +42,13 @@
                   name="mdi-heart"
                 ></BaseIcon>
                  </v-btn>
-              <button
+                 <v-btn icon :color="sourceUrl.isFavorite ? 'pink' : 'purple'"
+                  @click="onFavorite(!sourceUrl.isFavorite)">
+                  <BaseIcon
+                  name="mdi-star"
+                ></BaseIcon>
+                 </v-btn>
+              <!-- <button
                 :class="
                   sourceUrl.isFavorite ? 'comment-like-color' : 'comment-like'
                 "
@@ -50,14 +56,14 @@
                 @click="onFavorite(!sourceUrl.isFavorite)"
               >
                 <BaseIcon
-                  name="mdi-Star"
-                >المفضلة</BaseIcon>
-              </button>
+                  name="mdi-star"
+                ></BaseIcon>
+              </button> -->
               <button
                 class="comment-reply reply-popup"
                 @click.prevent="displayComment(!isDisplayComment)"
               >
-                <BaseIcon name="comment-alt"
+                <BaseIcon name="mdi-comment-multiple-outline"
                   >{{$vuetify.lang.t('$vuetify.sourceoptions.addcomment')}}
                 </BaseIcon>
               </button>

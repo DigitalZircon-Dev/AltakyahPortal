@@ -7,20 +7,26 @@
           <img src="~/assets/images/card/card-plus.svg" alt="" />
           Add
         </a>
-        <a href="#" class="Expand">
+        <a href="#" class="Expand"
+        @click.prevent="displayUserSkillEndorses()"
+        >
           <img src="~/assets/images/card/card-expand.svg" alt="" />
         </a>
       </div>
     </div>
     <div class="card-body">
-      <ul class="skill-list">
+      <div class="skill-items">
+        <!-- <v-chip class="ma-1 itm"
+          v-for="userSkill in userSkills"
+          :key="userSkill.id"
+        >{{ userSkill.skillName }} <v-avatar>.{{ 2 }}</v-avatar></v-chip> -->
       <cardkill
           v-for="userSkill in userSkills"
             :key="userSkill.id"
             :user-skill="userSkill"
             @deleteItemUserSkill="deleteItemUserSkill"
       ></cardkill>
-      </ul>
+      </div>
     </div>
     <AddUserSkill
       v-if="isDisplayAddUserSkill"
@@ -30,6 +36,12 @@
       @bindUserSkills="bindUserSkills"
       @close="close"
     ></AddUserSkill>
+    <UserSkillEndorse
+      v-if="isDisplayUserSkillEndorses"
+      :display-user-skill-endorses="isDisplayUserSkillEndorses"
+      @close="close"
+      @deleteItemUserSkill="deleteItemUserSkill"
+    ></UserSkillEndorse>
   </div>
 </template>
 
@@ -38,17 +50,19 @@
 import Vue from 'vue'
 import cardkill from '../skills/card-skill'
 import AddUserSkill from '../skills/AddUserSkill'
+import UserSkillEndorse from '../skills/UserSkillEndorse'
 
 
 export default Vue.extend({
  name: 'cardSkills',
-  components: {cardkill,AddUserSkill},
+  components: {cardkill,AddUserSkill,UserSkillEndorse},
   data() {
     return {
       id: '',
       userSkills: [],
       userSkillsDto: {},
-      isDisplayAddUserSkill: false
+      isDisplayAddUserSkill: false,
+      isDisplayUserSkillEndorses:false
     }
   },
   created() {
@@ -57,6 +71,7 @@ export default Vue.extend({
   methods: {
     close() {
       this.isDisplayAddUserSkill = false
+      this.isDisplayUserSkillEndorses = false
     },
     async fetchUserSkillss() {
       const vm = { userId: this.$route.query.userId }
@@ -85,7 +100,10 @@ export default Vue.extend({
       userSkills.forEach((value) => {
         self.userSkills.push(value)
       })
-    }
+    },
+       displayUserSkillEndorses() {
+      this.isDisplayUserSkillEndorses = true
+    },
   }
 })
 </script>

@@ -1,5 +1,6 @@
 <template>
-<div class="RequestBox col-md-6 pa-0 ml-3">
+<v-col cols="12" md="6" lg="6" xl="6">
+<div class="RequestBox">
    <v-card  flat class="requestCard ">
       <v-card-title class="RequestHeader py-2">
          My Requests
@@ -40,6 +41,7 @@
       </v-data-table>
     </v-card>
 </div>
+</v-col>
 </template>
 
 <script>

@@ -9,7 +9,9 @@
           max-width="700px"
           transition="scale-transition"
           origin="center center"
-          content-class="vacationModal"
+          content-class="commonModal"
+          @keydown.esc="expandFavourite = false"
+          @click:outside="expandFavourite = false"
         >
           <template v-slot:activator="{ on, attrs }">
             <a
@@ -45,7 +47,7 @@
                     <v-col cols="12" sm="12" class="py-0 ">
                       <v-tabs v-model="tab" class="favModal">
                         <v-tabs-slider
-                          color="transparent lighten-3"
+                          color="transparent"
                         ></v-tabs-slider>
                         <v-tab href="#tab-all" class="itmFav active" @click.prevent="fetchFavourites('tab-all',allFavourites)">
                           <span class="active" >
@@ -69,11 +71,14 @@
                               <v-list>
                                 <v-list-item
                                  v-for="favourite in favourites"
-                                 :key="favourite.id"
-                                 >
-                                  <v-icon color="stc_color_sliver" class="mx-1"
-                                    >mdi-bookmark-outline</v-icon
-                                  >
+                                 :key="favourite.id">
+
+                                  <img
+                                    src="~/assets/images/all/bookmark.svg"
+                                    alt=""
+                                    width="24px"
+                                    class="ma-1"
+                                  />
                                   <v-list-item-content>
                                     <v-list-item-title>
                                      {{favourite.favoriteName}}
@@ -176,7 +181,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .favModal a.itmFav {
   font-size: 14px;
   background: transparent;

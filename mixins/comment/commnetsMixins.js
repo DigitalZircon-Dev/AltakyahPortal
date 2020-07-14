@@ -75,7 +75,8 @@ export const commentsMixins = {
         sourceUrl: {
           fullUrl: '',
           urlTitle: '',
-          siteCollection: ''
+          siteCollection: '',
+          topicId:''
         }
       }
       const formData = helper.convertObjectToFormData(likeDto)
@@ -87,7 +88,6 @@ export const commentsMixins = {
         formData
       )
       if (data.value) {
-        debugger
         this.sourceUrl.countLike = _isLike
         ? this.sourceUrl.countLike + 1
         : this.sourceUrl.countLike - 1
