@@ -110,7 +110,7 @@ export default {
     '~/plugins/axiosPlugin',
     '~/plugins/Vuelidate' ,
     { src: '~/plugins/ckeditor5', ssr: false },
-    { src: '~/plugins/materialDesignIcons', ssr: false }
+    //{ src: '~/plugins/materialDesignIcons', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
