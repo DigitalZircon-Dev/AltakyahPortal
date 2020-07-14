@@ -4,7 +4,7 @@
       My Team
             <div class="action">
         <a href="/otherpages/P_team" class="Expand">
-          <img src="~/assets/images/card/card-expand.svg" alt="" />
+          <img src="~/assets/images/all/ic-link.svg" alt="" class="ex-link"/>
         </a>
       </div>
     </div>

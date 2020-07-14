@@ -234,59 +234,90 @@
                 <v-container class="py-0">
                   <v-row>
                     <v-col cols="12" sm="12" class="py-0 ">
-                      <v-list two-line>
-                        <div v-for="project in 5" :key="project" >
-                          <v-list-item>
-                            <img
-                              src="~/assets/images/all/lightbulb.svg"
+                      <v-list>
+                        <v-list-group
+                          v-for="item in items"
+                          :key="item.title"
+                          v-model="item.active"
+                          no-action
+                          class="projectItem"
+                        >
+                          <template v-slot:activator>
+                            <div class="projectHeader" >
+                              <img
+                              src="~/assets/images/all/projects-icon.svg"
                               alt=""
-                              width="24px"
-                              class="ma-1"
-                            />
-                            <v-list-item-content>
-                              <v-list-item-title>
-                                Project Title Here
-                              </v-list-item-title>
-                              <v-list-item-subtitle
-                                >23-10-2017</v-list-item-subtitle
-                              >
-                            </v-list-item-content>
-
-                            <v-list-item-action class="d-flex flex-row">
-                              <v-btn
-                                depressed
-                                flat
-                                dense
-                                text
-                                class="text-capitalize rounded-0"
-                              >
-                                <img
-                                  src="~/assets/images/all/ic-edit.svg"
-                                  alt=""
-                                  width="18px"
-                                  class="ma-1"
-                                />
-                                Edit
-                              </v-btn>
-                              <v-btn
-                                depressed
-                                flat
-                                dense
-                                text
-                                class="text-capitalize rounded-0"
-                              >
-                                <img
-                                  src="~/assets/images/all/ic-trash.svg"
-                                  alt=""
-                                  width="18px"
-                                  class="ma-1"
-                                />
-                                Delete
-                              </v-btn>
-                            </v-list-item-action>
-                          </v-list-item>
+                              width="20px"
+                              class="mx-1"
+                              />
+                              {{item.title}}
+                            </div>
+                          </template>
                           <v-divider></v-divider>
-                        </div>
+
+                          <v-list-item
+                            v-for="subItem in item.items"
+                            :key="subItem.desc"
+                            class="px-0"
+                          >
+                            <div class="pCard">
+                              <ul class="proList">
+                                <li>
+                                  <h2 class="subtitle-2">Project Status</h2>
+                                  <span class="caption">{{ item.status }}</span>
+                                </li>
+                                <li>
+                                  <h2 class="subtitle-2">Project Date</h2>
+                                  <span class="caption">{{
+                                    item.startDate
+                                  }}</span
+                                  ><span class="caption">{{
+                                    item.endDate
+                                  }}</span>
+                                </li>
+                                <li>
+                                  <h2 class="subtitle-2">
+                                    Project Description
+                                  </h2>
+                                  <p class="caption">{{ subItem.desc }}</p>
+                                </li>
+                                <li>
+                                  <v-btn
+                                    depressed
+                                    flat
+                                    dense
+                                    outlined
+
+                                    class="text-capitalize rounded-0 stc_color_silver--text mx-1"
+                                  >
+                                    <img
+                                      src="~/assets/images/all/ic-edit.svg"
+                                      alt=""
+                                      width="18px"
+                                      class="ma-1"
+                                    />
+                                    Edit
+                                  </v-btn>
+                                  <v-btn
+                                    depressed
+                                    flat
+                                    dense
+                                    outlined
+                                    class="text-capitalize rounded-0 stc_color_coral--text mx-1"
+                                  >
+                                    <img
+                                      src="~/assets/images/all/ic-trash.svg"
+                                      alt=""
+                                      width="18px"
+                                      class="ma-1"
+                                    />
+                                    Delete
+                                  </v-btn>
+                                </li>
+                              </ul>
+                            </div>
+                          </v-list-item>
+                        </v-list-group>
                       </v-list>
                     </v-col>
                   </v-row>
@@ -359,8 +390,99 @@ export default {
       Sdate: new Date().toISOString().substr(0, 10),
       Edate: new Date().toISOString().substr(0, 10),
       startDate: false,
-      endDate: false
+      endDate: false,
+
+      items: [
+        {
+          title: "Ministry of Finance",
+          active: false,
+          status: "Completed",
+          startDate: "23-07-2019",
+          endDate: "01-08-2020",
+          items: [
+            {
+              desc:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s"
+            }
+          ]
+        },
+
+        {
+          title: "Cafe et dessert",
+          active: false,
+          status: "Still Working",
+          startDate: "23-07-2019",
+          endDate: "01-08-2020",
+          items: [
+            {
+              desc:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s"
+            }
+          ]
+        },
+
+        {
+          title: "CMA Project",
+          active: false,
+          status: "Still Working",
+          startDate: "23-07-2019",
+          endDate: "01-08-2020",
+          items: [
+            {
+              desc:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s"
+            }
+          ]
+        },
+
+        {
+          title: "Now training Co",
+          active: false,
+          status: "Still Working",
+          startDate: "23-07-2019",
+          endDate: "01-08-2020",
+          items: [
+            {
+              desc:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s"
+            }
+          ]
+        },
+
+        {
+          title: "Project name here",
+          active: false,
+          status: "Still Working",
+          startDate: "23-07-2019",
+          endDate: "01-08-2020",
+          items: [
+            {
+              desc:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s"
+            }
+          ]
+        }
+      ]
     };
   }
 };
 </script>
+
+<style lang="scss">
+.pCard {
+
+}
+.projectItem{
+    border-bottom: 1px solid #eee;
+}
+.projectHeader{
+  flex: 1;
+}
+ul.proList {
+    list-style: none;
+}
+ul.proList li{
+    padding: 10px 0;
+    border-bottom: 1px dotted #eee;
+}
+</style>

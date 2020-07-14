@@ -24,7 +24,14 @@
           width: 18px;
           position: relative;
           top: 2px;
+          &.ex-link{
+            transform: rotate(90deg);
+            width: 20px;
+            height: 20px;
+
+          }
         }
+
         &.addBtn {
           margin-#{$reverse-direction}: 10px;
         }
@@ -158,6 +165,9 @@
           color:$stc_color_white !important
         }
       }
+      }
+      &.toggled{
+        background:#fabcc7;
       }
     }
     }

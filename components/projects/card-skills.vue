@@ -306,7 +306,7 @@
     </div>
     <div class="card-body">
       <div class="skill-items">
-        <v-chip class="ma-1 itm">SQL<v-avatar>.5</v-avatar></v-chip>
+        <v-chip class="ma-1 itm" :class="{toggled: isToggled}" @click="isToggled = !isToggled">SQL<v-avatar>.5</v-avatar></v-chip>
         <v-dialog
           v-model="SkillRate"
           persistent
@@ -318,7 +318,7 @@
           @click:outside="SkillRate = false"
         >
           <template v-slot:activator="{ on, attrs }">
-            <v-chip class="ma-1 itm" v-bind="attrs" v-on="on"
+            <v-chip class="ma-1 itm " v-bind="attrs" v-on="on"
               >Mobile Application Design<v-avatar>.12</v-avatar>
             </v-chip>
           </template>
@@ -406,6 +406,7 @@
         >
         <v-chip class="ma-1 itm">Illustrator<v-avatar>.8</v-avatar></v-chip>
         <v-chip class="ma-1 itm">Graphic Design<v-avatar>.4</v-avatar></v-chip>
+
       </div>
     </div>
   </div>
@@ -419,7 +420,9 @@ export default {
     return {
       addSkill: false,
       SkillRate: false,
+       isToggled: false,
       expandSkill: false,
+        selection: 2,
       Design: true,
       expanditm: true,
       expanditm1: true,
