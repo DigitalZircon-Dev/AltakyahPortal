@@ -1,4 +1,5 @@
 /* Vuetify tabs override Style */
+.recomendationBx{
 a.v-tab.v-tab--active {
   background: transparent;
   color: $stc_color_onyx;
@@ -28,4 +29,6 @@ a.v-tab:not(.v-tab--active) {
 
 .v-tabs-slider-wrapper {
   display: none;
+}
+
 }

@@ -225,18 +225,11 @@
 /*====== tasks  & requests=========*/
 
 .profile-tasks-requests {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  > div {
-    padding: 10px;
-    flex: 1;
-    background-color: $stc_color_white;
-    box-shadow: $stc_box_shadow;
-  }
 
   .taskCard {
     border-radius: 0 !important;
+    background-color: $stc_color_white;
+    box-shadow: $stc_box_shadow !important;
     .taskHeader {
       font-size: 16px;
       font-family: "STC medium";
@@ -385,6 +378,8 @@
 
   .requestCard {
     border-radius: 0 !important;
+    background-color: $stc_color_white;
+    box-shadow: $stc_box_shadow !important;
 
     .RequestHeader {
       font-size: 15px;

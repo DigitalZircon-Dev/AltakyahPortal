@@ -1,5 +1,6 @@
 <template>
-<div class="tasksBox col-md-6 pa-0  mr-3">
+ <v-col cols="12" md="6" lg="6" xl="6">
+<div class="tasksBox">
    <v-card  flat class="taskCard">
       <v-card-title class="taskHeader py-2">
           My Tasks
@@ -40,6 +41,7 @@
       </v-data-table>
     </v-card>
 </div>
+ </v-col>
 </template>
 
 <script>

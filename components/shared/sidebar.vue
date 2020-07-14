@@ -47,6 +47,7 @@ export default {
       drawer: false,
        menu: [
         { title: "Profile", link: "/", hasSub: false },
+        { title: "Profile Visitors", link: "/otherpages/P_VisitorProfile", hasSub: true },
         { title: "Vacation", link: "/vacation", hasSub: true },
         { title: "More", link: "/myteam",
           model: false,

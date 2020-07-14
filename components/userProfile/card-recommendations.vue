@@ -14,7 +14,13 @@
 
     <div class="card-body recommendation-content">
       <v-tabs>
-        <v-tabs-items v-model="Recotabs">
+        <v-tabs-items
+        v-model="Recotabs"
+        slider-color="transparent"
+        active-class="activeTab"
+        right
+
+        >
           <v-tab-item value="tab-1">
             <v-card flat>
               <ul class="recommendation-list">
@@ -155,4 +161,5 @@ a.given {
 .recommendation-content .v-tabs-bar {
   display: none;
 }
+
 </style>
