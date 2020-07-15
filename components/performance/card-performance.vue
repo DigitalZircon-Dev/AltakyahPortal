@@ -6,7 +6,7 @@
     <div class="card-body">
       <v-sheet class="mx-auto" >
         <v-slide-group
-          show-arrows
+          mobile
           :prev-icon="prevIcon ? 'mdi-minus' : undefined"
           :next-icon="nextIcon ? 'mdi-plus' : undefined"
         >
@@ -47,7 +47,9 @@
 export default {
   data: () => ({
     model: null,
-    years:[2019,2018,2017,2016]
+    years:[2019,2018,2017,2016],
+    prevIcon: false,
+    nextIcon: false,
   })
 };
 </script>

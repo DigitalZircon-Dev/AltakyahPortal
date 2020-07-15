@@ -241,7 +241,8 @@
                         How good is Mobile Application Design ?
                       </div>
 
-                      <v-radio-group v-model="radioGroup">
+                      <!-- <v-radio-group v-model="radioGroup"> -->
+                      <v-radio-group >
                         <v-radio
                           v-for="n in 3"
                           :key="n"

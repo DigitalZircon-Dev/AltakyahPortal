@@ -389,6 +389,7 @@ export default {
       // Calendar Variables
       Sdate: new Date().toISOString().substr(0, 10),
       Edate: new Date().toISOString().substr(0, 10),
+      date: new Date().toISOString().substr(0, 10),
       startDate: false,
       endDate: false,
 
@@ -469,9 +470,9 @@ export default {
 </script>
 
 <style lang="scss">
-.pCard {
+// .pCard {
 
-}
+// }
 .projectItem{
     border-bottom: 1px solid #eee;
 }

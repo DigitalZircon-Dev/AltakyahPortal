@@ -59,60 +59,11 @@ export default {
       { text: 'Author', value: 'author' },
       { text: 'Date', value: 'date' },
       ],
-      tasks: [
-        {
-          id: '#10184',
-          title: 'Review code for team page',
-          statusText : "completed",
-          author: "Muhammed Gamal Zaky",
-          date: "04 April 2020",
-        },
-        {
-         id: '#10657',
-            title: 'Review code for team page',
-            statusText : "Canceled",
-            author: "Muhammed Gamal Zaky",
-            date: "04 April 2020",
-        },
-        {
-         id: '#16677',
-            title: 'Review code for team page',
-            statusText : "Pending",
-            author: "Muhammed Gamal Zaky",
-            date: "04 April 2020",
-        },
-        {
-         id: '#23777',
-            title: 'Review code for team page',
-            statusText : "Progress",
-            author: "Muhammed Gamal Zaky",
-            date: "04 April 2020",
-        },
-        {
-         id: '#11277',
-            title: 'Review code for team page',
-            statusText : "completed",
-            author: "Muhammed Gamal Zaky",
-            date: "04 April 2020",
-        },
-        {
-         id: '#10747',
-            title: 'Review code for team page',
-            statusText : "completed",
-            author: "Muhammed Gamal Zaky",
-            date: "04 April 2020",
-        },
-        {
-         id: '#10752',
-            title: 'Review code for team page',
-            statusText : "completed",
-            author: "Muhammed Gamal Zaky",
-            date: "04 April 2020",
-        }
-      ]
+      tasks: []
 
     }
-  }, methods: {
+  }, 
+  methods: {
          getColor (statusText) {
         if (statusText == 'completed') return 'green'
         else if (statusText == 'pending') return 'orange'

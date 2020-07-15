@@ -44,7 +44,6 @@ export default {
   props: ['drawer'],
   data() {
     return {
-      drawer: false,
        menu: [
         { title: "Profile", link: "/", hasSub: false },
         { title: "Profile Visitors", link: "/otherpages/P_VisitorProfile", hasSub: true },
@@ -77,5 +76,10 @@ export default {
       admins: [["sub Link 1"], ["sub Link 2"]]
     };
   },
+  // computed: {
+  //   showDrawer() {
+  //     return this.drawer;
+  //   }
+  //}
 };
 </script>
