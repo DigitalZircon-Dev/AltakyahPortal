@@ -1,8 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-layout>    
       <userHtml/>
-    </v-flex>
   </v-layout>
 </template>
 
