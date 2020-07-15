@@ -5,12 +5,16 @@
   font-family: $stc_font_face;
   position: relative;
   .card-header {
-    display: block;
-    padding: 10px 20px;
+    display: flex;
+    padding: 10px 15px;
     border-bottom: 1px solid $stc_color_border;
     font-size: $stc_font_size;
     font-family: $stc_font_face_medium;
     position: relative;
+    p{
+      margin: 0;
+      flex: 1;
+    }
     .action {
       display: block;
       float: $reverse-direction;
@@ -37,6 +41,12 @@
         }
       }
     }
+
+  }
+  .addBtn {
+      img {
+      width: 20px;
+  }
   }
   .card-body {
     padding: 10px 15px;

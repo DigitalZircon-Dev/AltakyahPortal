@@ -1,7 +1,7 @@
 <template>
   <div class="card-information vacationBx">
     <div class="card-header">
-      Vacations Balance
+      <p>Vacations Balance</p>
       <div class="action">
         <v-dialog
           v-model="addVacation"

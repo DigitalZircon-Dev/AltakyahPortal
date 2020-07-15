@@ -1,7 +1,7 @@
 <template>
   <div class="card-information favouriteBx">
     <div class="card-header">
-      Favourites
+      <p>Favourites</p>
       <div class="action">
         <v-dialog
           v-model="expandFavourite"

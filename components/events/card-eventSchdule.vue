@@ -2,7 +2,7 @@
   <div class="eventSchdule">
     <div class="card-information schduleBx">
       <div class="card-header">
-        Event Schdule
+        <p>Event Schdule</p>
       </div>
       <div class="card-body">
         <ul class="schdule-list">

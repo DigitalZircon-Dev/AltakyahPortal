@@ -1,7 +1,7 @@
 <template>
   <div class="card-information teamBx">
     <div class="card-header">
-      My Team
+      <p>My Team</p>
             <div class="action">
         <a href="/otherpages/P_team" class="Expand">
           <img src="~/assets/images/all/ic-link.svg" alt="" class="ex-link"/>

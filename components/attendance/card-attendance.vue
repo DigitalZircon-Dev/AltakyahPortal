@@ -1,7 +1,7 @@
 <template>
     <div class="card-information attendanceBx">
                     <div class="card-header">
-                      Attendance
+                      <p>Attendance</p>
                     </div>
                     <div class="card-body">
                       <p class="card-body-title">

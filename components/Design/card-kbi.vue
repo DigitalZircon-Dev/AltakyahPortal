@@ -1,7 +1,7 @@
 <template>
   <div class="card-information KbiBx">
     <div class="card-header">
-     KPI
+     <p>KPI</p>
       <div class="action">
        <v-dialog
           v-model="expandKbi"

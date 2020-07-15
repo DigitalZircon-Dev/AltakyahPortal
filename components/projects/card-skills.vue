@@ -1,7 +1,7 @@
 <template>
   <div class="card-information skillsBx">
     <div class="card-header">
-      Skills & Endorse
+      <p>Skills & Endorse</p>
       <div class="action">
         <v-dialog
           v-model="addSkill"
@@ -205,6 +205,7 @@
     </div>
     <div class="card-body">
       <div class="skill-items">
+
         <v-chip class="ma-1 itm" :class="{toggled: isToggled}" @click="isToggled = !isToggled">SQL<v-avatar>.5</v-avatar></v-chip>
         <v-dialog
           v-model="SkillRate"
@@ -295,16 +296,23 @@
           </div>
         </v-dialog>
 
+
+
+
         <v-chip class="ma-1 itm"
-          >Responsive Web Design<v-avatar>.3</v-avatar></v-chip
+        >Responsive Web Design<v-avatar>.3</v-avatar></v-chip
         >
         <v-chip class="ma-1 itm">jQuery<v-avatar>.2</v-avatar></v-chip>
         <v-chip class="ma-1 itm">Photoshop<v-avatar>.6</v-avatar></v-chip>
         <v-chip class="ma-1 itm"
-          >Front End Deisgn<v-avatar>.9</v-avatar></v-chip
+        >Front End Deisgn<v-avatar>.9</v-avatar></v-chip
         >
         <v-chip class="ma-1 itm">Illustrator<v-avatar>.8</v-avatar></v-chip>
-        <v-chip class="ma-1 itm">Graphic Design<v-avatar>.4</v-avatar></v-chip>
+        <v-chip class="ma-1 itm"
+        active-class="purple--text"
+        :input-value="active"
+        @click="toggle"
+        >Graphic Design<v-avatar>.4</v-avatar></v-chip>
 
       </div>
     </div>

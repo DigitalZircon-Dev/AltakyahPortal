@@ -1,7 +1,7 @@
 <template>
   <div class="card-information performanceBx">
     <div class="card-header">
-      Performance
+      <p>Performance</p>
     </div>
     <div class="card-body">
       <v-sheet class="mx-auto" >

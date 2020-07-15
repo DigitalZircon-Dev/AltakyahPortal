@@ -1,7 +1,7 @@
 <template>
   <div class="card-information skillsBx">
     <div class="card-header">
-       {{ $vuetify.lang.t('$vuetify.userSkill.userSkillTite')}}
+       <p>{{ $vuetify.lang.t('$vuetify.userSkill.userSkillTite')}}</p>
       <div class="action">
         <a href="#" @click.prevent="displayAddUserSkill" class="addBtn">
           <img src="~/assets/images/card/card-plus.svg" alt="" />

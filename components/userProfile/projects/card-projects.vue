@@ -1,7 +1,7 @@
 <template>
   <div class="card-information projectsBx">
     <div class="card-header">
-      {{ $vuetify.lang.t('$vuetify.project.projectTitle') }}
+    <p>{{ $vuetify.lang.t('$vuetify.project.projectTitle') }}</p>
       <div class="action">
         <a href="#" class="addBtn" @click.prevent="showAddProject">
           <img src="~/assets/images/card/card-plus.svg" alt="" />

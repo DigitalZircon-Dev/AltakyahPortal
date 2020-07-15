@@ -1,7 +1,7 @@
 <template>
   <div class="card-information tasksBx">
     <div class="card-header">
-      Tasks
+      <p>Tasks</p>
     </div>
     <div class="card-body">
       <div class="tasks-box">

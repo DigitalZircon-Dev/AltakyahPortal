@@ -1,14 +1,5 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
+  <v-layout  >
       <userHtml/>
       <!-- <div class="text-center">
         <logo />
@@ -29,11 +20,11 @@
             </a>.
           </p>
           <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
+          If you have questions, please join the official <a
+            href="https://chat.vuetifyjs.com/"
+            target="_blank"
+            title="chat"
+          >
               discord
             </a>.
           </p>
@@ -76,7 +67,6 @@
           </v-btn>
         </v-card-actions>
       </v-card> -->
-    </v-flex>
   </v-layout>
 </template>
 

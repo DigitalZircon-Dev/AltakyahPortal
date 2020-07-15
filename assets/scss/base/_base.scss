@@ -14,3 +14,34 @@ body {
   }
   font-family: $stc_font_face;
 }
+
+.page_layout {
+  .page_section{
+  background-color: white;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+  font-family: "STC Regular";
+  position: relative;
+  min-height: 1000px;
+  .pageHeader {
+    padding: 25px 0;
+    display: flex;
+    .pageTitle {
+      position: relative;
+      color: #3f0070;
+      flex: 1;
+      height: 30px;
+      .remBorder {
+        border-width: 4px;
+        border-color: #ff375e !important;
+        background-color: #ff375e !important;
+      }
+
+      .title {
+        font-size: 28px !important;
+        padding: 0 15px;
+        position: relative;
+      }
+    }
+  }
+  }
+}

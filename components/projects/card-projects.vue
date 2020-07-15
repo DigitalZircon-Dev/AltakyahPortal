@@ -1,7 +1,7 @@
 <template>
   <div class="card-information projectsBx">
     <div class="card-header">
-      Projects
+      <p>Projects</p>
       <div class="action">
         <v-dialog
           v-model="addProject"

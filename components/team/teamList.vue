@@ -33,14 +33,9 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row class="line">
+    <v-row class="line-2">
       <v-col
-        class="memberItem currentLevel mx-auto"
-        cols="12"
-        sm="6"
-        md="4"
-        lg="4"
-      >
+        class="memberItem currentLevel">
         <v-card class="text-center " flat>
           <v-card-media>
             <v-badge
@@ -72,23 +67,22 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col>
+    <v-row  class="line-3">
+      <v-col class="py-0">
         <v-layout>
           <v-slide-group
             v-model="model"
-            class="pa-4"
-            prev-icon="mdi-arrow-left-circle-outline"
-            next-icon="mdi-arrow-right-circle-outline"
+            prev-icon="mdi-arrow-left"
+            next-icon="mdi-arrow-right"
+            class="tsliderArrow"
             show-arrows
           >
             <v-slide-item
-              v-for="n in 8"
+              v-for="n in 10"
               :key="n"
-              v-slot:default="{ active, toggle }"
             >
-              <v-col cols="3">
-                <v-card class="py-8 text-center" flat @click="toggle">
+              <v-col class="member-item">
+                <v-card class="py-8 text-center" flat >
                   <v-card-media>
                     <v-badge
                       bordered
@@ -103,9 +97,9 @@
                   </v-card-media>
                   <v-card-title class="justify-center">
                     <div>
-                      <h3 class="memberName">member Name</h3>
+                      <h3 class="memberName">Zakaria Bahah</h3>
                       <div class="memberPosition">
-                        member Position
+                          Senior IT Developer
                       </div>
                     </div>
                   </v-card-title>
@@ -149,3 +143,23 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.member-item{
+    width: 250px !important;
+    flex-basis: auto;
+  }
+.tsliderArrow .v-slide-group__prev i.v-icon{
+     width: 40px;
+  height: 40px;
+    background: #ddd;
+    border-radius: 50%;
+    color: #fff;
+}
+.tsliderArrow .v-slide-group__next i.v-icon{
+  width: 40px;
+  height: 40px;
+  background: #ff375e;
+  border-radius: 50%;
+  color: #fff;
+}
+</style>

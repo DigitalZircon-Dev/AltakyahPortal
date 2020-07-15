@@ -1,7 +1,7 @@
 <template>
   <div class="card-information recomendationBx">
     <div class="card-header">
-      <span class="title-reco">Recommendations</span>
+       <p>Recommendations</p>
       <v-tabs v-model="Recotabs" class="tabs-recommendation">
         <v-tab href="#tab-1" class="received"
           ><img src="~/assets/images/all/Received.svg" alt="" /> ({{
