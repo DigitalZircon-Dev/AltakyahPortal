@@ -7,14 +7,14 @@
 </template>
 
 <script>
-import Logo from '~/components/common/Logo.vue'
-import VuetifyLogo from '~/components/common/VuetifyLogo.vue'
-import userHtml from '@/components/userProfile/userprofilehtml.vue'
+// import Logo from '~/components/common/Logo.vue'
+// import VuetifyLogo from '~/components/common/VuetifyLogo.vue'
+import userHtml from '@/components/Design/userprofilehtml.vue'
 
 export default {
   components: {
-    Logo,
-    VuetifyLogo,
+    //Logo,
+    //VuetifyLogo,
     userHtml
   }
 }
